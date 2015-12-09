@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+
+<mapSettings 
+
+mapWidth = "900"
+mapHeight = "550"
+responsive = "true"
+
+offColor = "bdbdbd"
+strokeColor = "999"
+offStrokeColor = "000000"
+abbreviationColor = "f2f2f2"
+
+useText = "false"
+useTextAtBottom = "false"
+useParameterInUrl = "false"
+textAreaWidth = "0"
+textAreaHeight = "0"
+textAreaPadding = "0"
+
+pinSize = "10"
+
+/>
+
+
+<stateData stateName="Alabama" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Alaska" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Arizona" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Arkansas" url = "truck_school_WESTMEMPHIS.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="California" url = "truck_school_fontanaCalifornia.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Colorado" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Connecticut" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Delaware" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="District of Columbia" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Florida" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Georgia" url = "#" stateMode = "OFF" initialStateColor= "B12401" stateOverColor = "E32F02" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Hawaii" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Idaho" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Illinois" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Indiana" url = "truck_school_INDIANA.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Iowa" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Kansas" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Kentucky" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Louisiana" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Maine" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Maryland" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Massachusetts" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Michigan" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Minnesota" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Mississippi" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Missouri" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Montana" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Nebraska" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Nevada" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="New Hampshire" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="New Jersey" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="New Mexico" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="New York" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="North Carolina" url = "truck_school_northcarolina.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="North Dakota" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Ohio" url = "truck_school_OHIO.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Oklahoma" url = "truck_school_Tulsa.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Oregon" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Pennsylvania" url = "truck_school_Bethlehem_Pennsylvania.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Rhode Island" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="South Carolina" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="South Dakota"  url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Tennessee" url = "truck_school_Memphis_Tennessee.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Texas" url = "truck_school_SANANTONIO.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+</stateData>
+
+<stateData stateName="Utah" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Vermont" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Virginia" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Washington" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="West Virginia" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Wisconsin" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<stateData stateName="Wyoming" url = "#" stateMode = "OFF" initialStateColor= "999966" stateOverColor = "999900" stateSelectedColor = "feb41c">
+</stateData>
+
+<pinData pinName="Jacksonville, FL" url = "truck_school_JACKSONVILLE.php" pinX="760" pinY="460" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Orlando, FL" url = "truck_school_ORLANDO.php" pinX="767" pinY="485" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Tampa, FL" url = "truck_school_TAMPA.php" pinX="742" pinY="497" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Bethlehem, PA" url = "truck_school_Bethlehem_Pennsylvania.php" pinX="813" pinY="205" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Dunn. NC" url = "truck_school_northcarolina.php" pinX="815" pinY="330" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Memphis, TN" url = "truck_school_Memphis_Tennessee.php" pinX="610" pinY="350" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="West Memphis, AR" url = "truck_school_WESTMEMPHIS.php" pinX="585" pinY="350" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Tulsa, OK" url = "truck_school_Tulsa.php" pinX="490" pinY="350" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="San Antonio, TX" url = "truck_school_SANANTONIO.php" pinX="440" pinY="490" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Columbus, OH" url = "truck_school_OHIO.php" pinX="700" pinY="240" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Indianapolis, IN" url = "truck_school_INDIANA.php" pinX="650" pinY="250" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+<pinData pinName="Fontana, CA" url = "truck_school_fontanaCalifornia.php" pinX="90" pinY="340" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
+</pinData>
+
+</data>

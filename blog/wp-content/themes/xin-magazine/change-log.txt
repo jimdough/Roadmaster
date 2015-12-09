@@ -1,0 +1,21 @@
+== Changelog ==
+
+= 1.0.9 =
+* Option to set number of posts in Carousel
+
+= 1.0.8 =
+* Spanish translation
+* Fixed issue in Recent Post widget
+* Additioanl changes to XINWP
+
+= 1.0.7 =
+* Moved common functions into Xin WordPress Framework (XINWP). 
+* Dark Scheme. 
+
+= 1.0.6 =
+* Backend Xin Framework change 
+* Bug fix for color picker for section
+* New Theme Option: Brand URL
+
+= 1.0.5 =
+* Initial release

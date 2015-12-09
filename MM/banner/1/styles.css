@@ -1,0 +1,56 @@
+/* BANNER 1 */
+/* EVENT BANNER */
+
+#localEventBanner	{
+	width:932px; 
+	height:160px; 
+	margin:auto; 
+	background-image:url(http://www.roadmaster.com/newsbanner/localEventAlertBG.png); 
+	background-repeat:no-repeat;
+}
+
+#localEventBanner .headline	{
+	text-align: center;
+	font-size: 28px;
+	color: #CE1D14;
+	font-weight: bold;
+	padding-top: 50px;
+}
+
+#localEventBanner .dateTime	{
+	text-align: center;
+	font-size: 18px;
+	color: #000;
+	padding-top: 10px;
+	font-family: 'Oswald', sans-serif;
+}
+
+#localEventBanner .description	{
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+	padding-top: 5px;
+}
+
+#localEventBanner .address	{
+	width: 600px;
+	float: left;
+	padding-left: 10px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 15px;
+}
+
+#localEventBanner .cta	{
+	width: 300px;
+	float: right;
+	padding-right: 20px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 15px;
+	text-align: right;
+}
+
+/* END EVENT BANNER */

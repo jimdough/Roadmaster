@@ -1,0 +1,25 @@
+/*!
+Theme Name: Xin Magazine
+Theme URI: http://www.xinthemes.com/xin-magazine
+Author URI: http://www.xinthemes.com/
+
+Description: XIN Magazine Theme changes your blog instantly into a colorful magazine. All you need is to select the categories and your favorite colors using drag and drop admin panel. It is a Mobile First theme based on Foundation 4 Framework. It features magazine layout with responsive sidebars. XIN Magazine has many easy to use theme options and build-in Google Fonts support. 
+Author: XinThemes
+
+Version: 1.0.9
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Tags: two-columns, three-columns, flexible-width, custom-header, custom-background, threaded-comments, sticky-post, custom-menu, full-width-template, theme-options, post-formats, left-sidebar, right-sidebar, featured-images, translation-ready, light
+
+Text Domain: xinmag
+
+Xin WordPress Theme, Copyright (C) 2013 Stephen Cui
+------------------------------------------------------------------ */
+/* Surprised to see empty stylesheet? Please note that Xin Magazine
+ * uses minified verion of stylesheet. The source is located on 
+ * dev/xinmag.css. You may use one of the follow options:
+ * 1. Save Custom CSS in Theme Options
+ * 2. Create a Child Theme. Xin Magazine will include Child Theme's
+ * style.css automatically.
+------------------------------------------------------------------ */

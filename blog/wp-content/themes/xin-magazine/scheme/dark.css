@@ -1,0 +1,114 @@
+body {
+  background: #555555;
+  background-image: linear-gradient(to bottom, #555555, #666666);
+  background-repeat: repeat-x;
+  color: #e1e1e1;
+  border-color: #fff;
+}
+
+a {
+	color: #e1e1e1;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #e1e1e1;	
+}
+
+.sticky.hentry {
+	background: #333333;
+}
+.section-container.tabs > section > .title,
+.section-container.tabs > .section > .title {
+	background: #555555;
+	border-color: #666666;
+	color: #e1e1e1;
+}
+
+.section-container.tabs > section > .title:hover,
+.section-container.tabs > .section > .title:hover {
+	background: #383838;
+}
+.section-container.tabs > section.active > .title a,
+.section-container.tabs > .section.active > .title a,
+.section-container.tabs > section > .title a,
+.section-container.tabs > .section > .title a{
+	color: #e1e1e1;
+}
+
+
+.section-container.tabs > section:last-child .title,
+ .section-container.tabs > .section:last-child .title {
+	border-color: #666666;	
+}
+.section-container.tabs > section.active > .title,
+.section-container.tabs > .section.active > .title ,
+.section-container.tabs > section .content,
+.section-container.tabs > .section .content {
+	background: #383838;
+	border-color: #666666;
+}
+
+.row-container,
+.custom-background .row-container  {
+	background: #333333;
+	background: rgba(0,0,0, 0.8);
+	box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.65), -5px 0 5px -5px rgba(0, 0, 0, 0.65);
+}
+
+.site-header,
+.section-bar {
+	background: #333333;
+}
+
+.widget_rss ul li a,
+.widget_nav_menu ul li a,
+.widget_meta ul li a,
+.widget_recent_entries ul li a,
+.widget_pages ul li a,
+.widget_archive ul li a,
+.widget_categories ul li a {
+	border-color: #444444;
+}
+
+.titlebar {
+	background-color: rgba(0,0,0,0.5);
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.65);
+}
+#content {
+	border-color: #444444;
+}
+
+#footer-widget-area,
+#footer {
+	background: #333333;	
+}
+.widget-title {
+	border-color: #727272;
+	color: #c0c0c0;
+}
+
+.entry-meta a {
+	color: #d7d7d7;
+}
+
+.post-date-2 {
+	border: none;
+}
+
+.post-date-2 .month {
+	border: solid 1px #a11216;
+	background-color: #e0161d;
+}
+
+#featured-list {
+	background: #333333;
+}
+
+#featured-list li.active:before {
+	border-bottom-color: #333333;
+}
+
+#headlines,
+#headlines-index,
+.section-home {
+	border-right-color: #333333;
+}

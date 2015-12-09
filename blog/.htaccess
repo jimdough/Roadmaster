@@ -1,0 +1,27 @@
+<IfModule rewrite_module>
+    # WordPress Rewrite Settings
+    RewriteEngine On
+    RewriteBase /blog/
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /blog/index.php [L]
+
+    # Block access to WordPress administration except for CPT Office IP
+    RewriteCond %{REQUEST_URI} wp-(admin|login)
+    RewriteCond %{REQUEST_URI} !jetpack
+    RewriteCond %{REMOTE_ADDR} !^97\.76\.251\.130$
+    RewriteRule . - [R=404,L]
+</IfModule>
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /blog/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /blog/index.php [L]
+</IfModule>
+
+# END WordPress
