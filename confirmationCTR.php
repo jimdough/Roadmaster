@@ -70,7 +70,7 @@ window._fbq.push(['track', '6019119742383', {'value':'0.00','currency':'USD'}]);
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-gen2-S.gif, (default)], [img/headers/ph-gen2-M.gif, (medium)], [img/headers/ph-gen2-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen2-S.gif, (default)], [/img/headers/ph-gen2-M.gif, (medium)], [/img/headers/ph-gen2-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
       <!-- Small Nav-->
@@ -97,7 +97,7 @@ window._fbq.push(['track', '6019119742383', {'value':'0.00','currency':'USD'}]);
 	  	<div class="columns small-12 medium-6 large-4">
 <iframe class="mixedContent" src="http://roadmaster.uberflip.com/hubsFront/embedGrid?w=350&h=350&cols=1&rows=1&trans=slideLeft&label=Enter%20our%20Social%20Hub&open=_top&interval=2&website=roadmaster.com%2Fsocial" scroll="none" border="0" frameborder="0" width="350" height="350" style="height:350px;width:350px;border:0;margin:0;padding:0;overflow:none;background:transparent">&nbsp;</iframe>			</div>
 	  	<div class="columns text-center hide-for-medium-down large-4">
-	<a href="http://www.estoresbyzome.com/roadmasterdriversschool.php" target="_blank"><img src="img/storeGraphic.gif" border="0"></a>	  	</div>
+	<a href="http://www.estoresbyzome.com/roadmasterdriversschool.php" target="_blank"><img src="/img/storeGraphic.gif" border="0"></a>	  	</div>
 	  </div>
   </div></div>
 

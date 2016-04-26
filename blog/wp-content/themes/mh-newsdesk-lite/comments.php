@@ -36,7 +36,7 @@ if (have_comments()) {
 } else {
 	if (comments_open()) {
 		echo '<div class="comments-wrap">' . "\n";
-			echo '<h4 class="comment-section-title">' . sprintf(_n('<span class="comment-count">Be the first to comment</span> <span class="comment-count-more">on "%2$s"</span>', '<span class="comment-count">Be the first to comment</span> <span class="comment-count-more">on "%2$s"</span>', $comment_count, 'mh-newsdesk-lite'), number_format_i18n($comment_count), get_the_title()) . '</h4>' . "\n";
+			echo '<h4 class="comment-section-title">' . sprintf(__('<span class="comment-count">Be the first to comment</span> <span class="comment-count-more">on "%s"</span>', 'mh-newsdesk-lite'), get_the_title()) . '</h4>' . "\n";
 		echo '</div>' . "\n";
 	}
 }

@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-	 <title>CDL Training and Truck Driving School in Columbus, Ohio - Roadmaster</title>
+	 <title>Columbus, Ohio CDL Training and Truck Driving School - Roadmaster</title>
 <META NAME="DESCRIPTION" CONTENT="Roadmaster Columbus, OH, is a hands-on truck driving school & CDL training center for areas around Ohio.">
+<link href="http://www.roadmaster.com/truck_school_OHIO.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
 
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/school-co-s.jpg, (default)], [img/headers/school-co-m.jpg, (medium)], [img/headers/school-co-l.jpg, (large)]" alt="Roadmaster Truck Driving School of Chattanooga,TN">
+	   <img width="100%" src="/img/headers/school-co-l.jpg" alt="Roadmaster Truck Driving School of Chattanooga,TN">
    </div>
 	
 	 <!-- Small Nav-->
@@ -71,16 +72,16 @@
 	
 	<div class="row">
 	<div class="column small-12 text-center">
-		<img data-interchange="[img/cities/columbus3-m.jpg, (default)], [img/cities/columbus3-l.jpg, (medium)], [img/cities/columbus3-l.jpg, (large)]" alt="Roadmaster Truck Driving School">
+		<img src="/img/cities/columbus3-l.jpg" alt="Roadmaster Truck Driving School">
 	</div>
 </div>
 
 <div class="row">	
 	<div class="column small-12 text-center">
-		<ul class="clearing-thumbs small-block-grid-3" data-clearing>
-			<li><a class="th" href="img/cities/columbus2-l.jpg"><img style="thumb" src="img/cities/columbus2-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/columbus1-l.jpg"><img style="thumb" src="img/cities/columbus1-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/columbus4-l.jpg"><img style="thumb" src="img/cities/columbus4-s.jpg"></a></li>
+		<ul class="clearing-thumbs small-block-grid-3">
+			<li><a class="th" href="img/cities/columbus2-l.jpg"><img style="thumb" src="/img/cities/columbus2-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/columbus1-l.jpg"><img style="thumb" src="/img/cities/columbus1-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/columbus4-l.jpg"><img style="thumb" src="/img/cities/columbus4-s.jpg"></a></li>
 		</ul>
 	</div>
 </div>
@@ -125,14 +126,6 @@
 					    <li><b>Weekend:</b> Sat & Sun (7am to 6pm)</li>
 					  </ul>
 				  </div>
-			  
-
-			  <h3>Upcoming Events</h3>
-					 <table class="school-events">
-					  		<thead><tr><td><b>Date</b></td><td><b>Event Name</b></td><td><b>RSVP</b></td></tr></thead>
-					  		<tbody>
-					  			<tr class="repeatable"><td>Coming Soon</td><td>Coming Soon</td><td><a href	="#">Attend</a></td></tr>
-					  </table>
 	 </div><!-- END Column 1-->
 	 
 	 
@@ -140,9 +133,9 @@
 	 <h3>Associations</h3>
 	 
 	 <ul class="small-block-grid-3 text-center">
-		  <li><a href="http://cvta.org" target="_blank"><img src="img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
-		  <li><a href="http://www.truckload.org" target="_blank"><img src="img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
-		  <li><a href="http://www.ohiotruckingassn.org" target="_blank"><img src="img/logos/oh.jpg" alt="Ohio Trucking Association" /></a></li>
+		  <li><a href="http://cvta.org" target="_blank"><img src="/img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  <li><a href="http://www.truckload.org" target="_blank"><img src="/img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
+		  <li><a href="http://www.ohiotruckingassn.org" target="_blank"><img src="/img/logos/oh.jpg" alt="Ohio Trucking Association" /></a></li>
 	</ul>
 
 	 

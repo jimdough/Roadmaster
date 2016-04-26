@@ -8,11 +8,10 @@ $dark2: #999999;  /* Dark Grey */
 $dark3: #000000;  /* Black */
 $greenZurb: #1e7c2d;  /* Green */
 
-@import "jquery.foobar.2.1.scss";
-@import "normalize.scss";
 @import "foundation-icons.scss"; 
 @import "map.scss";
 @import "foundation.min.scss";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 /* Element Styles */
 
@@ -29,9 +28,9 @@ body	{
 }
 
 button.radius, .button.radius {
-	font-size:1.8em;
-	padding-top: .1em;
-	padding-bottom: .1em;
+	font-size:1em;
+	padding-top: .5em;
+	padding-bottom: .5em;
 	font-family: 'Open Sans';
 	font-weight: 400;
 }
@@ -41,28 +40,30 @@ a	{
 	}
 
 h1	{
-	font-size: 1.9em;
+	font-size: 1.6em;
 	font-family: 'Open Sans';
 	line-height: 1em;
-	font-weight: 400;
+	font-weight: 900;
+	color: $dark1;
+	display: inline-block;
 }
 
 h2	{
-	font-size: 1.6em;
+	font-size: 1.5em;
 	font-family: 'Open Sans';
 	font-weight: 400;
 	color: $main1;
 }
 
 h3	{ 
-	font-size: 1.5em;
+	font-size: 1.4em;
 	font-family: 'Open Sans';
 	color: $main1;
 	font-weight: 400;
 }
 
 h4 { 
-	font-size: 1.4em;
+	font-size: 1.3em;
 	font-family: 'Open Sans';
 	font-weight: 400;
 	color: #fff;
@@ -114,7 +115,6 @@ ul	{
 .editable	{
 	li	{
 		list-style-type: circle;
-		font-size: .9em;
 		margin-bottom: 1em;
 		ul{
 		li{
@@ -152,7 +152,7 @@ table		{
 .action	{
 	margin-bottom: 0em;
 	font-weight: 400;
-	
+	 
 	a{
 		color: #fff;
 	}
@@ -164,7 +164,7 @@ table		{
 			list-style-type: circle;
 			font-size: .9em;
 			line-height: 1.5em;
-			margin-bottom: 0em;
+			margin-bottom: 0em; 
 			a{
 				color: $light2;
 				background-color: $greenZurb;
@@ -185,6 +185,11 @@ table		{
 		text-decoration: underline;
 	}
 }
+
+.small-disclaimer{
+	font-size:.3em;
+	color:#ccc;
+	}
 
 .alert-box	{
 	width: 95%;
@@ -292,6 +297,28 @@ table		{
 	background-color: $main1;
 	color: $light1;
 }
+
+.related-box{
+	float: right;
+	margin: .3em;
+	padding: .5em;
+	padding-top:.5em !important;
+	h1{
+		padding-top: 0;
+		margin-top: 0;
+	}
+ul{
+	li{
+		padding-left: .3em;
+		line-height: .6em;
+		font-size: .9em;
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+}
+}
+
 
 .no-bullets	{
 	margin-left: .5em;
@@ -445,6 +472,11 @@ img	{
 	padding-left: 1em;
 }
 
+.off-canvas-submenu{
+	background-color: #bbbbbb;
+	margin: 0;
+}
+
 // END Main Styles //
 
 // School Styles //
@@ -566,8 +598,11 @@ img	{
 		
 		ul	{
 			list-style: none;
-			font-size: .8em;
+			font-size: .9em;
 			margin-left: .3em;
+		}
+		h2{
+			line-height: 1.2em;
 		}
 		
 		h5	{
@@ -658,6 +693,38 @@ img	{
 	}		
 }
 
+	.form-disclaimer {
+		font-size: .7em;
+		color: red;
+	}
+
+//Landing Pages //
+
+	.landing-page{
+			
+			.column, .columns {
+				padding-left: 3em;
+				padding-right: 3em;			
+		
+			.column, .columns {
+				padding-left: 0em;
+				padding-right: 0em;			
+		} }
+		
+		.yes-bullet>li{
+		  	margin-left: 3em;
+		  	list-style-type: disc;
+  		}
+  	}
+  	
+  	#footer{
+		  	 .columns {
+		  	 padding-left: 1em;
+		  	 padding-right: 1em;
+	  	 }
+	 }
+		
+		
 // Feature Slider //
 #featureSlider	{
 	background-color: $main1;
@@ -710,6 +777,8 @@ img	{
 // End Feature Slider //
 
 // Footer Styles //
+
+
 #footer	{
 	background-color: $main1;
 	padding: 1em;
@@ -749,6 +818,8 @@ ul.footerlink{
 
 	
 // Form Styles //
+
+
 	#form	{
 		input	{
 			font-size: .6em;
@@ -819,6 +890,10 @@ ul.footerlink{
 			font-size: 1.3em;
 			line-height: 2em;
 			margin-bottom: 0;
+		}
+		
+		.inner-wrap{
+			margin-top: 0;
 		}
 		
 		.school-header		{
@@ -903,13 +978,8 @@ ul.footerlink{
 		}
 		
 		.column, .columns {
-			padding-left: 1.5em !important;
-			padding-right: 1.5em !important;			
-			
-			.columns{
-			padding-left: .7em;
-			padding-right: .7em;
-		}
+			padding-left: 1.5em;
+			padding-right: 1.5em;			
 		}
 		
 		.panel{

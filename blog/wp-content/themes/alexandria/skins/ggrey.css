@@ -215,3 +215,19 @@
 .site-footer .wp-caption {
 	border: 1px solid #3a4040;
 }
+
+.bizfour-products-services-item{
+	background:#d3e5e5;
+}
+.bizfour-products-services-img{
+	background:#d3e5e5;
+}
+.bizfour-quote{
+	border:1px solid #d3e5e5;
+}
+.bizfour-quote-text{
+	background:url(images/ggrey/quote.png) top left no-repeat;		
+}
+.bizfour-quote-name span{
+	background:#d3e5e5;
+}

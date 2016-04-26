@@ -1,14 +1,15 @@
 <?php
 /*
 Plugin Name: Advanced Sidebar Menu
-Plugin URI: http://matlipe.com/advanced-sidebar-menu/
+Plugin URI: https://matlipe.com/advanced-sidebar-menu/
 Description: Creates dynamic menu based on child/parent relationship.
 Author: Mat Lipe
-Version: 5.0.8
-Author URI: http://matlipe.com
+Version: 5.0.10
+Author URI: https://matlipe.com
+Text Domain: advanced-sidebar-menu
 */
 
-define( 'ADVANCED_SIDEBAR_BASIC_VERSION', '5.0.8' );
+define( 'ADVANCED_SIDEBAR_BASIC_VERSION', '5.0.10' );
 
 
 #-- Define Constants

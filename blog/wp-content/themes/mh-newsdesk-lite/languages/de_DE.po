@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MH Newsdesk lite v1.0.6\n"
+"Project-Id-Version: MH Newsdesk lite v1.0.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-06-30 11:35+0100\n"
+"PO-Revision-Date: 2015-07-21 16:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,22 +118,6 @@ msgstr ""
 #: comments.php:34
 msgid "Comments are closed."
 msgstr "Kommentare sind deaktiviert."
-
-# @ mh-newsdesk-lite
-#: comments.php:39
-#, php-format
-msgid ""
-"<span class=\"comment-count\">Be the first to comment</span> <span class="
-"\"comment-count-more\">on \"%2$s\"</span>"
-msgid_plural ""
-"<span class=\"comment-count\">Be the first to comment</span> <span class="
-"\"comment-count-more\">on \"%2$s\"</span>"
-msgstr[0] ""
-"<span class=\"comment-count\">Kommentar hinterlassen</span> <span class="
-"\"comment-count-more\">on \"%2$s\"</span>"
-msgstr[1] ""
-"<span class=\"comment-count\">Kommentar hinterlassen</span> <span class="
-"\"comment-count-more\">on \"%2$s\"</span>"
 
 # @ mh-newsdesk-lite
 #: comments.php:45
@@ -562,3 +546,13 @@ msgstr "MH Posts Large [lite]"
 msgctxt "widget name"
 msgid "MH Recent Posts"
 msgstr "MH Recent Posts"
+
+# @ mh-newsdesk-lite
+#: comments.php:39
+#, php-format
+msgid ""
+"<span class=\"comment-count\">Be the first to comment</span> <span class="
+"\"comment-count-more\">on \"%s\"</span>"
+msgstr ""
+"<span class=\"comment-count\">Kommentar hinterlassen</span> <span class="
+"\"comment-count-more\">zu \"%s\"</span>"

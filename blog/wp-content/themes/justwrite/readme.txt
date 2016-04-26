@@ -37,15 +37,25 @@ License: Distributed under the terms of the MIT and GPL2 licenses
 Copyright: @afarkas @jdalton @jon_neal @rem
 ____________
 
-Font Awesome v4.3.0 icon set - http://fortawesome.github.io/Font-Awesome/
+Font Awesome v4.5.0 icon set - http://fortawesome.github.io/Font-Awesome/
 License: Font Awesome licensed under SIL OFL 1.1 / Code licensed under MIT License
 Copyright: Dave Gandy, twitter.com/davegandy
 ____________
 
+Owl carousel v2.0.0 jQuery script - http://www.owlcarousel.owlgraphic.com/
+License: Distributed under the terms of the MIT license
+Copyright: Bartosz Wojciechowski
+____________
+
+imagesLoaded v3.1.0 jQuery script - http://imagesloaded.desandro.com/
+License: Distributed under the terms of the MIT license
+Copyright: Oliver Caldwell
+
+
 JustWrite Screenshot - Images used:
-http://pixabay.com/en/man-telephoning-making-phone-call-240910/
-http://pixabay.com/en/finland-sky-clouds-sunset-river-229119/
-http://pixabay.com/en/sunset-aurigonlasku-twilight-283932/
-http://pixabay.com/en/cat-black-and-white-animals-288536/
+https://www.flickr.com/photos/paradox_and_confusion/14752706508/
+https://www.flickr.com/photos/cop21/23053866559/
+https://www.flickr.com/photos/133042043@N04/20475024129/
+https://www.flickr.com/photos/136375272@N05/21773064491/
 License: Public Domain CC0
-All images are from Pixabay - http://pixabay.com/
+All images are from Pixabay - http://flickr.com/

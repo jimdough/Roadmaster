@@ -18,8 +18,9 @@
 
 <?php if ( !get_theme_mod( 'ac_disable_minisidebar' ) ) { // Disable or Enable Mini-Sidebar ?>
 <section class="mini-sidebar">
+	<?php do_action( 'ac_action_mini_sidebar_inside_top' ); // Mini sidebar inside top action ?>
 	<header class="browse-by-wrap clearfix">
-    	<h2 class="browse-by-title"><?php _e( 'Browse By', 'acosmin' ); ?></h2>
+    	<h2 class="browse-by-title"><?php _e( 'Browse By', 'justwrite' ); ?></h2>
         <a href="#" class="close-browse-by"><i class="fa fa-times"></i></a>
     </header><!-- END .browse-by -->
     
@@ -30,15 +31,18 @@
         	<?php
 				// First Menu
 				if(is_home()) { $page_state = 'current_page_item'; } else { $page_state = ''; }
-				wp_nav_menu( array( 'container' => '', 'theme_location' => 'mini-first', 'items_wrap' => '<ul class="normal-list"><li class="'. $page_state .'"><a href="'. esc_url( home_url() ) .'" title="'. __('Go Home', 'acosmin') .'">'. __('Main Page', 'acosmin') .'</a></li>%3$s</ul>' ) );
+				wp_nav_menu( array( 'container' => '', 'theme_location' => 'mini-first', 'items_wrap' => '<ul class="normal-list"><li class="'. $page_state .'"><a href="'. esc_url( home_url() ) .'" title="'. __('Go Home', 'justwrite') .'">'. __('Main Page', 'justwrite') .'</a></li>%3$s</ul>' ) );
 			?>
 		</nav><!-- END .sb-content -->
 	</aside><!-- END .sidebox -->
     <?php } else { ?>	
 		<aside class="side-box">
-        	<h3 class="sidebar-heading"><?php esc_html_e( 'Add a menu', 'acosmin' ); ?></h3>
+        	<h3 class="sidebar-heading"><?php esc_html_e( 'Add a menu', 'justwrite' ); ?></h3>
         	<nav class="sb-content clearfix">
-            	<ul class="normal-list"><li class="current_page_item"><a href="#"><?php _e( 'Right Sidebar - First Menu', 'acosmin' ); ?></a></li></ul>
+            	<ul class="normal-list">
+                	<li class="current_page_item"><a href="#"><?php _e( 'Right Sidebar - First Menu', 'justwrite' ); ?></a></li>
+					<?php wp_list_pages( array( 'title_li' => '', 'depth' => 1 ) ); ?>
+				</ul>
             </nav>
         </aside>
     <?php } ?>
@@ -55,15 +59,18 @@
 	</aside><!-- END .sidebox -->
     <?php } else { ?>	
 		<aside class="side-box">
-        	<h3 class="sidebar-heading"><?php esc_html_e( 'Add a menu', 'acosmin' ); ?></h3>
+        	<h3 class="sidebar-heading"><?php esc_html_e( 'Add a menu', 'justwrite' ); ?></h3>
         	<nav class="sb-content clearfix">
-            	<ul class="normal-list"><li class="current_page_item"><a href="#"><?php _e( 'Right Sidebar - Second Menu', 'acosmin' ); ?></a></li></ul>
+            	<ul class="normal-list">
+					<li class="current_page_item"><a href="#"><?php _e( 'Right Sidebar - Second Menu', 'justwrite' ); ?></a></li>
+					<?php wp_list_pages( array( 'title_li' => '', 'depth' => 1 ) ); ?>
+				</ul>
             </nav>
         </aside>
     <?php } ?>
         
 	<aside class="side-box">
-		<h3 class="sidebar-heading"><?php _e( 'Archives', 'acosmin' ); ?></h3>
+		<h3 class="sidebar-heading"><?php _e( 'Archives', 'justwrite' ); ?></h3>
 		<nav class="sb-content clearfix">
 			<ul class="normal-list">
 				<?php wp_get_archives( array( 'type' => 'monthly', 'limit' => 12 ) ); ?>
@@ -72,7 +79,7 @@
 	</aside><!-- END .sidebox -->
     
     <div class="side-box larger">
-    		<h3 class="sidebar-heading"><?php _e( 'Calendar', 'acosmin' ); ?></h3>
+    		<h3 class="sidebar-heading"><?php _e( 'Calendar', 'justwrite' ); ?></h3>
             <div class="sb-content clearfix">
             	<?php get_calendar(true); ?>
 		</div><!-- END .sb-content -->
@@ -84,20 +91,20 @@
         	 It will show up only when your screen resolution is above 1600 pixels.	
 		-->
 		
-        <?php 
-		$ad160_show 	= of_get_option( 'ac_ad160_show' );
-		$ad160_code 	= of_get_option( 'ac_ad160_code' );
-		$ad160_title 	= of_get_option( 'ac_ad160_title' );
-		$ad160_url 		= of_get_option( 'ac_ad160_url' );
+        <?php
+		$ad160_show 	= get_theme_mod( 'ac_enable_160px_ad', '' );
+		$ad160_code 	= get_theme_mod( 'ac_enable_160px_code', '' );
+		$ad160_title 	= get_theme_mod( 'ac_enable_160px_title', '' );
+		$ad160_url 		= get_theme_mod( 'ac_enable_160px_link', '' );
 		if ( $ad160_show && $ad160_code != '' ) : ?>
-        <div class="banner-160-wrap">
-        	<div class="ad160">
+        <div class="b160-wrap">
+        	<div class="d160">
             	<?php 
 					if ( $ad160_title != '' ) {
-						echo '<h5 class="banner-small-title"><a href="' . esc_url( $ad160_url ) . '">' . esc_html( $ad160_title ) . '</a></h5>';	
+						echo '<h5 class="bsmall-title"><a href="' . esc_url( $ad160_url ) . '" id="mini-ad-title">' . esc_html( $ad160_title ) . '</a></h5>';	
 					}
 					if ( $ad160_code != '' ) { 
-						echo $ad160_code; 
+						echo ac_sanitize_ads( $ad160_code ); 
 					} 
 				?>
             </div>
@@ -105,6 +112,7 @@
         <?php endif; ?>
         
     </div><!-- END .wrap-over-1600 -->
+    <?php do_action( 'ac_action_mini_sidebar_inside_bot' ); // Mini sidebar inside bottom action ?>
 </section><!-- END .mini-sidebar -->
 
 <div class="mini-sidebar-bg"></div>

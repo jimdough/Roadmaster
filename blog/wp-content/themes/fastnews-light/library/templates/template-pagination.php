@@ -16,8 +16,8 @@ if (!is_singular() && current_theme_supports('loop-pagination')) {
             'mid_size' => 1,
             'type' => 'list',
             'prev_next' => TRUE,
-            'prev_text' => __('Previous', kopa_get_domain()),
-            'next_text' => __('Next', kopa_get_domain())
+            'prev_text' => esc_attr__('Previous', 'fastnews-light'),
+            'next_text' => esc_attr__('Next', 'fastnews-light')
         );
 
         if ($wp_rewrite->using_permalinks())

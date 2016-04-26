@@ -72,7 +72,7 @@ window._fbq.push(['track', '6019119742383', {'value':'0.00','currency':'USD'}]);
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-gen2-S.gif, (default)], [img/headers/ph-gen2-M.gif, (medium)], [img/headers/ph-gen2-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen2-S.gif, (default)], [/img/headers/ph-gen2-M.gif, (medium)], [/img/headers/ph-gen2-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
 
 	

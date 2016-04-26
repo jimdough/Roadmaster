@@ -147,7 +147,6 @@ final class LiveChatAdmin extends LiveChat
 	protected function reset_options()
 	{
 		delete_option('livechat_license_number');
-		delete_option('livechat_groups');
 	}
 
 	protected function update_options($data)
@@ -159,14 +158,8 @@ final class LiveChatAdmin extends LiveChat
 		}
 
 		$license_number = isset($data['license_number']) ? (int)$data['license_number'] : 0;
-		$skill = isset($data['skill']) ? (int)$data['skill'] : 0;
-
-		// skill must be >= 0
-		$skill = max(0, $skill);
-
 
 		update_option('livechat_license_number', $license_number);
-		update_option('livechat_groups', $skill);
 
 		if (isset($data['changes_saved']) && $data['changes_saved'] == '1')
 		{

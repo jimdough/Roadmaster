@@ -224,3 +224,19 @@ blockquote{
 	box-shadow:none !important;
 	text-shadow:none !important;
 }
+
+.bizfour-products-services-item{
+	background:#c2c2c2;
+}
+.bizfour-products-services-img{
+	background:#c2c2c2;	
+}
+.bizfour-quote{
+	border:1px solid #c2c2c2;
+}
+.bizfour-quote-text{
+	background:url(images/quote.png) top left no-repeat;		
+}
+.bizfour-quote-name span{
+	background:#c2c2c2;
+}

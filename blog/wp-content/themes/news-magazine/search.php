@@ -1,55 +1,67 @@
-<?php  get_header(); 
-news_magazine_slideshow();?>
-</div>	
-
-<div id="content" class="page">
- <div class="container">
-    <?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-			<div id="sidebar1" role="complementary">
-				<div class="sidebar-container">
-					<?php dynamic_sidebar( 'sidebar-1' );  ?>
-				</div>
+<?php 
+/*
+Template Name: Search Page
+*/
+get_header();
+global $wdwt_front;
+$blog_style = $wdwt_front->get_param('blog_style');
+?>
+</header>
+<div class="container">
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		<aside id="sidebar1">
+			<div class="sidebar-container">
+				<?php  dynamic_sidebar( 'sidebar-1' ); 	?>	
+				<div class="clear"></div>
 			</div>
-			<?php }  ?>
-			<div id="blog" class="blog search">
-				<div class="single-post">
-					<h2 class="page-header">
-						<span><?php echo __('Search','news-magazine'); ?></span>
-					</h2>						
+		</aside>
+	<?php }  ?>
+    <div id="content" class="blog search-page">
+        <div class="single-post">
+            <h2>
+                <?php echo __('Search',"news-magazine"); ?>
+            </h2>
+        </div>
+		<?php get_search_form(); ?>
+        
+        <?php  if( have_posts() ) {  while( have_posts()){  the_post(); ?>
+                 <div class="search-result">
+                    <h3>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h3>
+                    <div class="entry">
+                        <?php
+                        if($blog_style){
+                          ?>
+                          <p><?php news_magazine_frontend_functions::the_excerpt_max_charlength(250); ?></p>
+                          <?php
+                        }
+                        else{
+                          the_content();  
+                        }
+                        
+                        ?>
+                    </div>
+                </div>
+				<?php } ?>
+				<div class="page-navigation">
+					<?php posts_nav_link(); ?>
 				</div>
-				<form role="search" method="get" id="searchform" action="<?php echo esc_url( home_url() ); ?>">
-							<div class="searchback">
-								<input  type="text" name="s" id="s" class="searchbox_search" value="<?php echo get_search_query(); ?>"/> 
-								<input type="submit" id="searchsubmit" value="<?php echo __('SEARCH','news-magazine'); ?>"  />
-							</div>
-				</form>
-					<?php /*print page content*/ 
-					if( have_posts() ) { 
-						while( have_posts()){ 
-							the_post(); ?>
-							 <div class="single-post">
-									<a href="<?php the_permalink(); ?>">
-										<h3><?php the_title(); ?></h3>
-									</a>
-								<?php news_magazine_entry_cont_for_search(); ?>
-								<div class="clear"></div>
-							</div>
-				  <?php } ?>
-						<div class="page-navigation">
-							<?php posts_nav_link(); ?>
-						</div>
-				  
-				<?php	} 	?>
-	      </div>
-		  <?php if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
-			<div id="sidebar2" role="complementary">         
-				 <div class="sidebar-container">
-					 <?php dynamic_sidebar( 'sidebar-2' ); ?>
-				 </div>
-			</div>
-		  <?php } ?>
-	   <div style="clear:both"></div>
+        <?php }else {?>
+				<div class="search-no-result">
+			   <?php echo __("Nothing was found. Please try another keyword.", "news-magazine");  ?>
+				</div>
+		<?php }
+		$wdwt_front->bottom_advertisment();  ?>
 	</div>
+	<?php if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
+		<aside id="sidebar2">
+			<div class="sidebar-container">
+			  <?php  dynamic_sidebar( 'sidebar-2' ); 	?>
+			  <div class="clear"></div>
+			</div>
+		</aside>
+	<?php } ?>
+	<div class="clear"></div>		
 </div>
-
 <?php get_footer(); ?>

@@ -1,0 +1,6 @@
+Require all granted
+
+RewriteEngine On
+RewriteBase /students/courses
+
+RewriteRule ^(.*)\.html$ index.php [PT,L]

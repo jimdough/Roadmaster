@@ -70,28 +70,6 @@ LiveChat::get_instance()->get_helper('TrackingCodeInfo');
 			</form>
 			</div>
 
-				<?php } else { ?>
-
-			<div id="advanced" class="postbox" style="display:none">
-			<form method="post" action="?page=livechat_settings">
-				<h3>Advanced settings</h3>
-				<div class="postbox_content">
-				<table class="form-table">
-				<tr>
-				<th scope="row"><label for="skill">Group:</label></th>
-				<td><input type="text" name="skill" id="skill" value="<?php echo LiveChat::get_instance()->get_skill(); ?>" /> <span class="explanation">Used for dividing chat agents into groups (<a href="http://www.livechatinc.com/kb/dividing-live-chat-by-group/" target="_blank">read more</a>). Enter <strong>0</strong> for default group (recommended).</span></td>
-				</tr>
-				</table>
-				<p class="submit">
-				<input type="hidden" name="license_number" value="<?php echo LiveChat::get_instance()->get_license_number(); ?>" id="license_number">
-				<input type="hidden" name="changes_saved" value="1">
-				<input type="hidden" name="settings_form" value="1">
-				<input type="submit" class="button-primary" value="<?php _e('Save changes') ?>" />
-				</p>
-				</div>
-			</form>
-			</div>
-			<p id="advanced-link"><a href="">Show advanced settings&hellip;</a></p>
 				<?php } ?>
 
 			<?php if (LiveChat::get_instance()->is_installed()) { ?>
@@ -143,7 +121,6 @@ LiveChat::get_instance()->get_helper('TrackingCodeInfo');
 			<form method="post" action="?page=livechat_settings" id="save_new_license">
 				<p>
 				<input type="hidden" name="new_license_form" value="1">
-				<input type="hidden" name="skill" value="0">
 				<input type="hidden" name="license_number" value="0" id="new_license_number">
 				</p>
 			</form>

@@ -46,7 +46,7 @@
 	<!-- Row #1 -->
 		<div class="row" data-cms-node="15">
 	  <!-- Column #1 -->
-	  <div class="small-12 medium-12 large-6 column editable" data-cms-node="16">
+	  <div id="1" class="small-12 medium-12 large-6 column editable" data-cms-node="16">
 	  
 	  <section data-cms-node="17"> <!-- Side Content -->
 			  	  <!-- Content goes here -->
@@ -65,7 +65,7 @@
    </div> <!-- End Column 1-->
    
    <!-- Column 2-->
-   	  <div class="small-12 medium-12 large-6 column editable" data-cms-node="28">
+   	  <div id="2" class="small-12 medium-12 large-6 column editable" data-cms-node="28">
 	  
 	  <section data-cms-node="29"> <!-- Side Content -->
 			  	  <!-- Content goes here -->
@@ -87,7 +87,7 @@
 	<!-- Row 2-->
 		<div class="row" data-cms-node="39">
 	  <!-- Column #1 -->
-	  <div class="small-12 medium-12 large-6 column editable" data-cms-node="40">
+	  <div id="3" class="small-12 medium-12 large-6 column editable" data-cms-node="40">
 	  
 	  <section data-cms-node="41"> <!-- Side Content -->
 			  	  <!-- Content goes here -->
@@ -102,7 +102,7 @@
    </div> <!-- End Column 1-->
    
    <!-- Column 2-->
-   	  <div class="small-12 medium-12 large-6 column editable" data-cms-node="47">
+   	  <div id="4" class="small-12 medium-12 large-6 column editable" data-cms-node="47">
 	  
 	  <section data-cms-node="48"> <!-- Side Content -->
 			  	  <!-- Content goes here -->
@@ -121,7 +121,7 @@
 	<!-- Row 3-->
 		<div class="row" data-cms-node="55">
 	  <!-- Column #1 -->
-	  <div class="small-12 medium-12 large-6 column editable" data-cms-node="56">
+	  <div id="5" class="small-12 medium-12 large-6 column editable" data-cms-node="56">
 	  
 	  <section data-cms-node="57"> <!-- Side Content -->
 			  	  <!-- Content goes here -->
@@ -137,7 +137,7 @@
    </div> <!-- End Column 1-->
    
    <!-- Column 2-->
-   	  <div class="small-12 medium-12 large-6 column editable" data-cms-node="65">
+   	  <div id="6" class="small-12 medium-12 large-6 column editable" data-cms-node="65">
 	  
 	  <section data-cms-node="66"> <!-- Side Content -->
 			  	  <!-- Content goes here -->

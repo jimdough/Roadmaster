@@ -1,22 +1,21 @@
 <?php
-
+define('KOPA_THEME_URL', 'http://kopatheme.com/freebies/fast-news-magazine-wordpress-theme-light-version/');
 define('KOPA_THEME_NAME', 'FastNews Light');
-define('KOPA_DOMAIN', 'fastnewslight');
-define('KOPA_CPANEL_IMAGE_DIR', get_template_directory_uri() . '/library/images/layout/');
-define('KOPA_URL','http://kopatheme.com');
 
+#MENU WALKER
+require get_template_directory() . '/library/menu_walker.php';
+#LAYOUT
+require get_template_directory() . '/library/sidebar.php';
+require get_template_directory() . '/library/layout.php';
+require get_template_directory() . '/library/front.php';
+require get_template_directory() . '/library/backend.php';
 
+#CUSTOMIZE
+require get_template_directory() . '/api/kopa-customization.php';
+require get_template_directory() . '/api/TGMPluginActivation.class.php';
+require get_template_directory() . '/api/bfithumb.php';
+require get_template_directory() . '/library/customizer.php';
+require get_template_directory() . '/library/customize.php';
 
-require trailingslashit(get_template_directory()) . '/library/kopa.php';
-require trailingslashit(get_template_directory()) . '/library/ini.php';
-require trailingslashit(get_template_directory()) . '/library/includes/google-fonts.php';
-require trailingslashit(get_template_directory()) . '/library/includes/ajax.php';
-require trailingslashit(get_template_directory()) . '/library/includes/metabox/post.php';
-require trailingslashit(get_template_directory()) . '/library/includes/metabox/category.php';
-require trailingslashit(get_template_directory()) . '/library/includes/metabox/page.php';
-require trailingslashit(get_template_directory()) . '/library/front.php';
-
-/*
- * Custom Header
- */
-require get_template_directory().'/library/custom-header.php';
+#PLUGIN
+require get_template_directory() . '/library/plugin.php';

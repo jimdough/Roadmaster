@@ -151,3 +151,25 @@ function salesforce_w2l_success_message_1_tester_example(  $success ){
 	return 'Testing 123';
 
 }
+
+add_filter( 'salesforce_w2l_field_value', 'salesforce_w2l_field_value_date_example', 10, 3 );
+
+function salesforce_w2l_field_value_date_example( $val, $field, $form ){
+
+$form_id = 7; // form id to act upon [salesforce form="7"]
+$field_name = 'Date_Received__c'; // API Name of the field you want to auto check
+
+if( $form == $form_id && $field_name == $field && ! $_POST )
+return current_time('Y-m-d'); // or whatever date format you want
+
+return $val;
+}
+
+add_filter( 'salesforce_w2l_post_args', 'example_salesforce_enable_ssl_verify', 10, 1 );
+
+function example_salesforce_enable_ssl_verify( $args ){
+
+	$args['sslverify'] = true;
+	return $args;
+
+}

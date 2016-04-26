@@ -82,7 +82,7 @@
 		<div class="column small-12 large-6 medium-12">
 			<div class="panel">
 				  <h2>Truck Driver Salary & Benefits</h2>
-			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year, but that is just the beginning to what a truck driver can earn! </p>
+			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year*, but that is just the beginning to what a truck driver can earn! </p>
 			  
 			  <ul class="yes-bullet">
 			  		<li>Starting pay averaging <b>$40,000</b> per year</li>
@@ -115,7 +115,7 @@
 					<li>You may be pre-hired by on-site recruiters before finishing school if qualified</li>
 					<li>Job placement assistance</li>
 					<li>3-4 weeks of classes that focus on CDL training and Class A CDL license exam preparation</li>
-					<li>12 training locations nationwide</li>
+					<li>11 training locations nationwide</li>
 					<li>Financial assistance for those who qualify</li>
 			  	</ul>
 	  </div>
@@ -131,16 +131,26 @@
       <div class="row">
   	  <div class="large-12 columns">	  	  
 	  	  <h2>Why choose Roadmaster of Columbus, OH?</h2>
-	  	  <p>Becoming a truck driver is possible with the right driver training school behind you. With a solid reputation in the field, Roadmaster Drivers School can help you become a professional truck driver with only 3 to 4 weeks of specialized hands-on training.  For over 20 years, Roadmaster has trained over 60,000 entry level drivers and continues to help put people to work every day!</p>
+	  	  <p>Becoming a truck driver is possible with the right driver training school behind you. With a solid reputation in the field, Roadmaster Drivers School can help you become a professional truck driver with only 3 to 4 weeks of specialized hands-on training.  For over 20 years, Roadmaster has trained over 75,000 entry level drivers and continues to help put people to work every day!</p>
 	  	  
-	  	  <p>Offering 12 training locations across the country, Roadmaster is an industry leader in CDL training, employing experienced instructors and offering students comprehensive classroom and behind the wheel truck driving education so they are fully prepared to start their new job in the trucking industry.  By focusing on giving students the best education and maintaining high job placement standards, Roadmaster has gained an excellent reputation in the trucking industry for quality training of entry-level commercial truck drivers. At Roadmaster, you will gain the confidence and know-how needed to enter into the professional trucking industry, setting yourself apart from the rest. Roadmaster is serious when it comes to helping graduates find a job and begins job placement assistance in the first week of training.  If qualified, you could even be pre-hired with a trucking company during your first week of training at Roadmaster!  Many graduates receive multiple offers of employment from major transportation carriers such as Werner, Schneider, TMC, Covenant, Swift and more!</p>
+	  	  <p>Offering 11 training locations across the country, Roadmaster is an industry leader in CDL training, employing experienced instructors and offering students comprehensive classroom and behind the wheel truck driving education so they are fully prepared to start their new job in the trucking industry.  By focusing on giving students the best education and maintaining high job placement standards, Roadmaster has gained an excellent reputation in the trucking industry for quality training of entry-level commercial truck drivers. At Roadmaster, you will gain the confidence and know-how needed to enter into the professional trucking industry, setting yourself apart from the rest. Roadmaster is serious when it comes to helping graduates find a job and begins job placement assistance in the first week of training.  If qualified, you could even be pre-hired with a trucking company during your first week of training at Roadmaster!  Many graduates receive multiple offers of employment from major transportation carriers such as Werner, Schneider, TMC, Covenant, Swift and more!</p>
 
-	  </div><!-- end column-->
+	  	 <!---<div class="large-6 columns>
+		 <h2>Location Information</h2>
+<p><img src="../../img/cities/columbus3-l.jpg" alt="Roadmaster Truck Driving School"></p>
+<div class="columns small-12 medium-7">
+<p><b><a href="../../truck_school_ohio.php">Roadmaster Drivers School of Columbus, Ohio</a></b><br> 4060 Perimeter Drive<br> Columbus, Ohio 43228<br> <a href="tel:+16143511748">Phone: (614) 351-1748</a> <span class="show-for-small"><a href="../../truck_school_ohio.php#viewmap" target="_blank">Get Directions</a></span></p>
+</div>
+<div class="columns small-12 medium-5" style="padding: 0; margin: 0;"><a class="hide-for-small button default round" style="padding: .5em; margin: .5em;" href="../../truck_school_ohio.php#viewmap" target="_blank">Get Directions <i class="fi-arrow-right"></i></a></div></div>
 	   </div><!-- end row-->
-
+	   	  		
+	  		 <div class="row">
+			 <div class="columns editable" id="dynamic-disclaimer"><p class="small-disclaimer"><span class="s1">*wage info supplied by Werner Enterprises</span></p></div>
+		 </div>
+		 
 <!-- CTA--><div class="row show-for-small uneditable" id="apply"><div class="columns text-center"><a class="button success radius" style="font-size:1.2em; line-height:1.2em;" href="tel:+18008311300" onclick="goog_report_conversion('tel:18008311300')">Click to Call Admissions Office<br>1-800-831-1300</a></div></div><!-- / CTA -->
 
-<!-- CTA--><div class="row hide-for-small uneditable" id="apply"><div class="columns small-12"><h2>Call our Admissions Office Today at <b>1-800-831-1300</b> or fill out the form below to get started!</h2></div></div>		
+<!-- CTA--><div class="row hide-for-small editable text-center" id="apply"><div class="columns small-12"><h2>Call our Admissions Office Today at <b>1-800-831-1300</b> or fill out the form below to get started!</h2></div></div>		
 		 </div> <!-- End Column 2-->
 	
 	</div>
@@ -188,11 +198,12 @@
 				      </div>
 			    </div>
 			    
+
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Phone Number</label>
-			        <input name="phone" type="text" required pattern="(\S.*){10,}" id="phone" placeholder="555-555-1212">
-			        <small class="error">A valid phone number is required.</small>
+			        <label>Phone Number<span class="form-disclaimer"> (dashes only)</span></label>
+			        <input name="phone" type="tel" required pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" id="phone" placeholder="555-555-1212">
+			        <small class="error">A valid phone number is required. 10 digit minimum</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">
@@ -204,9 +215,9 @@
 			    
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Zip Code</label>
-			        <input name="zip" type="text" required pattern="number" id="zip" placeholder="55555">
-			        <small class="error">Your zip code is required.</small>
+			        <label>Zip Code <span class="form-disclaimer">(no dashes)</span></label>
+			        <input name="zip" type="text" required pattern="^[0-9]{5}$" id="zip" placeholder="55555">
+			        <small class="error">Your zip code is required. Only use 5 digits</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">

@@ -12,8 +12,11 @@
 */
 ?>
 <div class="wrap">
-<div class="icon32"><img src="<?php echo plugins_url(); ?>/simple-embed-code/images/screen_icon.png" alt="" title="" height="32px" width="32px"/><br /></div>
-<h2><?php _e( 'Code Embed Options', 'simple-embed-code' ); ?></h2>
+<?php
+global $wp_version;
+if ( ( float ) $wp_version >= 4.3 ) { $heading = '1'; } else { $heading = '2'; }
+?>
+<h<?php echo $heading; ?>><?php _e( 'Code Embed Options', 'simple-embed-code' ); ?></h<?php echo $heading; ?>>
 <?php
 // If options have been updated on screen, update the database
 if ( ( !empty( $_POST ) ) && ( check_admin_referer( 'code-embed-profile' , 'code_embed_profile_nonce' ) ) ) {
@@ -22,6 +25,7 @@ if ( ( !empty( $_POST ) ) && ( check_admin_referer( 'code-embed-profile' , 'code
 	$options[ 'opening_ident' ] = strtoupper( trim( $_POST[ 'code_embed_opening' ], '[]<>' ) );
 	$options[ 'keyword_ident' ] = strtoupper( trim( $_POST[ 'code_embed_keyword' ], '[]<>' ) );
 	$options[ 'closing_ident' ] = strtoupper( trim( $_POST[ 'code_embed_closing' ], '[]<>' ) );
+	$options[ 'debug' ] = $_POST[ 'code_embed_debug' ];
 
 	// If any fields are blank assign default values
 	if ( $options[ 'opening_ident' ] == '' ) { $options[ 'opening_ident' ] = '%'; }
@@ -37,22 +41,29 @@ $options = ace_get_embed_paras();
 
 <form method="post" action="<?php echo get_bloginfo( 'wpurl' ) . '/wp-admin/admin.php?page=ace-options&amp;updated=true' ?>">
 
-<?php echo '<h3>' . __( 'Identifier Format' ) . '</h3>' . __( 'Specify the format that will be used to define the way the code is embedded in your post. The formats are case insensitive and characters &lt; &gt [ ] are invalid.', 'simple-embed-code' ); ?>
+<table class="form-table">
+<tr>
+<th scope="row"><?php _e( 'Hide Debug', 'simple-embed-code' ); ?></th>
+<td><input type="checkbox" name="code_embed_debug" value="1"<?php if ( $options[ 'debug' ] == "1" ) { echo ' checked="checked"'; } ?>/>&nbsp;<span class="description"><?php _e( 'Hide debug HTML comments in source.', 'simple-embed-code' ); ?></span></td>
+</tr>
+</table>
+
+<?php echo '<h3>' . __( 'Identifier Format', 'simple-embed-code' ) . '</h3>' . __( 'Specify the format that will be used to define the way the code is embedded in your post. The formats are case insensitive and characters &lt; &gt [ ] are invalid.', 'simple-embed-code' ); ?>
 
 <table class="form-table">
 
 <tr>
-<th scope="row"><?php _e( 'Keyword' ); ?></th>
+<th scope="row"><?php _e( 'Keyword', 'simple-embed-code' ); ?></th>
 <td><input type="text" size="12" maxlength="12" name="code_embed_keyword" value="<?php echo $options[ 'keyword_ident' ] ; ?>"/>&nbsp;<span class="description"><?php _e( 'The keyword that is used to name the custom field and then place in your post where the code should be embedded. A suffix on any type can then be placed on the end.', 'simple-embed-code' ); ?></span></td>
 </tr>
 
 <tr>
-<th scope="row"><?php _e( 'Opening Identifier' ); ?></th>
+<th scope="row"><?php _e( 'Opening Identifier', 'simple-embed-code' ); ?></th>
 <td><input type="text" size="4" maxlength="4" name="code_embed_opening" value="<?php echo $options[ 'opening_ident' ]; ?>"/>&nbsp;<span class="description"><?php _e( 'The character(s) that must be placed in the post before the keyword to uniquely identify it.', 'simple-embed-code' ); ?></span></td>
 </tr>
 
 <tr>
-<th scope="row"><?php _e( 'Closing Identifier' ); ?></th>
+<th scope="row"><?php _e( 'Closing Identifier', 'simple-embed-code' ); ?></th>
 <td><input type="text" size="4" maxlength="4" name="code_embed_closing" value="<?php echo $options[ 'closing_ident' ]; ?>"/>&nbsp;<span class="description"><?php _e( 'The character(s) that must be placed in the post after the keyword to uniquely identify it.', 'simple-embed-code' ); ?></span></td>
 </tr>
 

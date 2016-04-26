@@ -195,6 +195,38 @@
                                     Typically displayed in the upper left corner of the video.
                                 </td>
                             </tr>
+                            <tr>
+                                <td>Autoplay</td>
+                                <td>
+                                    <input name="rvl_options_field[enable_vimeo_autoplay]"
+                                        id="rvl-vimeo-autoplay"
+                                        type="checkbox" value="1" 
+                                        {% if enable_vimeo_autoplay %}checked="checked"{% endif %} />
+                                </td>
+                                <td><label for="rvl-vimeo-byline">
+                                    Enable the autoplay of the&nbsp;video</label></td>
+                                <td><code>autoplay</code>, <code>noautoplay</code></td>
+                                <td>
+                                    Be careful before enabling this by default on all videos.  It's likely better to do
+                                    this one video at a&nbsp;time.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Loop</td>
+                                <td>
+                                    <input name="rvl_options_field[enable_vimeo_loop]"
+                                        id="rvl-vimeo-loop"
+                                        type="checkbox" value="1" 
+                                        {% if enable_vimeo_loop %}checked="checked"{% endif %} />
+                                </td>
+                                <td><label for="rvl-vimeo-byline">
+                                    Enable the looping of the&nbsp;video</label></td>
+                                <td><code>loop</code>, <code>noloop</code></td>
+                                <td>
+                                    Be careful before enabling this by default on all videos.  It's likely better to do
+                                    this one video at a&nbsp;time.
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <p class="submit">

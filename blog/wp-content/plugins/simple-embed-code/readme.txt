@@ -1,9 +1,12 @@
 ﻿=== Code Embed ===
 Contributors: dartiss
+Donate link: http://artiss.co.uk/donate
 Tags: artiss, embed, code, html, javascript, script, simple, video, xhtml, youtube
 Requires at least: 3.3
-Tested up to: 4.2.2
-Stable tag: 2.1
+Tested up to: 4.3.1
+Stable tag: 2.1.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Code Embed provides a very easy and efficient way to embed code (JavaScript and HTML) in your posts and pages.
 
@@ -122,10 +125,15 @@ This WordPress plugin is licensed under the [GPLv2 (or later)](http://wordpress.
 
 == Installation ==
 
+Code Embed can be found and installed via the Plugin menu within WordPress administration. Alternatively, it can be downloaded and installed manually...
+
 1. Upload the entire `simple-code-embed` folder to your wp-content/plugins/ directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Under the Settings section of the administration menu there should now be a new option named "Code Embed". Select this option to set the default options.
-4. Add the identifier code to the appropriate posts and pages where you wish the code to be embedded.
+
+Once installed, no matter which method you use, you'll then need to do the following...
+
+1. Under the Settings section of the administration menu there should now be a new option named "Code Embed". Select this option to set the default options.
+2. Add the identifier code to the appropriate posts and pages where you wish the code to be embedded.
 
 == Frequently Asked Questions ==
 
@@ -133,15 +141,11 @@ This WordPress plugin is licensed under the [GPLv2 (or later)](http://wordpress.
 
 If your code contains the characters `]]>` then you'll find that it doesn't - WordPress modifies this itself.
 
+Otherwise, it's likely to be your code and not this plugin. The best way to confirm this is to look at the source of the page and compare the code output with what you embedded. Does it match? If it does, then your code is at fault.
+
 = What's the maximum size of the embed code that I can save in a custom field? =
 
 WordPress stores the custom field contents in a MySQL table using the `longtext` format. This can hold over 4 billion characters.
-
-= Which version of PHP does this plugin work with? =
-
-It has been tested and been found valid from PHP 4 upwards.
-
-Please note, however, that the minimum for WordPress is now PHP 5.2.4. Even though this plugin supports a lower version, I am not coding specifically to achieve this - therefore this minimum may change in the future.
 
 == Screenshots ==
 
@@ -152,6 +156,15 @@ Please note, however, that the minimum for WordPress is now PHP 5.2.4. Even thou
 5. The search screen, showing search results
 
 == Changelog ==
+
+= 2.1.2 =
+* Maintenance: Added missing text domain, ready for automatic translation.
+
+= 2.1.1 =
+* Maintenance: Updated help text
+* Maintenance: Modified admin screen headings so they're compatible with WP4.3
+* Enhancement: Added options to suppress debug output
+* Enhancement: Added donation link to plugin meta. Go on, you know you want to...
 
 = 2.1 =
 * Maintenance: Updated plugin branding
@@ -181,7 +194,7 @@ Please note, however, that the minimum for WordPress is now PHP 5.2.4. Even thou
 * Bug: Fixed bug where name of plugin folder was incorrect
 
 = 1.6 =
-* Maintenance: Improved code further from 1.5, including seperating code into seperate includes
+* Maintenance: Improved code further from 1.5, including separating code into separate includes
 * Enhancement: Added global embeds option
 * Enhancement: New tools option in the administration menu which allows you to search for code embeds
 
@@ -216,6 +229,15 @@ versions of this plugin
 * Initial release
 
 == Upgrade Notice ==
+
+= 2.1.2 =
+* Update with text domain, ready for automatic translation
+
+= 2.1.1 =
+* Various minor fixes and updates
+
+= 2.1 =
+* Upgrade for change of branding and removal of redundant features
 
 = 2.0.2 =
 * Upgrade to fix a [minor XSS vulnerability](https://bugzilla.mozilla.org/show_bug.cgi?id=771315 "Bug 771315 - WP Plugin Simple-embed-Code - Fix XSS Before Adding to Hacks Blog")

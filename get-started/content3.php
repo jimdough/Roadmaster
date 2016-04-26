@@ -205,7 +205,7 @@ As far as benefits, it’s important to keep in mind that you can pick which car
 
 <!-- CTA--><div class="row show-for-small uneditable" id="apply"><div class="columns text-center"><a class="button success radius" style="font-size:1.2em; line-height:1.2em;" href="tel:+18008311300" onclick="goog_report_conversion('tel:18008311300')">Click to Call Admissions Office<br>1-800-831-1300</a></div></div><!-- / CTA -->
 
-<!-- CTA--><div class="row hide-for-small uneditable" id="apply"><div class="columns small-12"><h2>Call our Admissions Office Today at <b>1-800-831-1300</b> or fill out the form below to get started!</h2></div></div><br>			
+<!-- CTA--><div class="row hide-for-small editable text-center" id="apply"><div class="columns small-12"><h2>Call our Admissions Office Today at <b>1-800-831-1300</b> or fill out the form below to get started!</h2></div></div><br>			
 		 </div> <!-- End Column 2-->
 	
 	</div>
@@ -253,11 +253,12 @@ As far as benefits, it’s important to keep in mind that you can pick which car
 				      </div>
 			    </div>
 			    
+
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Phone Number</label>
-			        <input name="phone" type="text" required pattern="(\S.*){10,}" id="phone" placeholder="555-555-1212">
-			        <small class="error">A valid phone number is required.</small>
+			        <label>Phone Number<span class="form-disclaimer"> (dashes only)</span></label>
+			        <input name="phone" type="tel" required pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" id="phone" placeholder="555-555-1212">
+			        <small class="error">A valid phone number is required. 10 digit minimum</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">
@@ -269,9 +270,9 @@ As far as benefits, it’s important to keep in mind that you can pick which car
 			    
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Zip Code</label>
-			        <input name="zip" type="text" required pattern="number" id="zip" placeholder="55555">
-			        <small class="error">Your zip code is required.</small>
+			        <label>Zip Code <span class="form-disclaimer">(no dashes)</span></label>
+			        <input name="zip" type="text" required pattern="^[0-9]{5}$" id="zip" placeholder="55555">
+			        <small class="error">Your zip code is required. Only use 5 digits</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">

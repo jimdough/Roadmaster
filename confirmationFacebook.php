@@ -25,22 +25,20 @@
 <!-- END Google Analytics Tracking Code-->
 
 
-<!-- Facebook Conversion Code for Facebook PPC Confirmation -->
-<script>(function() {
-var _fbq = window._fbq || (window._fbq = []);
-if (!_fbq.loaded) {
-var fbds = document.createElement('script');
-fbds.async = true;
-fbds.src = '//connect.facebook.net/en_US/fbds.js';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(fbds, s);
-_fbq.loaded = true;
-}
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(['track', '6029687384383', {'value':'0.00','currency':'USD'}]);
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6029687384383&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1549939651885554');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1549939651885554&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 
 
  </head>
@@ -74,7 +72,7 @@ window._fbq.push(['track', '6029687384383', {'value':'0.00','currency':'USD'}]);
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-gen2-S.gif, (default)], [img/headers/ph-gen2-M.gif, (medium)], [img/headers/ph-gen2-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen2-S.gif, (default)], [/img/headers/ph-gen2-M.gif, (medium)], [/img/headers/ph-gen2-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
 
 	

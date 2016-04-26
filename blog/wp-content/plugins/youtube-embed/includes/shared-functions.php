@@ -164,66 +164,30 @@ function vye_extract_id( $id ) {
 /**
 * Validate video type
 *
-* Function to work out what type of video has been requested and
-* whether it is valid. Also fetches the video title.
+* Function to work out what type of video has been requested.
 *
 * @since	2.0
 *
-* @uses     vye_set_general_defaults Get the default settings
-*
 * @param	string	$id				Video ID
-* @param	string	$title_needed	Whether the title requires extracting
 * @return	string					Array containing file details
 */
 
-function vye_validate_id( $id, $title_needed = false ) {
+function vye_validate_id( $id ) {
 
-	$type = false;
-	$title = false;
-	$options = false;
-
-	$options = vye_set_general_defaults();
-
-	// Attempt to get the video type and title from cache
-
-	if ( $options[ 'info_cache' ] != 0 ) {
-		$type = get_transient( 'vye_type_' . $id );
-		$title = get_transient( 'vye_title_' . $id );
-	}
-
-	// Check if items are cached
-
-	$cache = true;
-	if ( ( !$type ) or ( !$title ) ) { $cache = false; }
-
-	// Get video information if not cached
-
-	if ( !$cache ) {
-
-		$type = '';
-		if ( strtolower( substr( $id, 0, 2 ) ) == 'pl') {
-			$type = 'p';
+	$type = '';
+	if ( strtolower( substr( $id, 0, 2 ) ) == 'pl') {
+		$type = 'p';
+	} else {
+		if ( strlen( $id ) == 11 ) {
+			$type = 'v';
 		} else {
-			if ( strlen( $id ) == 11 ) {
-				$type = 'v';
-			} else {
-				if ( strlen( $id ) == 16 ) {
-					$type = 'p';
-				}
+			if ( strlen( $id ) == 16 ) {
+				$type = 'p';
 			}
 		}
-
-		// Update the cache
-
-		set_transient( 'vye_type_' . $id, $type, $options[ 'info_cache' ] * 3600 );
-
 	}
 
-	if ( !$title_needed ) { return $type; }
-
-	$return[ 'type' ] = $type;
-	$return[ 'title' ] = $title;
-	return $return;
+	return $type;
 }
 
 /**
@@ -239,7 +203,7 @@ function vye_validate_id( $id, $title_needed = false ) {
 
 function vye_error( $errorin ) {
 
-	return '<p style="color: #f00; font-weight: bold;">Artiss YouTube Embed: ' . $errorin . "</p>\n";
+	return '<p style="color: #f00; font-weight: bold;">YouTube Embed: ' . $errorin . "</p>\n";
 
 }
 
@@ -357,33 +321,6 @@ function vye_get_file( $filein, $header = false ) {
 }
 
 /**
-* Function to set embed type
-*
-* Depending on embed parameters set a value
-*
-* @since	2.0
-*
-* @uses		vye_convert			Convert value to a 0 or 1 equivalent
-*
-* @param	string	$type		Current embed type
-* @param	string	$embedplus	Whether EmbedPlus embedding is required
-* @return	string				The type of embedding to use
-*/
-
-function vye_get_embed_type( $type, $embedplus ) {
-
-	$embedplus = vye_convert( $embedplus );
-	$type = strtolower( $type );
-
-	if ( ( $type == 'embedplus' ) or ( $embedplus == '1' ) ) { $type = 'm'; }
-	if ( $type == 'iframe' ) { $type = 'v'; }
-	if ( $type == 'object' ) { $type = 'p'; }
-	if ( $type == 'chromeless' ) { $type = 'c'; }
-
-	return $type;
-}
-
-/**
 * Convert autohide parameter
 *
 * Convert autohide text value to a numeric equivalent
@@ -413,9 +350,10 @@ function vye_set_autohide( $autohide ) {
 *
 * @param	string	$current	The current profile number
 * @param	string	$total		The total number of profiles
+* @param	string	$full_list	Show the full list or just those defined?
 */
 
-function vye_generate_profile_list( $current, $total ) {
+function vye_generate_profile_list( $current, $total, $full_list = false ) {
 
 	echo '<option value="0"';
 	if ( $current == "0" ) { echo " selected='selected'"; }
@@ -423,15 +361,27 @@ function vye_generate_profile_list( $current, $total ) {
 	$loop = 1;
 	while ( $loop <= $total ) {
 
+		// Attempt to get profile
+
 		$profiles = get_option( 'youtube_embed_profile' . $loop );
 		$profname = $profiles[ 'name' ];
+		$list_found = true;
 
-		if ( $profname == '' ) { $profname = __( 'Profile' ) . ' ' . $loop; }
-		if ( strlen( $profname ) > 30 ) { $profname = substr( $profname, 0, 30 ) . '&#8230;'; }
-		echo '<option value="' . $loop . '"';
+		// If list is undefined, give it a default name
 
-		if ( $current == $loop ) { echo " selected='selected'"; }
-		echo '>' . __( $profname ) . "</option>\n";
+		if ( $profname == '' ) { $profname = __( 'Profile' ) . ' ' . $loop; $list_found = false; }
+
+		// Output profile information
+
+		if ( ( $list_found ) or ( $full_list ) ) {
+
+			echo '<option value="' . $loop . '"';
+			if ( $current == $loop ) { echo " selected='selected'"; }
+			echo '>' . __( $profname );
+			if ( !$list_found ) { echo ' [undefined]'; }
+			echo "</option>\n";
+
+		}
 
 		$loop ++;
 	}
@@ -479,5 +429,230 @@ function vye_extract_xml( $input, $tag ) {
 	}
 
 	return $field;
+}
+
+/**
+* Function to set Shortcode option
+*
+* Looks up shortcode option - if it's not set, assign a default
+*
+* @since	2.0
+*
+* @return   string		Alternative Shortcode
+*/
+
+function vye_set_shortcode_option() {
+
+	$shortcode = get_option( 'youtube_embed_shortcode' );
+
+	// If an array, transform to new format
+
+	if ( is_array( $shortcode ) ) {
+		$shortcode = $shortcode[ 1 ];
+		update_option( 'youtube_embed_shortcode', $shortcode );
+	}
+
+	// If setting doesn't exist, set defaults
+
+	if ( $shortcode == '' ) {
+		$shortcode = 'youtube_video';
+		update_option( 'youtube_embed_shortcode', $shortcode );
+	}
+
+	return $shortcode;
+}
+
+/**
+* Function to set general YouTube options
+*
+* Looks up options. If none exist, or some are missing, set default values
+*
+* @since	2.0
+*
+* @return   strings		Options array
+*/
+
+function vye_set_general_defaults() {
+
+	$options = get_option( 'youtube_embed_general' );
+
+	// If options don't exist, create an empty array
+
+	if ( !is_array( $options ) ) { $options = array(); }
+
+	// Because of upgrading, check each option - if not set, apply default
+
+	$default_array = array(
+						   'editor_button' => 1,
+						   'admin_bar' => 1,
+						   'profile_no' => 5,
+						   'list_no' => 5,
+						   'alt_profile' => 0,
+						   'metadata' => 1,
+						   'feed' => 'b',
+						   'thumbnail' => 2,
+						   'privacy' => 0,
+						   'frameborder' => 1,
+						   'widgets' => 0,
+						   'menu_access' => 'list_users',
+						   'language' => '',
+						   'debug' => 1,
+						   'script' => '',
+						   'prompt' => 1
+						   );
+
+	$new_options = array_merge( $default_array, $options );
+
+	// Update the options, if changed, and return the result
+
+	if ( $options != $new_options ) { update_option( 'youtube_embed_general', $new_options ); }
+
+	return $new_options;
+}
+
+/**
+* Function to set YouTube profile options
+*
+* Looks up profile options, based on passed profile numer.
+* If none exist, or some are missing, set default values
+*
+* @since	2.0
+*
+* @param    string	$profile	Profile number
+* @return   string				Options array
+*/
+
+function vye_set_profile_defaults( $profile ) {
+
+	if ( $profile == 0 ) {
+		$profname = 'Default';
+	} else {
+		$profname = 'Profile ' . $profile;
+	}
+	$options = get_option( 'youtube_embed_profile' . $profile );
+
+	$changed = false;
+	$new_user = false;
+
+	// Work out default dimensions
+
+	$width = 0;
+	if ( isset( $content_width ) ) { $width = $content_width; }
+	if ( ( $width == 0 ) or ( $width == '' ) ) { $width = 560; }
+	$height = 25 + round( ( $width / 16 ) * 9, 0 );
+
+	// If the old options exist, import them and then delete them
+
+	if ( !is_array( $options ) ) {
+		if ( ( $profile == 0 ) && ( get_option( 'youtube_embed' ) ) ) {
+			$old_opts = get_option( 'youtube_embed' );
+			$options = $old_opts;
+			delete_option( 'youtube_embed' );
+			$changed = true;
+		} else {
+			$options = array();
+		}
+	}
+
+	// Because of upgrading, check each option - if not set, apply default
+
+	if ( !array_key_exists( 'name', $options ) ) { $options[ 'name' ] = $profname; $changed = true; }
+
+	if ( !array_key_exists( 'width', $options ) ) {
+		$options[ 'width' ] = $width;
+		$options[ 'height' ] = $height;
+		$changed = true;
+	}
+	if ( !array_key_exists( 'height', $options ) ) { $options[ 'height' ] = 340; $changed = true; }
+	if ( !array_key_exists( 'fullscreen', $options ) ) { $options[ 'fullscreen' ] = 1; $changed = true; }
+	if ( !array_key_exists( 'template', $options ) ) { $options[ 'template' ] = '%video%'; $changed = true; }
+	if ( !array_key_exists( 'autoplay', $options ) ) { $options[ 'autoplay' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'start', $options ) ) { $options[ 'start' ] = 0; $changed = true; }
+	if ( !array_key_exists( 'loop', $options ) ) { $options[ 'loop' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'cc', $options ) ) { $options[ 'cc' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'annotation', $options ) ) { $options[ 'annotation' ] = 1; $changed = true; }
+	if ( !array_key_exists( 'related', $options ) ) { $options[ 'related' ] = 1; $changed = true; }
+	if ( !array_key_exists( 'info', $options ) ) { $options[ 'info' ] = 1; $changed = true; }
+	if ( !array_key_exists( 'stop', $options ) ) { $options[ 'stop' ] = 0; $changed = true; }
+	if ( !array_key_exists( 'disablekb', $options ) ) { $options[ 'disablekb' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'autohide', $options ) ) { $options[ 'autohide' ] = 2; $changed = true; }
+	if ( !array_key_exists( 'controls', $options ) ) { $options[ 'controls' ] = 1; $changed = true; }
+	if ( !array_key_exists( 'wmode', $options ) ) { $options[ 'wmode' ] = 'window'; $changed = true; }
+	if ( !array_key_exists( 'style', $options ) ) { $options[ 'style' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'color', $options ) ) { $options[ 'color' ] = 'red'; $changed = true; }
+	if ( !array_key_exists( 'theme', $options ) ) { $options[ 'theme' ] = 'dark'; $changed = true; }
+	if ( !array_key_exists( 'https', $options ) ) { $options[ 'https' ] = 1; $changed = true; }
+	if ( !array_key_exists( 'modest', $options ) ) { $options[ 'modest' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'dynamic', $options ) ) { $options[ 'dynamic' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'fixed', $options ) ) { $options[ 'fixed' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'download', $options ) ) { $options[ 'download' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'download_style', $options ) ) { $options[ 'download_style' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'download_text', $options ) ) { $options[ 'download_text' ] = 'Click here to download the video'; $changed = true; }
+	if ( !array_key_exists( 'playsinline', $options ) ) { $options[ 'playsinline' ] = ''; $changed = true; }
+	if ( !array_key_exists( 'html5', $options ) ) { $options[ 'html5' ] = ''; $changed = true; }
+
+	// Update the options, if changed, and return the result
+
+	if ( $changed ) { update_option( 'youtube_embed_profile' . $profile, $options ); }
+
+	// Remove added slashes from template XHTML
+
+	$options[ 'template' ] = stripslashes( $options[ 'template' ] );
+
+	return $options;
+}
+
+/**
+* Function to set default list options
+*
+* Looks up list options, based on passed list number.
+* If none exist, or some are missing, set default values
+*
+* @since	2.0
+*
+* @param    string	$list		List number
+* @return   string				Options array
+*/
+
+function vye_set_list_defaults( $list ) {
+
+	$options = get_option( 'youtube_embed_list' . $list );
+	$changed = false;
+
+	// If array doesn't exist create an empty one
+
+	if ( !is_array( $options ) ) { $options = array(); }
+
+	// Because of upgrading, check each option - if not set, apply default
+
+	if ( !array_key_exists( 'name',$options ) ) { $options[ 'name' ] = 'List ' . $list; $changed = true; }
+	if ( !array_key_exists( 'list',$options ) ) { $options[ 'list' ] = ''; $changed = true; }
+
+	// Update the options, if changed, and return the result
+
+	if ( $changed ) { update_option( 'youtube_embed_list' . $list, $options ); }
+	return $options;
+}
+
+/**
+* Output timing
+*
+* Used by the author for testing purposes
+*
+* @since	2.1
+*
+* @param    string	$checkpoint		The last time
+* @param	string	$name			The name of the checkpoint
+* @return   string					New checkpoint
+*/
+
+function ye_timer( $checkpoint, $name ) {
+
+	$timing = ( microtime( true ) - $checkpoint );
+
+	echo '<p>' . $name . ': ' . ( $timing * 1000000 ) . ' microseconds.</p>';
+
+	return microtime( true );
+
 }
 ?>

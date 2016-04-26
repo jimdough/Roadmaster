@@ -1,0 +1,250 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Jquery Validation For Contact Form 7"
+msgstr ""
+
+#. Short description.
+msgid "New standard of validation for Contact Form 7 plugin."
+msgstr ""
+
+#. Screenshot description.
+msgid "Contact Form With extra jquery validation in front end."
+msgstr ""
+
+#. Screenshot description.
+msgid "Setting and Instruction For Jquery Validation For Contact Form 7."
+msgstr ""
+
+#. Screenshot description.
+msgid "Change Error Message"
+msgstr ""
+
+#. Screenshot description.
+msgid "Validation Error Theme 1 (Lite Version)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Validation Error Theme 2 (Only Available in Pro Version)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Validation Error Theme 3 (Only Available in Pro Version)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Validation Error Theme 4 (Only Available in Pro Version)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Validation Error None (Lite Version)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Adds Jquery Validation to Contact Form Fields."
+msgstr ""
+
+#. Found in description list item.
+msgid "More faster validation than of contact form core validation."
+msgstr ""
+
+#. Found in description list item.
+msgid "Allows field to be validated for url, date, credit card, number and more."
+msgstr ""
+
+#. Found in description list item.
+msgid "Field Highlight features for invalid field data types."
+msgstr ""
+
+#. Found in description list item.
+msgid "Error message for individual fields."
+msgstr ""
+
+#. Found in description list item.
+msgid "Easy to to add validation rules. Just add class in contact form 7 fields."
+msgstr ""
+
+#. Found in description list item.
+msgid "Interactive validation that your users love."
+msgstr ""
+
+#. Found in description list item.
+msgid "Works with multiple forms now."
+msgstr ""
+
+#. Found in description list item.
+msgid "Required"
+msgstr ""
+
+#. Found in description list item.
+msgid "Email"
+msgstr ""
+
+#. Found in description list item.
+msgid "Url"
+msgstr ""
+
+#. Found in description list item.
+msgid "Date"
+msgstr ""
+
+#. Found in description list item.
+msgid "Number"
+msgstr ""
+
+#. Found in description list item.
+msgid "Digit only"
+msgstr ""
+
+#. Found in description list item.
+msgid "Credit Card"
+msgstr ""
+
+#. Found in description list item.
+msgid "US Phone number"
+msgstr ""
+
+#. Found in description list item.
+msgid "Minimum Number - Makes the element require a given minimum."
+msgstr ""
+
+#. Found in description list item.
+msgid "Maximum Number - Makes the element require a given maximum."
+msgstr ""
+
+#. Found in description list item.
+msgid "Minimum Length - Makes the element require a given minimum length."
+msgstr ""
+
+#. Found in description list item.
+msgid "Maximum Length - Makes the element require a given maximum length."
+msgstr ""
+
+#. Found in description list item.
+msgid "Range Length - Makes the element require a given value range."
+msgstr ""
+
+#. Found in description list item.
+msgid "Range - Makes the element require a given value range."
+msgstr ""
+
+#. Found in description list item.
+msgid "Equal To - Requires the element to be the same as another one"
+msgstr ""
+
+#. Found in description list item.
+msgid "Extension - Makes the element require a certain file extension"
+msgstr ""
+
+#. Found in description list item.
+msgid "Require Group - Ensures a given number of fields in a group are complete."
+msgstr ""
+
+#. Found in description list item.
+msgid "4 different <a href=\"http://dnesscarkey.com/jquery-validation/validation-error-theme/\">validation error theme</a> to choose from. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Change <a href=\"http://dnesscarkey.com/jquery-validation/change-error-message/\">validation error message</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This plugin adds jquery validation to your contact form 7. You will be able to validate extra validation rules like: url, date, credit card, phone number in the contact form 7 fields."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Benefits you get from this plugins."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Validation Methods available."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://dnesscarkey.com/jquery-validation/lite-version-demo/\">Lite Version Demo</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Additional Validation Methods available in PRO version."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Additional Features in Pro version."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://dnesscarkey.com/jquery-validation/pro-version-demo/\">Pro Version Demo</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "For Support Please Visit <a href=\"http://dineshkarki.com.np/forums/forum/jquery-validation-for-contact-form\">http://dineshkarki.com.np/forums/forum/jquery-validation-for-contact-form</a>. We don't respond to tickets created here."
+msgstr ""
+
+#. Found in description paragraph, installation list item.
+msgid "Don't forget to check the instructions in the setting page of the plugin."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the plugin jquery-validation-for-contact-form-7 files to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the jquery-validation-for-contact-form-7 plugin through the 'Plugins' menu in WordPress."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Select Jquery Validation For Contact Form 7 under Settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Contact Form 7 loading icon issue."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested with WP 4.2.3 and Contact Form 7 Ver 4.2.1."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Latest jquery validation plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested with WP 4.1.1 and Contact Form 7 Ver 4.1.1."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added more validation rules."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed PhoneUS validation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested with 3.9"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Multiple form issues fixed."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IE issues fixed."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Error Fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "First Release"
+msgstr ""
+
+#. Found in faq header.
+msgid "Does it works with multiple contact form ?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes, this plugin has been take care to handle multiple forms in a single page."
+msgstr ""

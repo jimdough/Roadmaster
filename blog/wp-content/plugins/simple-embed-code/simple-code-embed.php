@@ -1,9 +1,12 @@
 <?php
 /*
 Plugin Name: Code Embed
+Plugin URI: https://wordpress.org/plugins/simple-code-embed/
 Description: Allows you to embed code into your posts & pages
-Version: 2.1
-Author: dartiss
+Version: 2.1.2
+Author: David Artiss
+Author URI: http://www.artiss.co.uk
+Text Domain: simple-embed-code
 */
 
 /**
@@ -15,11 +18,11 @@ Author: dartiss
 * @since	1.6
 */
 
-define( 'artiss_code_embed_version', '2.1' );
+define( 'artiss_code_embed_version', '2.1.2' );
 
 function ace_load_plugin_textdomain() {
     load_plugin_textdomain( 'simple-embed-code', false, 'simple-embed-code/languages' );
-} 
+}
 add_action( 'init', 'ace_load_plugin_textdomain' );
 
 $functions_dir = WP_PLUGIN_DIR . '/simple-embed-code/includes/';

@@ -3,7 +3,7 @@
  * Plugin Name: Responsive Video Light
  * Plugin URI: http://bitpusher.tk/responsive-video-light
  * Description: A plugin to add responsive videos to pages and posts
- * Version: 1.3.2
+ * Version: 1.4.0
  * Author: Bill Knechtel
  * Author URI: http://bitpusher.tk
  * License: GPLv2
@@ -278,6 +278,12 @@ function responsive_vimeo_shortcode($attributes, $content = null)
             case 'disable_vimeo_portrait_display':
                 $query_string['portrait'] = '0';
                 break;
+            case 'enable_vimeo_autoplay':
+                $query_string['autoplay'] = '1';
+                break;
+            case 'enable_vimeo_loop':
+                $query_string['loop'] = '1';
+                break;
         }
     }
 
@@ -309,6 +315,18 @@ function responsive_vimeo_shortcode($attributes, $content = null)
                 $query_string['portrait'] = '0';
                 $query_string['byline'] = '0';
                 $query_string['title'] = '0';
+                break;
+            case "autoplay":
+                $query_string['autoplay'] = '1';
+                break;
+            case "noautoplay":
+                $query_string['autoplay'] = '0';
+                break;
+            case "loop":
+                $query_string['loop'] = '1';
+                break;
+            case "noloop":
+                $query_string['loop'] = '0';
                 break;
             default:
                 // Fairly primitive extraction - might want to beef this up

@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-	 <title>CDL Training and Truck Driving School in West Memphis, Arkansas - Roadmaster</title>
+	 <title>West Memphis, Arkansas CDL Training and Truck Driving School - Roadmaster</title>
 <META NAME="DESCRIPTION" CONTENT="Roadmaster West Memphis is a hands-on truck driving school & CDL training center for areas around West Memphis, Arkansas.">
+<link href="http://www.roadmaster.com/truck_school_WESTMEMPHIS.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,8 @@
    </aside>
        
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/school-wm-s.jpg, (default)], [img/headers/school-wm-m.jpg, (medium)], [img/headers/school-wm-l.jpg, (large)]" alt="Roadmaster Truck Driving School of West Memphis,AR">
+	   <img width="100%" src="/img/headers/school-wm-l.jpg" alt="Roadmaster Truck Driving School of West Memphis,AR">
+	   
    </div>
    
          <!-- Small Nav-->
@@ -71,16 +73,16 @@
 	  
 <div class="row">
 	<div class="column small-12 text-center">
-		<img data-interchange="[img/cities/wm1-m.jpg, (default)], [img/cities/wm1-l.jpg, (medium)], [img/cities/wm1-l.jpg, (large)]" alt="Roadmaster Truck Driving School">
+		<img src="/img/cities/wm1-l.jpg" alt="Roadmaster Truck Driving School">
 	</div>
 </div>
 
 <div class="row">	
 	<div class="column small-12 text-center">
-		<ul class="clearing-thumbs small-block-grid-3" data-clearing>
-			<li><a class="th" href="img/cities/wm2-l.jpg"><img style="thumb" src="img/cities/wm2-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/wm3-l.jpg"><img style="thumb" src="img/cities/wm3-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/wm4-l.jpg"><img style="thumb" src="img/cities/wm4-s.jpg"></a></li>
+		<ul class="clearing-thumbs small-block-grid-3">
+			<li><a class="th" href="img/cities/wm2-l.jpg"><img style="thumb" src="/img/cities/wm2-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/wm3-l.jpg"><img style="thumb" src="/img/cities/wm3-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/wm4-l.jpg"><img style="thumb" src="/img/cities/wm4-s.jpg"></a></li>
 		</ul>
 	</div>
 </div>
@@ -93,7 +95,7 @@
 	
 	<p>Our <b>truck driving school</b> staff includes 5 <a href="http://www.cvta.org/" target="_blank">CVTA</a> master instructors and 5 third party licensed examiners. Students practice driving with well-maintained practice equipment on diverse driving courses so they are confident in their truck driving abilities upon graduation.</p>
 
-<p>Students are attracted to the West Memphis school from many surrounding states including Tennessee, Arkansas and Mississippi. Roadmaster believes in hands-on <a href="trucking_benefits.php">truck driver training</a> so each student can obtain real-world truck driving skills before they enter the truck driving industry.</p>
+<p>Students are attracted to the West Memphis school from many surrounding states including Missouri, Louisiana and Mississippi. Roadmaster believes in hands-on <a href="trucking_benefits.php">truck driver training</a> so each student can obtain real-world truck driving skills before they enter the truck driving industry.</p>
 <h3>Roadmaster offers<span style="font-size:14px; vertical-align:top;">*</span>:</h3>
 
     <ul>
@@ -105,16 +107,16 @@
           <li><a href="veteran-cdl-training.php">Approved for Veteran Training & post-9/11 benefits</a></li>
    </ul>
 <p><i>*Check specific location of interest for services available.  Not all services listed are available at all Roadmaster locations.</i></p>
-<p>Roadmaster West Memphis</b> is a member of the <a href="http://www.arkansastrucking.com" target="_blank">Arkansas Trucking Association.</a> Roadmaster West Memphis is licensed in Tennessee by the <a href="http://tn.gov/thec/topic/authorized-institutions-data" target="_blank">Tennessee Higher Education Commission</a> and Arkansas by the <a href="http://www.sbpce.org/" target="_blank">State Board of Private Career  Education.</a> Major trucking carriers visit our West Memphis campus year round.</p>
+<p>Roadmaster West Memphis</b> is a member of the <a href="http://www.arkansastrucking.com" target="_blank">Arkansas Trucking Association.</a> Roadmaster West Memphis is licensed in Arkansas by the <a href="http://www.sbpce.org/" target="_blank">State Board of Private Career  Education.</a> Major trucking carriers visit our West Memphis campus year round.</p>
 
 <ul>
-    <li>Job placement and graduation data is available on the <a href="http://tn.gov/thec/topic/authorized-institutions-data" target="_blank">Tennessee Higher Education Commission’s website</a>.</li>
-    <li>Roadmaster Drivers School of West Memphis is authorized for operation as a postsecondary educational institution by the <a href="http://tn.gov/thec/topic/authorized-institutions-data" target="_blank">Tennessee Higher Education Commission</a>.</li>
+    <li>Job placement and graduation data is available <a href="http://tn.gov/thec/topic/authorized-institutions-data" target="_blank">here</a>.</li>
+    <li>Roadmaster Drivers School of West Memphis is authorized for operation as a postsecondary educational institution by the <a href="http://www.sbpce.org/" target="_blank">State Board of Private Career  Education.</a>.</li>
     <li>The transferability of credits disclosure statement can be viewed by <a href="assets/wmTransfer.pdf" target="_blank">clicking here</a>.</li>
     <li>To view the cost of tuition for this program please <a href="assets/wmAddendum.pdf" target="_blank">click here</a>.</li>
 </ul>
 
-<p>Roadmaster Drivers School in West Memphis, Arkansas, is located across the Mississippi River, about 5 minutes from downtown Memphis on I-40 and I-55. Students can visit rock 'n' roll landmarks, including <a href="http://www.bbkingclubs.com/index.php?page=memhome" target="_blank">B.B King's Blues Club</a> and <a href="http://www.elvis.com/graceland/tours/tickets-reservations/" target="_blank">Elvis Presley's Graceland</a>, or eat world-famous ribs at the <a href="http://www.hogsfly.com/TheRestaurant.php" target="_blank">Rendezvous Restaurant</a>! </p>
+<p>Roadmaster Drivers School in West Memphis, Arkansas, is located across the Mississippi River, about 5 minutes from downtown proper on I-40 and I-55. Students can visit rock 'n' roll landmarks, including <a href="http://www.bbkingclubs.com/index.php?page=memhome" target="_blank">B.B King's Blues Club</a> and <a href="http://www.graceland.com/visit/buytickets.aspx" target="_blank">Elvis Presley's Graceland</a>, or eat world-famous ribs at the <a href="http://www.hogsfly.com/home" target="_blank">Rendezvous Restaurant</a>! </p>
 	  </section>
 	   <?php include("inc/cta.inc"); ?>
 	  <div class="row editable"> <!-- Dual Column -->
@@ -131,12 +133,6 @@
 					  </ul>
 				  </div>
 
-			  <h3>Upcoming Events</h3>
-					  <table class="school-events">
-					  		<thead><tr><td><b>Date</b></td><td><b>Event Name</b></td><td><b>RSVP</b></td></tr></thead>
-					  		<tbody>
-					  			<tr class="repeatable"><td>Coming Soon</td><td>Coming Soon</td><td><a href	="#">Attend</a></td></tr>
-					  </table>
 	 </div><!-- END Column 1-->
 	 
 	 
@@ -144,16 +140,15 @@
 	 <h3>Associations</h3>
 	 
 	 <ul class="small-block-grid-3 text-center">
-		  <li><a href="#" target="_blank"><img src="img/logos/ar.jpg" alt="Arkansas Trucking Association" /></a></li>
-		  <li><a href="http://cvta.org" target="_blank"><img src="img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
-		  <li><a href="http://www.truckload.org" target="_blank"><img src="img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
+		  <li><a href="#" target="_blank"><img src="/img/logos/ar.jpg" alt="Arkansas Trucking Association" /></a></li>
+		  <li><a href="http://cvta.org" target="_blank"><img src="/img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  <li><a href="http://www.truckload.org" target="_blank"><img src="/img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
 	</ul>
 	 
 	 
 	 <h3>School Resources</h3>
 	 <ul class="no-bullets">
 	 	<li><a href="http://www.arkansastrucking.com" target="_blank">Arkansas Trucking Association.</a></li>
-	 	<li><a href="http://www.state.tn.us/thec/" target="_blank">Tennessee Higher Education Commission</a></li>
 	 	<li><a href="http://www.cvta.org" target="_blank">Commercial Vehicle Training Association</a></li>
 	 	<li><a href="http://www.truckload.org" target="_blank">Truckload Carriers Association</a></li>
 	 	<li><a href="assets/wmTransfer.pdf" target="_blank">Transferability of Credits Disclosure Statement</a></li>

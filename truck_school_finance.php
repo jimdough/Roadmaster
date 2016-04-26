@@ -5,6 +5,7 @@
  <head>
   <title>How to Finance CDL Training and Truck Driving School - Roadmaster</title>
   <meta name="DESCRIPTION" content="Roadmaster is a hands on truck driving school & Class A CDL license training center that provides complete truck driver training and help financing school.">
+  <link href="http://www.roadmaster.com/truck_school_finance.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-financial-s.gif, (default)], [img/headers/ph-financial-m.gif, (medium)], [img/headers/ph-financial-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-financial-s.gif, (default)], [/img/headers/ph-financial-m.gif, (medium)], [/img/headers/ph-financial-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
       <!-- Small Nav-->
@@ -53,8 +54,17 @@
 	  
 	  <section> <!-- Left Side Content -->
 			  	  
-			  <h3>Cost of Truck Driving School</h3>
-			  
+		<div class="panel radius related-box hide-for-small">
+          <h4>Related Topics</h4>
+          <ul class="no-bullets">
+              <li><a href="http://www.roadmaster.com/blog/roadmaster-offers-new-flexible-repayment-solution/">Flexible Repayment Solutions</a></li>
+              <li><a href="http://www.roadmaster.com/blog/how-to-make-great-money-and-live-virtually-rent-free-3/">How to Make Great Money</a></li>
+              <li><a href="http://www.roadmaster.com/trucking_benefits.php">Truck Driving Career Benefits</a></li>
+              <li><a href="http://www.roadmaster.com/how-much-do-truck-drivers-make.php">How Much Do Truck Drivers Make?</a></li>
+          </ul>
+		  </div>
+
+			  <h1>Cost of Truck Driving School</h1>
 			  <p>A major benefit of Roadmaster is that we offer financial assistance if needed, for those who qualify. In addition to financing options, we work with numerous trucking companies who offer tuition reimbursement programs and more!</p>
 
 			  <p>Roadmaster has frequent on-site visits from trucking companies and their Driver Recruiters. Each of these Recruiters meet with students during their training and provide information about what their company offers when it comes to pay rates and bonuses, opportunities and driving options available to you, the schedules and home time, the benefits and other perks!</p>
@@ -78,6 +88,9 @@
 				<h6>Veterans' Refund Policy</h6>
 				
 				<p>The refund of the unused portion of tuition, fees, and other charges for veterans or eligible persons who fail to enter a course, withdraw or discontinue prior to completion, will be made for all amounts paid which exceed the approximate pro rata portion of the total charges that the length of the completed portion bears to the total length of the course. The proration will be determined on the ratio of days or hours of instruction completed to the total number of instructional days or hours in the course.</p>
+				
+				<div class="text-center hide-for-large-up"><a href="#formJump"><img src="img/applyNow.png" alt="Apply Now" width="80%" border="0"></a><br><br></div>
+<div class="text-center hide-for-medium-down"><a href="#formJump"><img src="img/apply-now-banner.png" alt="Apply Now" border="0"></a><br><br></div>
 
 	  </section>
 

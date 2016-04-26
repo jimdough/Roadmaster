@@ -1,9 +1,18 @@
 	   	  <!-- First Footer Column -->
 	   	  <div class="small-12 large-4 medium-6 small-12 columns">
-		   		<!-- Event Manager Listing -->
-				<h4>Upcoming Events</h4>
-				<!-- Put an include for this file when live "mm/mm-framed-hp.php"-->
-				<!-- Event Manager Listings End -->
+	   	  	 <ul class="medium-block-grid-2 text-center hide-for-small">
+				  <li><a href="http://www.caltrux.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-tca.jpg" alt="Truckload Carriers Association" /></a></li>
+				  <li><a href="http://www.trucking.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-ata.jpg" alt="American TruckingAssociation" /></a></li>
+		  	</ul>
+		  	<ul class="medium-block-grid-1 text-center hide-for-small">
+		  		 <li><a href="http://cvta.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  	</ul>
+		  	
+		  	<ul class="small-block-grid-3 text-center show-for-small">
+				  <li><a href="http://www.caltrux.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-tca.jpg" alt="Truckload Carriers Association" /></a></li>
+				  <li><a href="http://www.trucking.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-ata.jpg" alt="American TruckingAssociation" /></a></li>
+				  <li><a href="http://cvta.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  	</ul>
 	   		</div>
    	   		
    	   		<!-- Second Footer Column -->

@@ -5,6 +5,7 @@
  <head>
   <title>How to Apply to our CDL Training and Truck Driving School - Roadmaster</title>
   <meta name="DESCRIPTION" content="How to apply to Roadmaster, a hands on truck driving school & Class A CDL license training center that provides complete truck driver training across the USA">
+  <link href="http://www.roadmaster.com/truck_school_how-to-apply.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-enrollment-S.gif, (default)], [img/headers/ph-enrollment-M.gif, (medium)], [img/headers/ph-enrollment-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-enrollment-S.gif, (default)], [/img/headers/ph-enrollment-M.gif, (medium)], [/img/headers/ph-enrollment-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
       <!-- Small Nav-->

@@ -14,16 +14,12 @@
 /* ------------------------------------------------------------------------- *
  *  Required Files
 /* ------------------------------------------------------------------------- */
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/acosmin/framework/' );
-
-require_once ( get_template_directory() . '/acosmin/framework/extensions/variables.php' );
-require_once ( get_template_directory() . '/acosmin/framework/options-framework.php' );
-require_once ( get_template_directory() . '/acosmin/framework/extensions/functions-extended.php' );
 require_once ( get_template_directory() . '/acosmin/functions/functions-default.php' );
 require_once ( get_template_directory() . '/acosmin/functions/functions-icons.php' );
 require_once ( get_template_directory() . '/acosmin/functions/functions-post-options.php' );
 require_once ( get_template_directory() . '/acosmin/functions/functions-theme-customizer.php' );
 require_once ( get_template_directory() . '/acosmin/functions/class-tgm-plugin-activation.php' );
+require_once ( get_template_directory() . '/acosmin/widgets/ac-sections-widgets-init.php' );
 
 
 
@@ -43,7 +39,7 @@ if ( ! function_exists( 'ac_setup' ) ) {
 	function ac_setup() {
 		
 		// Make JustWrite available for translation.
-		load_theme_textdomain( 'acosmin', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'justwrite', FALSE, basename( dirname( __FILE__ ) ) . '/languages' );
 		
 		// Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
@@ -51,6 +47,8 @@ if ( ! function_exists( 'ac_setup' ) ) {
 		add_image_size( 'ac-post-thumbnail', 600, 400, true );
 		add_image_size( 'ac-slide-thumbnail', 515, 300, true );
 		add_image_size( 'ac-sidebar-featured', 638, 368, true );
+		add_image_size( 'ac-masonry-2x-thumbnail', 900, 520, true );
+		add_image_size( 'ac-masonry-small-featured', 600 );
 		add_image_size( 'ac-sidebar-small-thumbnail', 210, 140, true );
 		
 		// Enable post format support
@@ -59,9 +57,10 @@ if ( ! function_exists( 'ac_setup' ) ) {
 		// Menues
 		// This theme has only one menu, located in the header.
 		register_nav_menus( array(
-			'main'				=> __( 'Main Menu', 'acosmin' ),
-			'mini-first'		=> __( 'Right Sidebar - First Menu', 'acosmin' ),
-			'mini-second'		=> __( 'Right Sidebar - Second Menu', 'acosmin' ),
+			'main'				=> __( 'Main Menu', 'justwrite' ),
+			'second'			=> __( 'Second Menu', 'justwrite' ),
+			'mini-first'		=> __( 'Right Sidebar - First Menu', 'justwrite' ),
+			'mini-second'		=> __( 'Right Sidebar - Second Menu', 'justwrite' ),
 		) );
 		
 		// This feature adds theme support for themes to display titles.
@@ -114,8 +113,8 @@ if ( ! function_exists( 'ac_css_files' ) ) {
 		wp_register_style( 'ac_webfonts_' . ac_get_selected_ff(), ac_font_url( ac_get_selected_ff() ), array(), null);
 			
 		// Enqueue
-		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.9.2', 'all' );
-		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.3.0', 'all' );
+		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '2.0.1', 'all' );
+		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.5.0', 'all' );
 		wp_enqueue_style( 'ac_webfonts_' . ac_get_selected_ff() );
 			
 	}
@@ -134,7 +133,11 @@ if ( ! function_exists( 'ac_js_files' ) ) {
 		// Enqueue
 		wp_enqueue_script( 'ac_js_fitvids', get_template_directory_uri() . '/assets/js/jquery.fitvids.js', array('jquery'), '1.1', true );
 		wp_enqueue_script( 'ac_js_menudropdown', get_template_directory_uri() . '/assets/js/menu-dropdown.js', array('jquery'), '1.4.8', true );
-		wp_enqueue_script( 'ac_js_slider', get_template_directory_uri() . '/assets/js/slider.js', array('jquery'), '0.3.0', true );
+		
+		if( is_home() && get_theme_mod( 'ac_enable_slider', false ) ) {
+			wp_enqueue_script( 'ac_js_slider', get_template_directory_uri() . '/assets/js/slider.js', array('jquery'), '0.3.0', true );
+		}
+		
 		wp_enqueue_script( 'ac_js_myscripts', get_template_directory_uri() . '/assets/js/myscripts.js', array('jquery'), '1.0.6', true );
 		wp_enqueue_script( 'ac_js_html5', get_template_directory_uri() . '/assets/js/html5.js', array('jquery'), '3.7.0', false );
 		
@@ -147,13 +150,25 @@ add_action( 'wp_enqueue_scripts', 'ac_js_files' );
 
 
 
+/*  Load admin CSS files
+/* ------------------------------------ */
+if ( ! function_exists( 'ac_admin_css_files' ) ) {
+	
+	function ac_admin_css_files() {
+		wp_enqueue_style( 'ac_admin_styles', get_template_directory_uri() . '/assets/css/admin/ac-admin-styles.css', array(), '1.0', 'all' );	
+	}
+	
+}
+add_action( 'admin_enqueue_scripts', 'ac_admin_css_files' );
+
+
 /*  Font Families
 /* ------------------------------------ */ 
 if ( ! function_exists( 'ac_font_url' ) ) {
 	
-	function ac_font_url( $font_type = 'style1' ) {
+	function ac_font_url( $font_type = 'style5' ) {
 		
-		// You have 4 optios
+		// You have 9 optios
 		// Please select a option from the WP Theme Customise, Content tab.
 		$font_url = '';
 		$google_fonts_url = "//fonts.googleapis.com/css";
@@ -161,11 +176,21 @@ if ( ! function_exists( 'ac_font_url' ) ) {
 		if( $font_type == 'style1' ) {
 			$font_url = add_query_arg( 'family', urlencode( 'Montserrat:400,700|Questrial|Arimo:400,700|Source Sans Pro:400,700,400italic,700italic' ), $google_fonts_url );
 		} elseif( $font_type == 'style2' ) {
-			$font_url = add_query_arg( 'family', urlencode( 'PT Serif:400,700,400italic,700italic|Montserrat:400,700|Questrial' ), $google_fonts_url );
+			$font_url = add_query_arg( 'family', urlencode( 'PT Serif:400,700,400italic,700italic|Montserrat:400,700' ), $google_fonts_url );
 		} elseif( $font_type == 'style3' ) {
-			$font_url = add_query_arg( 'family', urlencode( 'Roboto:400,700italic,700,400italic|Montserrat:400,700|Questrial' ), $google_fonts_url );
+			$font_url = add_query_arg( 'family', urlencode( 'Roboto:400,700italic,700,400italic|Montserrat:400,700' ), $google_fonts_url );
 		} elseif( $font_type == 'style4' ) {
 			$font_url = add_query_arg( 'family', urlencode( 'PT Sans:400,700,400italic,700italic' ), $google_fonts_url );
+		} elseif( $font_type == 'style5' ) {
+			$font_url = add_query_arg( 'family', urlencode( 'Poppins:400,500,700|Lato:400,700,900,400italic,700italic' ), $google_fonts_url );
+		} elseif( $font_type == 'style6' ) {
+			$font_url = add_query_arg( 'family', urlencode( 'Roboto Slab:400,700|Open Sans:400,700,800,400italic,700italic' ), $google_fonts_url );
+		} elseif( $font_type == 'style7' ) {
+			$font_url = add_query_arg( 'family', urlencode( 'Roboto Slab:400,700|Source Serif Pro:400,700' ), $google_fonts_url );
+		} elseif( $font_type == 'style8' ) {
+			$font_url = add_query_arg( 'family', urlencode( 'Playfair Display:400,700,900|Source Serif Pro:400,700' ), $google_fonts_url );
+		} elseif( $font_type == 'style9' ) {
+			$font_url = add_query_arg( 'family', urlencode( 'Playfair Display:400,700,900|Open Sans:400,700,800,400italic,700italic' ), $google_fonts_url );
 		}
 		
 		return $font_url;
@@ -182,13 +207,18 @@ if ( ! function_exists( 'ac_font_styles' ) ) {
 	
 	function ac_font_styles() {
 		
-		$selected = get_theme_mod('ac_font_select');
-		$font_style_url = get_stylesheet_directory_uri() . '/assets/css/font-' . $selected . '.css';
+		$selected 				= get_theme_mod( 'ac_font_select', 'style5' );
+		$childtheme 			= get_theme_mod( 'ac_disable_child_fonst_style', false );
+		$font_style_url_child 	= get_stylesheet_directory_uri() . '/assets/css/font-' . $selected . '.css';
+		$font_style_url 		= get_template_directory_uri() . '/assets/css/font-' . $selected . '.css';
 		
 		if( $selected == '' || $selected == 'style1' ) {
 			return;	
 		} else {
 			wp_enqueue_style( 'ac_webfonts_selected-' . $selected, $font_style_url, array(), null );
+			if( is_child_theme() && $childtheme ) {
+				wp_enqueue_style( 'ac_webfonts_selected-' . $selected . '_child', $font_style_url_child, array(), null );	
+			}
 		}
 		
 	}
@@ -201,10 +231,11 @@ add_action( 'wp_enqueue_scripts', 'ac_font_styles', 100 );
 /*  Get selected font
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_get_selected_ff' ) ) {
+	
 	function ac_get_selected_ff() {
 		
 		// Check if a font is selected
-		$selected = get_theme_mod( 'ac_font_select' );
+		$selected = get_theme_mod( 'ac_font_select', 'style5' );
 		
 		if ( $selected == '' ) {
 			$current_font = 'style1';	
@@ -254,9 +285,9 @@ if ( ! function_exists( 'ac_sidebars_widgets' ) ) {
 	
 		// Main sidebar that appears on the right.
 		register_sidebar( array(
-			'name'          => __( 'Main Sidebar', 'acosmin' ),
+			'name'          => __( 'Main Sidebar', 'justwrite' ),
 			'id'            => 'main-sidebar',
-			'description'   => __( 'Main sidebar that appears on the right.', 'acosmin' ),
+			'description'   => __( 'Main sidebar that appears on the right.', 'justwrite' ),
 			'before_widget' => '<aside id="%1$s" class="side-box clearfix widget %2$s"><div class="sb-content clearfix">',
 			'after_widget'  => '</div></aside><!-- END .sidebox .widget -->',
 			'before_title'  => '<h3 class="sidebar-heading">',
@@ -265,9 +296,86 @@ if ( ! function_exists( 'ac_sidebars_widgets' ) ) {
 		
 		// Same as above, designed for the articles area.
 		register_sidebar( array(
-			'name'          => __( 'Posts Sidebar', 'acosmin' ),
+			'name'          => __( 'Posts Sidebar', 'justwrite' ),
 			'id'            => 'posts-sidebar',
-			'description'   => __( 'Same as "Main Sidebar", designed for the posts.', 'acosmin' ),
+			'description'   => __( 'Same as "Main Sidebar", designed for the posts.', 'justwrite' ),
+			'before_widget' => '<aside id="%1$s" class="side-box clearfix widget %2$s"><div class="sb-content clearfix">',
+			'after_widget'  => '</div></aside><!-- END .sidebox .widget -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// Main Page - Before posts
+		register_sidebar( array(
+			'name'          => __( 'Sections - Before posts', 'justwrite' ),
+			'id'            => 'main-page-before',
+			'description'   => __( 'Use this area with the special designed widgets.("AC SEC:" prefix and bright blue background color).', 'justwrite' ),
+			'before_widget' => '<section id="%1$s" class="container %2$s builder clearfix">',
+			'after_widget'  => '</section><div class="cleardiv"></div><!-- END .container .builder -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// Main Page - After posts
+		register_sidebar( array(
+			'name'          => __( 'Sections - After posts', 'justwrite' ),
+			'id'            => 'main-page-after',
+			'description'   => __( 'Use this area with the special designed widgets.("AC SEC:" prefix and bright blue background color).', 'justwrite' ),
+			'before_widget' => '<section id="%1$s" class="container %2$s builder clearfix">',
+			'after_widget'  => '</section><div class="cleardiv"></div><!-- END .container .builder -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// All pages - Before footer 
+		register_sidebar( array(
+			'name'          => __( 'Sections - Before footer', 'justwrite' ),
+			'id'            => 'all-pages-footer-before',
+			'description'   => __( 'Widgets will appear on all pages (except main page), before the widgetized footer area. Use this area with the special designed widgets ("AC SEC:" prefix and bright blue background color).', 'justwrite' ),
+			'before_widget' => '<section id="%1$s" class="container %2$s builder' . ac_sidebars_all_pages_disabled_mini() . ' clearfix">',
+			'after_widget'  => '</section><div class="cleardiv"></div><!-- END .container .builder -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// Footer - Area #1
+		register_sidebar( array(
+			'name'          => __( 'Footer - Area #1', 'justwrite' ),
+			'id'            => 'footer-area-1',
+			'description'   => __( 'Displays widgets in area #1 (footer).', 'justwrite' ),
+			'before_widget' => '<aside id="%1$s" class="side-box clearfix widget %2$s"><div class="sb-content clearfix">',
+			'after_widget'  => '</div></aside><!-- END .sidebox .widget -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// Footer - Area #2
+		register_sidebar( array(
+			'name'          => __( 'Footer - Area #2', 'justwrite' ),
+			'id'            => 'footer-area-2',
+			'description'   => __( 'Displays widgets in area #2 (footer).', 'justwrite' ),
+			'before_widget' => '<aside id="%1$s" class="side-box clearfix widget %2$s"><div class="sb-content clearfix">',
+			'after_widget'  => '</div></aside><!-- END .sidebox .widget -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// Footer - Area #3
+		register_sidebar( array(
+			'name'          => __( 'Footer - Area #3', 'justwrite' ),
+			'id'            => 'footer-area-3',
+			'description'   => __( 'Displays widgets in area #3 (footer).', 'justwrite' ),
+			'before_widget' => '<aside id="%1$s" class="side-box clearfix widget %2$s"><div class="sb-content clearfix">',
+			'after_widget'  => '</div></aside><!-- END .sidebox .widget -->',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		) );
+		
+		// Footer - Area #4
+		register_sidebar( array(
+			'name'          => __( 'Footer - Area #4', 'justwrite' ),
+			'id'            => 'footer-area-4',
+			'description'   => __( 'Displays widgets in area #4 (footer).', 'justwrite' ),
 			'before_widget' => '<aside id="%1$s" class="side-box clearfix widget %2$s"><div class="sb-content clearfix">',
 			'after_widget'  => '</div></aside><!-- END .sidebox .widget -->',
 			'before_title'  => '<h3 class="sidebar-heading">',
@@ -279,27 +387,120 @@ if ( ! function_exists( 'ac_sidebars_widgets' ) ) {
 }
 add_action( 'widgets_init', 'ac_sidebars_widgets' );
 
+// Add a widgetized area on all pages, before the footer
+if ( ! function_exists( 'ac_sidebars_before_footer_area' ) ) {
+	
+	function ac_sidebars_before_footer_area() {
+		if( ! is_front_page() ) {
+			if ( is_active_sidebar( 'all-pages-footer-before' ) ) { dynamic_sidebar( 'all-pages-footer-before' ); }
+		}
+	}
+	
+}
+add_action( 'ac_action_footer_widgets_before', 'ac_sidebars_before_footer_area' );
+
+// In case the mini sidebar is disabled
+if ( ! function_exists( 'ac_sidebars_all_pages_disabled_mini' ) ) {
+	
+	function ac_sidebars_all_pages_disabled_mini() {
+		$is_enabled = get_theme_mod( 'ac_disable_minisidebar' );
+		if( $is_enabled ) {
+			return ' mini-disabled';
+		} else {
+			return;	
+		}
+	}
+
+}
+
 
 
 /*  Set mini-sidebar to disabled
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_mini_disabled' ) ) {
 	
-	function ac_mini_disabled() {
+	function ac_mini_disabled( $echo = true ) {
 		
 		// Adds a class to the mini-sidebar if you select to disable it
 		$is_enabled = get_theme_mod( 'ac_disable_minisidebar' );
-		$class		= '';
+		$class		= array();
 		
 		if ( $is_enabled ) {
-			$class = ' mini-disabled';	
+			$class[] = ' mini-disabled';
+			if ( is_home() && ( 
+				is_active_widget( false, false, 'ac-widget-masonry-small', true ) || 
+				is_active_widget( false, false, 'ac-widget-masonry-large', true ) || 
+				is_active_widget( false, false, 'ac-widget-four-columns-categories', true ) || 
+				is_active_widget( false, false, 'ac-widget-three-columns-categories', true ) || 
+				is_active_widget( false, false, 'ac-widget-two-columns-categories', true ) ||
+				is_active_widget( false, false, 'ac-widget-popular-posts', true )
+				) ) {
+				$class[] = 'builder-on';	
+			} else { }
+			
+			if( has_filter( 'ac_mini_disabled_filter' ) ) {
+				$class = apply_filters( 'ac_mini_disabled_filter', $class );
+			}
 		}
+
+		$classes = join(' ', $class);
 		
-		echo $class;
+		if( $echo ) {
+			echo esc_html( $classes );
+		} else {
+			echo esc_html( $classes );
+		}
 		
 	}
 	
 }
+
+
+
+/*  Main menu social profiles
+/* ------------------------------------ */
+if ( ! function_exists( 'ac_main_menu_social' ) ) {
+	
+	function ac_main_menu_social() {
+		$show		= get_theme_mod( 'ac_disable_menu_social', true );
+		$show_fixed = get_theme_mod( 'ac_disable_menu_social_fixed', true );
+		$output		= '';
+		
+		// Social variables
+		$header_fb 	= get_theme_mod( 'ac_social_profile_fb', '' );
+		$header_tw 	= get_theme_mod( 'ac_social_profile_tw', '' );
+		$header_gp 	= get_theme_mod( 'ac_social_profile_gp', '' );
+		$header_rss = get_theme_mod( 'ac_social_profile_rss', '' );
+		
+		// Check if rss url is set
+		if( $header_rss != '' ) { $h_rss_link = $header_rss; } else { $h_rss_link = get_bloginfo( 'rss2_url' ); };
+		
+		// Show the icons only if the menu is in fixed state
+		if( $show_fixed ) { $show_fixed_state = ''; } else { $show_fixed_state = ' show'; };
+		
+		// If enabled show icons
+		if( $show ) {
+			$output .= '<ul class="header-social-icons' . $show_fixed_state . ' clearfix">';
+				if( $header_tw != '' ) {
+					$output .=	'<li><a href="https://twitter.com/' . esc_html( $header_tw ) . '" class="social-btn left twitter">' . ac_icon( 'twitter', false ) . '</a></li>';
+				}
+				if( $header_fb != '' ) {
+					$output .=	'<li><a href="' . esc_url( $header_fb ) . '" class="social-btn left facebook">' . ac_icon( 'facebook', false ) . '</a></li>';
+				}
+				if( $header_gp != '' ) {
+					$output .=	'<li><a href="' . esc_url( $header_gp ) . '" class="social-btn left google-plus">' . ac_icon( 'google-plus', false ) . '</a></li>';
+				}
+				$output .= '<li><a href="' . esc_url ( $h_rss_link ) . '" class="social-btn right rss">' . ac_icon( 'rss', false) . '</a></li>';
+			$output .= '</ul><!-- END .header-social-icons -->';
+		
+			echo $output = apply_filters( 'ac_main_menu_social_filter', $output );
+		} else {
+			return;	
+		}
+	}
+			
+}
+add_action( 'ac_action_search_btn_after', 'ac_main_menu_social' );
 
 
 
@@ -327,18 +528,18 @@ if ( ! function_exists( 'ac_comment_template' ) ) {
 				 <div class="comment-main">
 	
 					<header class="vcard clearfix">
-						<?php printf(__('<cite class="fn">%s says:</cite>', 'acosmin'), get_comment_author_link()) ?>
+						<?php printf(__('<cite class="fn">%s says:</cite>', 'justwrite'), get_comment_author_link()) ?>
 						
 						<aside class="comm-edit">
 							<a class="comment-date" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf('%1$s', get_comment_date('M d, Y'),  get_comment_time()) ?></a>
-							<?php edit_comment_link(__('Edit', 'acosmin'),'  ','') ?>
+							<?php edit_comment_link(__('Edit', 'justwrite'),'  ','') ?>
 						</aside>
 					</header>
 	
 					<div class="comment-text">
 					<?php comment_text(); ?>
 						<?php if ($comment->comment_approved == '0') : ?>
-							 <em><?php _e('Your comment is awaiting moderation.', 'acosmin') ?></em>
+							 <em><?php _e('Your comment is awaiting moderation.', 'justwrite') ?></em>
 							 <br />
 						<?php endif; ?>
 					</div>
@@ -354,13 +555,13 @@ if ( ! function_exists( 'ac_comment_template' ) ) {
 			case 'pingback'  :
 		?>
 			<li <?php comment_class(); ?> id="li-pingback-<?php comment_ID(); ?>">
-				<?php _e('Pingback:', 'acosmin') ?> <?php echo get_comment_author_link(); ?> <small class="ping-edit"><?php ac_icon('edit'); edit_comment_link(__('Edit', 'acosmin'),'  ','') ?></small>
+				<?php _e('Pingback:', 'justwrite') ?> <?php echo get_comment_author_link(); ?> <small class="ping-edit"><?php ac_icon('edit'); edit_comment_link(__('Edit', 'justwrite'),'  ','') ?></small>
 			</li>
 		<?php
 			case 'trackback' :
 		?>
 			<li <?php comment_class(); ?> id="li-trackback-<?php comment_ID(); ?>">
-				<?php _e('Trackback:', 'acosmin') ?> <?php echo get_comment_author_link(); ?> <small class="ping-edit"><?php ac_icon('edit'); edit_comment_link(__('Edit', 'acosmin'),'  ','') ?></small>
+				<?php _e('Trackback:', 'justwrite') ?> <?php echo get_comment_author_link(); ?> <small class="ping-edit"><?php ac_icon('edit'); edit_comment_link(__('Edit', 'justwrite'),'  ','') ?></small>
 			</li>
 		<?php
 		endswitch;
@@ -390,11 +591,26 @@ if ( ! function_exists( 'ac_get_logo' ) ) {
 	}
 	
 	function ac_logo_class() {
+		$class = array();
+		$centered = get_theme_mod( 'ac_logo_centered', false );
+		
 		if ( get_theme_mod( 'ac_logo_image' ) ) {
-			echo ' logo-image'; 	
+			$class[] = 'logo-image'; 	
 		} else {
-			echo ' logo-text'; 
+			$class[] = 'logo-text'; 
 		}
+		
+		if ( $centered ) {
+			$class[] = 'logo-centered';
+		}
+		
+		if( has_filter( 'ac_logo_class_filter' ) ) {
+			$class = apply_filters( 'ac_logo_class_filter', $class );
+		}
+		
+		$classes = join( ' ', $class );
+		
+		echo ' ' . esc_attr( $classes );
 		
 	}
 
@@ -433,8 +649,8 @@ if ( ! function_exists( 'ac_paginate' ) ) {
 			'current'  => $paged,
 			'mid_size' => 1,
 			'add_args' => array_map( 'urlencode', $query_args ),
-			'prev_text' => __( '&larr; Previous', 'acosmin' ),
-			'next_text' => __( 'Next &rarr;', 'acosmin' ),
+			'prev_text' => __( '&larr; Previous', 'justwrite' ),
+			'next_text' => __( 'Next &rarr;', 'justwrite' ),
 		) );
 	
 		if ( $links ) :
@@ -457,17 +673,18 @@ if ( ! function_exists( 'ac_paginate' ) ) {
 /*  Slider options
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_slider_options' ) ) {
+	
 	function ac_slider_options() {
 		
-		if ( of_get_option( 'ac_show_slider' ) && is_front_page() && !is_paged() && ac_featured_posts_count() > 2 ) {
+		if ( get_theme_mod( 'ac_enable_slider', false ) && is_front_page() && !is_paged() && ac_featured_posts_count() > 2 ) {
 			
-			if ( of_get_option( 'ac_slider_auto_start' ) ) {
+			if ( get_theme_mod( 'ac_autostart_slider', false ) ) {
 				$slider_autostart = 'true';		
 			} else {
 				$slider_autostart = 'false';	
 			}
 			
-			$slider_transition_delay = of_get_option( 'ac_slider_interval' );
+			$slider_transition_delay = get_theme_mod( 'ac_slider_delay', '5000' );
 			
 			?>
 			
@@ -488,7 +705,7 @@ if ( ! function_exists( 'ac_slider_options' ) ) {
 	}
 	
 }
-add_action( 'ac_before_body_closed_hook', 'ac_slider_options' );
+add_action( 'wp_footer', 'ac_slider_options' );
 
 
 
@@ -535,13 +752,13 @@ if ( ! function_exists( 'ac_post_nav_arrows' ) ) {
 		echo '<div class="post-navigation clearfix">';
 								
 		if( $prev_post ) {
-			echo '<a href="' . esc_url( $prev_post_url ) . '" class="prev-post" title="Previous Post">' . ac_icon('angle-left', false) . '</a>';	
+			echo '<a href="' . esc_url( $prev_post_url ) . '" class="prev-post" title="' . __( 'Previous Post', 'justwrite' ) . '">' . ac_icon('angle-left', false) . '</a>';	
 		} else {
 			echo '<span class="prev-post">' . ac_icon('angle-left', false) . '</span>';	
 		}
 								
 		if( $next_post ) {
-			echo '<a href="' . esc_url( $next_post_url ) . '" class="next-post" title="Next Post">' . ac_icon('angle-right', false) . '</a>';	
+			echo '<a href="' . esc_url( $next_post_url ) . '" class="next-post" title="' . __( 'Next Post', 'justwrite' ) . '">' . ac_icon('angle-right', false) . '</a>';	
 		} else {
 			echo '<span class="next-post">' . ac_icon('angle-right', false) . '</span>';	
 		}
@@ -553,6 +770,220 @@ if ( ! function_exists( 'ac_post_nav_arrows' ) ) {
 
 
 
+/*  <html> tag classes
+/* ------------------------------------ */
+if ( ! function_exists( 'ac_html_tag_classes' ) ) {
+	
+	function ac_html_tag_classes() {
+		$check_preloader = get_theme_mod( 'ac_preloader_enable', false );
+		$check_plugin = get_option( 'ac_justwrite_freebies_activated' );
+		$classes = array();
+		
+		if( $check_plugin == 'active' ) {
+			if( ! empty( $check_preloader ) ) {
+				$classes[] = 'js';	
+			}
+		}
+		
+		if( has_filter( 'ac_html_tag_classes_filter' )) {
+			$classes = apply_filters('ac_html_tag_classes_filter', $classes);
+		}
+		
+		$css_classes = join(' ', $classes);
+
+		if( ! empty( $classes ) ) {
+			echo ' class="' . esc_attr( $css_classes ) . '"';
+		} else {
+			return;	
+		}
+	}
+	
+}
+
+
+
+/*  Categories title output (columns widgets)
+/* ---------------------------------------------- */
+if ( ! function_exists( 'ac_widget_cols_title' ) ) {
+	
+	function ac_widget_cols_title( $cat_name = '' ) {
+		
+		if( $cat_name != '' ) {
+			$category_name = get_cat_name( absint( $cat_name ) );
+			if( has_filter( 'ac_widget_cats_cols_title_filter') ) { 
+				$title_output = '<h3 class="section-col-title">' .  apply_filters( 'ac_widget_cats_cols_title_filter', esc_html( $category_name ) ) . '</h3>';
+				echo $title_output;
+			} else {
+				$title_output = '<h3 class="section-col-title">' . esc_html( $category_name ) . '</h3>';
+				echo $title_output; 
+			}
+		} else {
+			echo '<h3 class="section-col-title">' . __( 'No category selected', 'justwrite' ) . '</h3>';	
+		}
+	}
+
+}
+
+
+
+/*  Return demo widgets
+/* ---------------------------------------------- */
+if ( ! function_exists( 'ac_return_inactive_widgets' ) ) {
+	
+	function ac_return_inactive_widgets( $area = '' ) {	
+		$disable 	= get_theme_mod( 'ac_disable_demo_widgets', false );
+		$notice 	= '<p class="add-some-widgets">' . esc_html__( 'Disable these demo widgets by adding your own widgets or from `Customizer > Layout Options > Miscellaneous > Disable demo widgets`.', 'justwrite' ) . '</p>';
+		$notice2 	= '<p class="add-some-widgets container builder">' . esc_html__( 'Disable these demo sections by adding your own in "Sections - Before posts". You can also disable them from `Customizer > Layout Options > Miscellaneous > Disable demo widgets`.', 'justwrite' ) . '</p>';
+		$notice3 	= '<p class="add-some-widgets">' . esc_html__( 'Disable these demo widgets by adding your own widgets or from `Customizer > Layout Options > Miscellaneous > Disable demo widgets`. You can also disable the entire widgetized footer from `Customizer > Footer Options > Hide footer widgets area`.', 'justwrite' ) . '</p>';
+		$ac_widgets_wrap_args = array(
+				'before_widget' => '',
+				'after_widget'  => '',
+				'before_title'  => '<h3 class="sidebar-heading">',
+				'after_title'   => '</h3>' );
+		$ac_widgets_wrap_sec_args = array( 'before_widget' => '', 'after_widget'  => '', 'before_title'  => '', 'after_title'   => '' );
+		
+		if( ! $disable ) {
+			// Front page before
+			if( $area == 'front-page-before' && ! is_paged() ) {
+				// Display Slider
+				$ac_widget_rp_inst = array( 'title' => '' );
+				echo '<section class="n-mb container ss-slider builder clearfix">';
+					the_widget( 'AC_Section_Slider', $ac_widget_rp_inst, $ac_widgets_wrap_sec_args );
+				echo '</section><div class="cleardiv"></div><!-- END .container .builder -->';
+				
+				// Display Masonry 2
+				$ac_widget_rp_inst = array( 'title' => '', 'typeselect' => 'category', 'category' => '1' );
+				echo '<section class="n-mb n-mt container sm-large-masonary builder clearfix">';
+					the_widget( 'AC_Section_Masonry_2', $ac_widget_rp_inst, $ac_widgets_wrap_sec_args );
+				echo '</section><div class="cleardiv"></div><!-- END .container .builder -->';
+				
+				// Notice
+				echo $notice2;
+				
+				// Display 4 columns section
+				$ac_widget_rp_inst = array( 'title' => '', 'category_1' => '1', 'category_2' => '1', 'category_3' => '1', 'category_4' => '1'  );
+				echo '<section class="n-mb b-top p-top2 container sc-small builder clearfix">';
+					the_widget( 'AC_Section_Cat_4_Columns', $ac_widget_rp_inst, $ac_widgets_wrap_sec_args );
+				echo '</section><div class="cleardiv"></div><!-- END .container .builder -->';
+
+				// Some needed js
+				wp_enqueue_script( 'ac-owl-carousel-demo-js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '2.0.0', false );
+				wp_enqueue_script( 'ac-images-loaded-demo-js', get_template_directory_uri() . '/assets/js/imagesloaded.min.js', array( 'jquery' ), '3.1.8', TRUE );
+				wp_enqueue_script( 'jquery-masonry' );
+			}
+			
+			// Main sidebar
+			if( $area == 'sidebars' ) {
+				// Display social widget
+				$ac_widget_rp_inst = array( 'title' => '', 'twitter' => '#', 'twitter_anc' => __( 'Follow', 'justwrite' ), 'facebook' => '#', 'facebook_anc' => __( 'Facebook', 'justwrite' ), 'google-plus' => '#', 'google-plus_anc' => __( 'G+', 'justwrite' ), 'rss' => '#', 'rss_anc' => __( 'Subscribe', 'justwrite' ), 'youtube' => '#', 'youtube_anc' => __( 'Youtube', 'justwrite' ), 'instagram' => '#', 'instagram_anc' => __( 'Instagram', 'justwrite' ) );
+				echo '<aside class="side-box clearfix widget ac-social-buttons-widget"><div class="sb-content clearfix">';
+					the_widget( 'AC_Social_Buttons_Widget', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+				
+				// Display recent posts widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Recent Posts Demo', 'justwrite' ), 'recent_posts_number' => 3, 'hide_recent_thumbs' => false );
+				echo '<aside class="side-box clearfix widget ac_recent_posts_widget"><div class="sb-content clearfix">';
+					the_widget( 'AC_Recent_Posts_Widget', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+				
+				// Display popular posts widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Popular Posts Demo', 'justwrite' ), 'popular_posts_number' => 3, );
+				echo '<aside class="side-box clearfix widget ac_popular_posts_widget"><div class="sb-content clearfix">';
+					the_widget( 'AC_Popular_Posts_Widget', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+				
+				// Notice
+				echo $notice;
+			} 
+			
+			// Footer
+			if( $area == 'footer-area-1' ) {
+				// Display recent posts widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Footer Area #1', 'justwrite' ), 'recent_posts_number' => 3, 'hide_recent_thumbs' => true );
+				echo '<aside class="side-box clearfix widget ac_recent_posts_widget"><div class="sb-content clearfix">';
+					the_widget( 'AC_Recent_Posts_Widget', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';	
+			}
+			
+			if( $area == 'footer-area-2' ) {
+				// Display social widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Footer Area #2', 'justwrite' ), 'twitter' => '#', 'twitter_anc' => __( 'Follow', 'justwrite' ), 'facebook' => '#', 'facebook_anc' => __( 'Facebook', 'justwrite' ), 'google-plus' => '#', 'google-plus_anc' => __( 'G+', 'justwrite' ), 'rss' => '#', 'rss_anc' => __( 'Subscribe', 'justwrite' ) );
+				echo '<aside class="side-box clearfix widget ac-social-buttons-widget"><div class="sb-content clearfix">';
+					the_widget( 'AC_Social_Buttons_Widget', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+				
+				// Display text widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Some Text', 'justwrite' ), 'text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s' );
+				echo '<aside class="side-box clearfix widget ac-social-buttons-widget"><div class="sb-content clearfix">';
+					the_widget( 'WP_Widget_Text', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+			}
+			
+			if( $area == 'footer-area-3' ) {
+				// Display calendar widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Footer Area #3', 'justwrite' ) );
+				echo '<aside class="side-box clearfix widget ac-social-buttons-widget"><div class="sb-content clearfix">';
+					the_widget( 'WP_Widget_Calendar', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+			}
+			
+			if( $area == 'footer-area-4' ) {
+				// Display text widget
+				$ac_widget_rp_inst = array( 'title' => __( 'Footer Area #4', 'justwrite' ), 'text' => '<p>Dummy text variations of passages of Lorem Ipsum available, but the majority have suffered. If you are going to use a passage of Lorem Ipsum.</p><p>Alteration in some form, by injected humour, or randomised words which dont look even slightly believable.</p>' );
+				echo '<aside class="side-box clearfix widget ac-social-buttons-widget"><div class="sb-content clearfix">';
+					the_widget( 'WP_Widget_Text', $ac_widget_rp_inst, $ac_widgets_wrap_args );
+				echo '</div></aside><!-- END .sidebox .widget -->';
+				
+				// Notice
+				echo $notice3;
+			}
+		} else {
+			return;	
+		}
+	}
+	
+}
+
+
+
+/*  Options Framework Fallback
+/* ------------------------------------ */
+if ( ! function_exists( 'of_get_option' ) ) {
+	
+	function of_get_option( $name, $default = false ) {
+		return;
+	}
+	
+}
+
+
+
+/*  Social sharing action
+/* ------------------------------------ */
+if ( ! function_exists( 'ac_action_show_social_sharing' ) ) {
+	
+	function ac_action_show_social_sharing( $output = '', $echo = true ) {
+		$more_btns = apply_filters( 'ac_action_show_social_sharing_filter', $more_btns = '' );
+		$kses_args = array( 'a' => array( 'href' => array(), 'class' => 'array' ), 'i' => array( 'class' => array() ), 'span' => array( 'class' => array() ) );
+		$output .= '<span class="s-social">';
+			$output .= '<a href="https://twitter.com/intent/tweet?url=' . esc_url( get_permalink() ) . '" class="social-btn twitter"><i class="fa fa-twitter"></i></a>';
+			$output .= '<a href="https://www.facebook.com/sharer/sharer.php?u=' . esc_url( get_permalink() ) . '" class="social-btn facebook"><i class="fa fa-facebook"></i></a>';
+			$output .= '<a href="https://plus.google.com/share?url=' . esc_url( get_permalink() ) . '" class="social-btn google-plus"><i class="fa fa-google-plus"></i> </a>';
+			$output .= $more_btns;
+		$output .='</span>';
+		
+		if( $echo ) {
+			echo wp_kses( $output, $kses_args );
+		} else {
+			return wp_kses( $output );
+		}
+	}
+	
+}
+add_action( 'ac_action_thumbnail_after', 'ac_action_show_social_sharing' );
+
+
+
 /*  Plugins Compatibility
 /* ------------------------------------ */
 
@@ -560,11 +991,11 @@ if ( ! function_exists( 'ac_post_nav_arrows' ) ) {
 if ( ! function_exists( 'ac_compatibility_unreg_icons' ) ) {
 	
 	function ac_compatibility_unreg_icons() {
-		 wp_deregister_style( 'cwp-pac-fontawesome-stylesheet');
+		 wp_deregister_style( 'cwp-pac-fontawesome-stylesheet' );
 	}
 	
 }
-add_action('init', 'ac_compatibility_unreg_icons');
+add_action( 'init', 'ac_compatibility_unreg_icons' );
 
 
 
@@ -575,6 +1006,12 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 function my_theme_register_required_plugins() {
 
     $plugins = array(
+	
+		array(
+            'name'      => 'Contact Form 7',
+            'slug'      => 'contact-form-7',
+            'required'  => false,
+        ),
         
 		array(
             'name'      => 'Revive Old Post',
@@ -599,23 +1036,23 @@ function my_theme_register_required_plugins() {
         'is_automatic' => false,
         'message'      => '',
         'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'acosmin' ),
-            'menu_title'                      => __( 'Install Plugins', 'acosmin' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'acosmin' ),
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'acosmin' ),
-            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
-            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
-            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
-            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ),
-            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ),
-            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ),
-            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ),
-            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ),
-            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'acosmin' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'acosmin' ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'acosmin' ),
+            'page_title'                      => __( 'Install Required Plugins', 'justwrite' ),
+            'menu_title'                      => __( 'Install Plugins', 'justwrite' ),
+            'installing'                      => __( 'Installing Plugin: %s', 'justwrite' ),
+            'oops'                            => __( 'Something went wrong with the plugin API.', 'justwrite' ),
+            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'justwrite' ),
+            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/">JustWrite Pro</a></em> in now available. Also, this theme recommends the following plugins: %1$s.', 'justwrite' ),
+            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'justwrite' ),
+            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'justwrite' ),
+            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'justwrite' ),
+            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'justwrite' ),
+            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'justwrite' ),
+            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'justwrite' ),
+            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'justwrite' ),
+            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'justwrite' ),
+            'return'                          => __( 'Return to Required Plugins Installer', 'justwrite' ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', 'justwrite' ),
+            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'justwrite' ),
             'nag_type'                        => 'updated'
         )
     );

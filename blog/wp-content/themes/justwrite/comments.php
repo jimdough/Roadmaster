@@ -5,8 +5,8 @@
 
 // Disable Comments Globally
 
-$disable_comments = of_get_option( 'ac_disable_elements' );
-if ( !$disable_comments['comments'] ) :
+$disable_comments = get_theme_mod( 'ac_disable_comments', false );
+if ( !$disable_comments ) :
 
 // -------------------------------------------------
 
@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 			printf( 
 				_n( '<span class="comments-number">One thought on</span> <span class="title">&ldquo;%2$s&rdquo;</span>', 
 					'<span class="comments-number">%1$s thoughts on</span> <span class="title">&ldquo;%2$s&rdquo;</span>', 
-					get_comments_number(), 'acosmin' ),
+					get_comments_number(), 'justwrite' ),
 				number_format_i18n( get_comments_number() ), 
 				get_the_title() 
 			);
@@ -48,14 +48,14 @@ if ( post_password_required() ) {
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav class="comments-pagination clearfix" role="navigation">
     	<div class="paging-wrap">
-			<?php previous_comments_link( __( '&larr; Older Comments', 'acosmin' ) ); ?>
-			<?php next_comments_link( __( 'Newer Comments &rarr;', 'acosmin' ) ); ?>
+			<?php previous_comments_link( __( '&larr; Older Comments', 'justwrite' ) ); ?>
+			<?php next_comments_link( __( 'Newer Comments &rarr;', 'justwrite' ) ); ?>
 		</div>
 	</nav><!-- END .comments-pagination -->
 	<?php endif; // Check for comment navigation. ?>
 
 	<?php if ( ! comments_open() ) : ?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'acosmin' ); ?></p>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'justwrite' ); ?></p>
 	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

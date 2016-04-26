@@ -5,6 +5,7 @@
  <head>
   <title>Contact Us at our CDL Training and Truck Driving School - Roadmaster</title>
   <meta name="DESCRIPTION" content="Contact Roadmaster, a hands on truck driving school & Class A CDL license training center that provides complete truck driver training across the USA">
+  <link href="http://www.roadmaster.com/contact.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-gen1-s.gif, (default)], [img/headers/ph-gen1-m.gif, (medium)], [img/headers/ph-gen1-l.gif, (large)]" alt="Page Header">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen1-s.gif, (default)], [/img/headers/ph-gen1-m.gif, (medium)], [/img/headers/ph-gen1-l.gif, (large)]" alt="Page Header">
    </div>
    
       <!-- Small Nav-->

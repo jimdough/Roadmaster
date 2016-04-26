@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 	
     <?php get_sidebar( 'browse' ); ?>
     
@@ -15,7 +15,7 @@
     <section class="content-wrap with-title" role="main">
     
     	<header class="main-page-title">
-        	<h1 class="page-title"><?php printf( __( 'Tag Archives: <span>%s</span>', 'acosmin' ), single_tag_title( '', false ) ) . ac_icon( 'angle-down' ) ?></h1>
+        	<h1 class="page-title"><?php printf( __( 'Tag Archives: %s', 'justwrite' ), '<span>' . single_tag_title( '', false ) . '</span>' ) . ac_icon( 'angle-down' ) ?></h1>
         </header>
     
     	<div class="posts-wrap clearfix">

@@ -19,7 +19,7 @@ function mh_newsdesk_lite_customize_register($wp_customize) {
     class MH_Customize_Button_Control extends WP_Customize_Control {
         public function render_content() {  ?>
 			<p>
-				<a href="http://www.mhthemes.com/themes/mh/newsdesk/" target="_blank" class="button button-secondary"><?php echo esc_html($this->label); ?></a>
+				<a href="<?php echo esc_url('http://www.mhthemes.com/themes/mh/newsdesk/'); ?>" target="_blank" class="button button-secondary"><?php echo esc_html($this->label); ?></a>
 			</p> <?php
         }
     }

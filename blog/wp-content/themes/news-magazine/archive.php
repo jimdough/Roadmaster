@@ -1,86 +1,98 @@
-<?php get_header(); 
-news_magazine_slideshow();
-wp_reset_query();
-global $news_magazine_general_settings_page,$post;
-foreach ($news_magazine_general_settings_page->options_generalsettings as $value) {
-	if ( isset($value['var_name']) ) { $$value['var_name'] = $value['std']; }
-}
-if(isset($blog_style) && $blog_style=="on") 
-{ ?>								
-   <style>
-	 #content.page .blog-post img{
-		height: 180px !important;
-		width: 240px;
-	 }
-   </style>
-<?php }   
+<?php 
+/*The template for displaying Archive pages*/
+
+get_header(); 
+global $wdwt_front;
+$grab_image = $wdwt_front->get_param('grab_image');
+$blog_style = $wdwt_front->get_param('blog_style');
+$date_enable = $wdwt_front->get_param('date_enable');
 ?>
+</header>
+<div class="container"><?php 
+	/* SIDBAR1 */	
+	if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+    <aside id="sidebar1">
+        <div class="sidebar-container">
+            <?php  dynamic_sidebar( 'sidebar-1' ); 	?>	
+			<div class="clear"></div>
+        </div>
+    </aside>
+    <?php }?>
 
-</div>
-<div id="content" class="page">
-	<div class="container">
-		<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-			<div id="sidebar1" role="complementary">
-				<div class="sidebar-container">
-					<?php dynamic_sidebar( 'sidebar-1' );  ?>
-				</div>
-			</div>
-			<?php } ?>
+	<div id="content" class="blog archive-page">
 
-
-	<div id="blog" class="blog">
-            <?php $post = $posts[0];  ?> 
-			<?php /* If this is a category archive */ if (is_category()) { ?>
-				<h2 class="styledHeading page-header"><span><?php echo __('Archive for the','news-magazine'); ?>  &#8216;<?php single_cat_title(); ?>&#8217; <?php echo __('Category', 'news-magazine'); ?>:</span></h2>
-			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-				<h2 class="styledHeading page-header"><span><?php echo __('Posts Tagged','news-magazine'); ?> &#8216;<?php single_tag_title(); ?>&#8217;</span></h2>
-			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-				<h2 class="styledHeading page-header"><span><?php echo __('Archive for','news-magazine'); ?> <?php echo get_the_date(); ?></span></h2>
-			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-				<h2 class="styledHeading page-header"><span><?php echo __('Archive for','news-magazine'); ?> <?php echo get_the_date('F Y'); ?></span></h2>
-			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-				<h2 class="styledHeading page-header"><span><?php echo __('Archive for','news-magazine'); ?> <?php echo get_the_date('Y'); ?></span></h2>
-			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-				<h2 class="styledHeading page-header"><span><?php if(isset($_GET['author'])) printf( __( 'All posts by %s', 'news-magazine' ), '<span class="vcard">' . get_the_author_meta('user_login', $_GET['author']) . '</span>' ); ?></span></h2>
-			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-				<h2 class="styledHeading page-header"><span><?php echo __('Blog Archives','news-magazine'); ?></span></h2>
-		<?php } ?>
-		<?php if (have_posts()) :
+	<?php if (have_posts()) : ?>
+	<?php $post = $posts[0]; ?>
 		
-    		while(have_posts()) : the_post(); ?>	
-				<div class="post">
-					
-					<?php news_magazine_entry_cont(); ?>
-					
-				</div>				
-       <?php endwhile; ?>	
-		<div class="navigation">
-			<?php news_magazine_nav_link(); ?>
+		<?php  if (is_category()) { ?>
+		<h2 class="styledHeading"><?php _e('Archive For The ', "news-magazine"); ?>&ldquo;<?php single_cat_title(); ?>&rdquo; <?php _e('Category', "news-magazine"); ?></h2>
+	 	<?php  } elseif( is_tag() ) { ?>
+		<h2 class="styledHeading"><?php _e('Posts Tagged ', "news-magazine"); ?>&ldquo;<?php single_tag_title(); ?>&rdquo;</h2>
+		<?php  } elseif (is_day()) { ?>
+		<h2 class="styledHeading"><?php _e('Archive For ', "news-magazine"); ?><?php the_time(get_option( 'date_format' )); ?></h2>
+		<?php  } elseif (is_month()) { ?>
+		<h2 class="styledHeading"><?php _e('Archive For ', "news-magazine"); ?><?php the_time(get_option( 'date_format' )); ?></h2>
+		<?php  } elseif (is_year()) { ?>
+		<h2 class="styledHeading"><?php _e('Archive For ', "news-magazine"); ?><?php the_time(get_option( 'date_format' )); ?></h2>
+		<?php  } elseif (is_author()) { ?>
+		<h2 class="styledHeading"><?php _e('Author Archive', "news-magazine"); ?></h2>
+		<?php  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+		<h2 class="styledHeading"><?php _e('Blog Archives', "news-magazine"); ?></h2>
+	 	<?php } ?>
+			
+		<?php while (have_posts()) : the_post(); ?>
+			
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div class="post">
+				<h3 class="archive-header">
+					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				</h3>
+				<?php if($date_enable){ ?>
+					<p class="meta-date"><?php _e('By ',"news-magazine"); ?><?php the_author_posts_link(); ?> | <?php news_magazine_frontend_functions::posted_on(); ?></p>
+				<?php } ?>		
+			</div>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( ); ?>" rel="bookmark">
+			<?php
+					if(has_post_thumbnail() || (news_magazine_frontend_functions::post_image_url() && $blog_style && $grab_image)){
+					?>
+						<div class="img_container fixed size180x150">
+							<?php echo news_magazine_frontend_functions::fixed_thumbnail(180,150, $grab_image); ?>
+						</div>
+					<?php
+					} ?>
+			</a>
+			<?php  if($blog_style){the_excerpt();}else{the_content();}  ?>
+			<p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( ); ?>" rel="bookmark"><?php _e('Read more', "news-magazine"); ?> &raquo;</a></p>
 		</div>
-	   <?php else : ?>
-	   
-			<p id="empty_category"><?php _e('There are not posts belonging to this category or tag. Try searching below:', 'news-magazine'); ?></p>
-			<form role="search" method="get" id="searchform" action="<?php echo esc_url( home_url() ); ?>">
-				<div class="searchback">
-					<input  type="text" value="" name="s" id="s" class="searchbox_search" placeholder="<?php echo __('Type here','news-magazine'); ?>"/> 
-					<input type="submit" id="searchsubmit" value="<?php echo __('SEARCH','news-magazine'); ?>"  />
-				</div>
-			</form>
-		
-		<?php endif; ?>
-		<div class="clear"></div>
+        <?php if($date_enable) news_magazine_frontend_functions::entry_meta(); ?>
+		<?php endwhile; ?>
+		<div class="page-navigation">
+		     <?php posts_nav_link(); ?>
+	    </div>
+	<?php else : ?>
 
-   </div>
-   <?php			
-		 if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
-			<div id="sidebar2" role="complementary">         
-				 <div class="sidebar-container">
-					 <?php dynamic_sidebar( 'sidebar-2' );   ?>
-				 </div>
-			</div>
-		<?php } ?>
-		<div class="clear"></div>
+		<h3 class="archive-header"><?php _e('Not Found', "news-magazine"); ?></h3>
+		<p><?php _e('There are not posts belonging to this category or tag. Try searching below:', "news-magazine"); ?></p>
+		<div id="search-block-category"><?php get_search_form(); ?></div>
+	
+	<?php endif; ?>
+	
+	<?php $wdwt_front->bottom_advertisment();  
+	if(comments_open()){  ?>
+		<div class="comments-template">
+			<?php echo comments_template();	?>
+		</div>
+	<?php } ?>
 	</div>
+	 <?php
+	if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
+		<aside id="sidebar2">
+			<div class="sidebar-container">
+			  <?php  dynamic_sidebar( 'sidebar-2' ); 	?>
+			  <div class="clear"></div>
+			</div>
+		</aside>
+    <?php } ?>
 </div>
 	
 <?php get_footer(); ?>

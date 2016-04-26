@@ -5,7 +5,14 @@
 ?>
 <?php get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<?php
+	// Sections output (Main Page - Before posts)  
+	if ( is_active_sidebar( 'main-page-before' ) && ! is_paged() ) { dynamic_sidebar( 'main-page-before' ); } else { ac_return_inactive_widgets('front-page-before'); };
+?>
+
+<?php if ( ! get_theme_mod( 'ac_disable_index_posts', false ) ) { ?> 
+
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 	
     <?php get_sidebar( 'browse' ); ?>
     
@@ -14,7 +21,11 @@
     <section class="content-wrap" role="main">
     	
         <?php
-			if ( of_get_option( 'ac_show_slider' ) && is_front_page() && !is_paged() && ac_featured_posts_count() > 2 ) {
+			// Index content wrap inside top action
+			do_action( 'ac_action_index_content_wrap_inside_top' );
+			
+			// Main slider
+			if ( get_theme_mod( 'ac_enable_slider', false ) && is_front_page() && !is_paged() && ac_featured_posts_count() > 2 ) {
 				get_template_part( 'featured-content' );
 			}
 		?>
@@ -34,7 +45,13 @@
         
         </div><!-- END .posts-wrap -->
         
-        <?php ac_paginate(); ?>
+        <?php
+			// Pagination 
+			ac_paginate(); 
+			
+			// Index content wrap inside bottom action
+			do_action( 'ac_action_index_content_wrap_inside_bot' );
+		?>
         
     </section><!-- END .content-wrap -->
     
@@ -43,5 +60,12 @@
     </div><!-- END .wrap-template-1 -->
     
 </section><!-- END .container -->
+
+<?php } // ac_disable_index_posts ?>
+
+<?php 
+	// Sections output (Main Page - After posts)
+	if ( is_active_sidebar( 'main-page-after' ) && ! is_paged() ) { dynamic_sidebar( 'main-page-after' ); } 
+?> 
 
 <?php get_footer(); ?>

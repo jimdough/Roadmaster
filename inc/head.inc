@@ -10,7 +10,5 @@
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="300">
   <meta property="og:image:height" content="82">
-  <link rel="stylesheet" href="/css/styles.css" type="text/css">
- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
  <a id="topJump"></a>
- 
+   <link rel="stylesheet" href="/css/styles.css" type="text/css">

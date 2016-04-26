@@ -44,19 +44,8 @@ if ( is_array( $options ) ) {
 
 // Delete all other options
 
-delete_option( 'widget_youtube_embed_widget' );
-
 delete_option( 'youtube_embed_general' );
 delete_option( 'youtube_embed_shortcode' );
-delete_option( 'youtube_embed_url' );
-delete_option( 'youtube_embed_editor_sc' );
-delete_option( 'youtube_embed_activated' );
-
-// Delete cookie
-
-$path = str_replace( 'http://', '', site_url( '/', 'http' ) );
-$pos = strpos( $path, '/' );
-$path = substr( $path, $pos ) . 'wp-content/';
-
-setcookie( 'vye_mce_shortcode', '', time() - 3600, $path );
+delete_option( 'youtube_embed_shortcode_admin' );
+delete_option( 'youtube_embed_shortcode_site' );
 ?>

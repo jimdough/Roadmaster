@@ -1,3 +1,66 @@
+Version: 2.4.5
+------------------------------------------
+Fixed array merge error.
+
+Version: 2.4.4
+------------------------------------------
+CSS Aditions
+
+Version: 2.4.3
+------------------------------------------
+Fixed sanitization bugs
+
+Version: 2.4.2
+------------------------------------------
+Added missing options
+
+Version: 2.4.1
+------------------------------------------
+Switched theme options to customizer.
+
+Version: 2.3.7
+------------------------------------------
+Css Aditions.
+
+Version: 2.3.6
+------------------------------------------
+Removed backward compatibility.
+
+Version: 2.3.5
+------------------------------------------
+Reverting to 2.3.3 until I find the bug in 2.3.4.
+
+Version: 2.3.3
+------------------------------------------
+Css Aditions.
+
+Version: 2.3.2
+------------------------------------------
+Css Aditions.
+
+Version: 2.3.1
+------------------------------------------
+Css Aditions.
+
+Version: 2.3
+------------------------------------------
+Added Woocomerce support and new homepage layout.
+
+Version: 2.2.14
+------------------------------------------
+Css Aditions.
+
+Version: 2.2.13
+------------------------------------------
+Css Aditions.
+
+Version: 2.2.12
+------------------------------------------
+Css Aditions.
+
+Version: 2.2.11
+------------------------------------------
+Css Aditions.
 
 Version: 2.2.10
 ------------------------------------------

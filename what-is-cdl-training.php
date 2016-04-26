@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-  <title>What is a CDL Training and Truck Driving School - Roadmaster</title>
+  <title>What is a CDL Training and Truck Driving School program- Roadmaster</title>
   <meta name="DESCRIPTION" content="Roadmaster is a hands on truck driving school & Class A CDL license training center that provides complete truck driver training across the USA">
+  <link href="http://www.roadmaster.com/what-is-cdl-training.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-cdltraining-s.gif, (default)], [img/headers/ph-cdltraining-m.gif, (medium)], [img/headers/ph-cdltraining-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-cdltraining-s.gif, (default)], [/img/headers/ph-cdltraining-m.gif, (medium)], [/img/headers/ph-cdltraining-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
       <!-- Small Nav-->

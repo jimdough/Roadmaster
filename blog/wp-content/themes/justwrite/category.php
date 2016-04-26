@@ -6,16 +6,20 @@
 
 <?php get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 	
     <?php get_sidebar( 'browse' ); ?>
     
     <div class="wrap-template-1 clearfix">
     
     <section class="content-wrap with-title" role="main">
+    	<?php
+			// Categories content wrap inside top action
+			do_action( 'ac_action_categories_content_wrap_inside_top' );
+		?>
     
     	<header class="main-page-title">
-        	<h1 class="page-title"><?php printf( __( 'Category Archives: <span>%s</span>', 'acosmin' ), single_cat_title( '', false ) ) . ac_icon( 'angle-down' ) ?></h1>
+        	<h1 class="page-title"><?php _e( 'Category Archives:', 'justwrite' ) ?> <?php ac_output_first_category( '', true ) . ac_icon( 'angle-down' ); ?></h1>
         </header>
     
     	<div class="posts-wrap clearfix">
@@ -33,7 +37,13 @@
         
         </div><!-- END .posts-wrap -->
         
-        <?php ac_paginate(); ?>
+        <?php
+			// Pagination
+			ac_paginate();
+			
+			// Categories content wrap inside bottom action
+			do_action( 'ac_action_categories_content_wrap_inside_bot' );
+		?>
         
     </section><!-- END .content-wrap -->
     

@@ -51,6 +51,7 @@ function ace_set_plugin_meta( $links, $file ) {
 	if ( strpos( $file, 'code-embed.php' ) !== false ) {
 
 		$links = array_merge( $links, array( '<a href="http://wordpress.org/support/plugin/simple-embed-code">' . __( 'Support', 'simple-embed-code' ) . '</a>' ) );
+		$links = array_merge( $links, array( '<a href="http://www.artiss.co.uk/donate">' . __( 'Donate', 'simple-embed-code' ) . '</a>' ) );		
 	}
 
 	return $links;
@@ -73,7 +74,7 @@ function ace_menu() {
 
     global $ace_search_hook;
 
-	$ace_search_hook = add_submenu_page( 'tools.php', __( 'Code Embed Search', 'simple-embed-code' ), __( 'Code Search', 'simple-embed-code' ), 'edit_posts', 'ace-search', 'ace_search' );
+	$ace_search_hook = add_submenu_page( 'tools.php', __( 'Code Embed Search', 'simple-embed-code' ), __( 'Code Search', 'simple-embed-code' ), 'edit_posts', 'ace-search', 'ace_search' );	
 
     add_action('load-'.$ace_search_hook, 'ace_add_search_help');
    
@@ -105,7 +106,7 @@ function ace_add_options_help() {
 
     if ( $screen->id != $ace_options_hook ) { return; }
 
-    $screen -> add_help_tab( array( 'id' => 'ace-options-help-tab', 'title'	=> __( 'Help', 'simple-embed-code' ), 'content' => ace_options_help() ) );
+    $screen -> add_help_tab( array( 'id' => 'ace-options-help-tab', 'title'	=> __( 'Help', 'simple-embed-code' ), 'content' => ace_options_help() ) );	
 }
 
 /**
@@ -168,10 +169,11 @@ function ace_search() {
 
 function ace_options_help() {
 
-	$help_text = '<p>' . __( 'Use this screen to modify the identifiers and keyword used to specify your embedded code.', 'simple-embed-code' ) . '</p>';
+	$help_text = '<p>' . __( 'Use this screen to modify the various settings, including the identifiers and keyword used to specify your embedded code.', 'simple-embed-code' ) . '</p>';
+	$help_text .= '<p>' . __( 'The first option allows to suppress debug output. Normally this is an HTML comment in your page source - if you wish to hide this then simply ticket this option.', 'simple-embed-code' ) . '</p>';
 	$help_text .= '<p>' . __( 'The keyword is the name used for your custom field. The custom field\'s value is the code that you wish to embed.', 'simple-embed-code' ) . '</p>';  
 	$help_text .= '<p>' . __( 'The keyword, sandwiched with the identifier before and after, is what you then need to add to your post or page to activate the embed code.', 'simple-embed-code' ) . '</p>';
-	$help_text .= '<p>' . sprintf( __( 'You are using Code Embed version %s. It was written by Dark Designs.', 'simple-embed-code' ), artiss_code_embed_version ) . '</p>';
+	$help_text .= '<p>' . sprintf( __( 'You are using Code Embed version %s. It was written by David Artiss.', 'simple-embed-code' ), artiss_code_embed_version ) . '</p>';
 
 
 	return $help_text;

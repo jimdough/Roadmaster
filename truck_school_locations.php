@@ -5,6 +5,7 @@
  <head>
   <title>Locations of our CDL Training and Truck Driving Schools - Roadmaster</title>
   <meta name="DESCRIPTION" content="Roadmaster is a hands-on truck driving school & Class A CDL license training center that provides complete truck driver training across the USA.">
+  <link href="http://www.roadmaster.com/truck_school_locations.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -42,7 +43,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-locations-s.gif, (default)], [img/headers/ph-locations-m.gif, (medium)], [img/headers/ph-locations-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[http://www.roadmaster.com/img/headers/ph-locations-s.gif, (default)], [http://www.roadmaster.com/img/headers/ph-locations-m.gif, (medium)], [http://www.roadmaster.com/img/headers/ph-locations-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
      <!-- Small Nav-->
@@ -51,11 +52,11 @@
 
 		<div class="row">
 	  <!-- Column #1 -->
-	  <div class="small-12 medium-12 large-12 column editable">
+	  <div class="small-12 medium-12 large-12 column editable" id="untitled-region-1">
 	  
 	  <section> <!-- Side Content -->
 	  
-	  <h2 class="text-center">Roadmaster Drivers School has 12 CDL training schools located across the USA!</h2>
+	  <h2 class="text-center">Roadmaster Drivers School has 11 CDL training schools located across the USA!</h2>
 	         <div class="mapWrapper" style="overflow:hidden;">
                 <div id="map"></div>
                 <div id="text"></div>

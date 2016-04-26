@@ -4,39 +4,6 @@ Fastnews theme
 Description: Fastnews theme is designed for magazine, news with flexible layout. The theme is based on KOPATHEME layout manager technique that will let you flexibility choose layout options of every pages within your site. It is very helpful when you are experimenting with visual hierarchy. You can define unlimited sidebar for widget areas, and with powerful custom widgets, the theme provides you more flexibility and ease-of-use for your site
 
 --------------------
-Change log
---------------------
-#1.0.8
-- updated custom.js: validate comment form
-#1.0.7
-- add widget mailchimp subscribe
-- add widget feedburner subscribe
-#1.0.6
-- add default title to posts without title
-- add default thumbnail to blog slider
-- removed unsual field in customizer
-- updated comments.php
-- add timestamp to widgets 
-#1.0.5
-- updated readme.txt
-#1.0.4
-- updated editor-style.css
-#1.0.3
-- added editor-style.css
-#1.0.2
-- widgets nolonger overflow eachother
-- long texts aren't break layout
-- Fixed Undefined index error in widgets.php
-#1.0.1
-- Change images to GPL compatible
-- fixed search widget fit with any widget area
-- updated: gpl v3 to gplv2 or later
-- updated: escaped all home_url()
-- updated: add en-us.pot
-- updated: change webfont.js link to relative (http://ajax.google... to //ajax.google....)
-- fixed: overflow in flexslider
-
---------------------
 Sources and Credits
 --------------------
 
@@ -165,7 +132,7 @@ Note: use of embedded <style> is not recommended when using media queries, becau
  * http://bassistance.de/jquery-plugins/jquery-plugin-validation/
  * http://docs.jquery.com/Plugins/Validation
  *
- * Copyright (c) 2006 - 2011 Jörn Zaefferer
+ * Copyright (c) 2006 - 2011 Jï¿½rn Zaefferer
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php

@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-  <title>Hiring Seminars at our CDL Training and Truck Driving School - Roadmaster</title>
+  <title>Truck Driving Jobs Hiring- Roadmaster</title>
   <meta name="DESCRIPTION" content="Roadmaster is a hands on truck driving school & Class A CDL license training center that provides complete truck driver training across the USA">
+  <link href="http://www.roadmaster.com/trucking_jobs_hiringseminar.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-gen2-s.gif, (default)], [img/headers/ph-gen2-m.gif, (medium)], [img/headers/ph-gen1-2.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen2-s.gif, (default)], [/img/headers/ph-gen2-m.gif, (medium)], [/img/headers/ph-gen1-2.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
       <!-- Small Nav-->
@@ -126,10 +127,6 @@
 <p style="text-align:center; font-size:18px;"><a name="San_Antonio"></a><b>Roadmaster Drivers School of San Antonio, Inc.<br />
 7196 S. W.W. White Rd, San Antonio, TX 78222</b></p>
 <iframe src="https://www.google.com/calendar/embed?src=1ar1g5iujq7n2php6sesf2so0o%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-
-<p style="text-align:center; font-size:18px;"><a name="Salt_Lake_City"></a><b>Roadmaster Drivers School of Salt Lake City Inc.<br />
-6211 West 2100 South, West Valley City, UT 84128</b></p>
-<iframe src="https://www.google.com/calendar/embed?src=d8n67n6on83jb50mquhd7cf1ac%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 
 	  </section>
 

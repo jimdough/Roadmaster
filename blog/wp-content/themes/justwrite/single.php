@@ -4,8 +4,7 @@
 /* ------------------------------------------------------------------------- */
 
 //  Settings
-$disable_elements 	= of_get_option( 'ac_disable_elements' );
-$disable_about 		= $disable_elements['about'];
+$disable_about = get_theme_mod( 'ac_disable_about_box', false );
 
 //  Check if it is a post format
 $format = get_post_format();
@@ -17,14 +16,17 @@ if ( false === $format ) {
 
 <?php get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 	
     <?php get_sidebar( 'browse' ); ?>
     
     <div class="wrap-template-1 clearfix">
     
     <section class="content-wrap clearfix" role="main">
-    
+    	<?php
+			// Single view content wrap inside top action
+			do_action( 'ac_action_single_content_wrap_inside_top' );
+		?>
     	<section class="posts-wrap single-style-template-1 clearfix">
         
         <?php
@@ -36,6 +38,7 @@ if ( false === $format ) {
 		?>
         
         </section><!-- END .posts-wrap -->
+        <?php do_action( 'ac_action_single_posts_wrap_after' ); // After single posts wrap action ?>
         
         <section class="about-share clearfix">
         
@@ -44,6 +47,9 @@ if ( false === $format ) {
                 <aside class="share-pagination<?php if( $disable_about ) { echo ' about-disabled'; } ?> clearfix">
                     
                     <?php 
+						// Add some sharing buttons if needed
+						do_action( 'ac_action_single_content_about_social' );
+					
 						// Next - Previous Post
 						ac_post_nav_arrows(); 
 					?>
@@ -67,6 +73,10 @@ if ( false === $format ) {
             </div><!-- END .as-wrap -->
         
         </section><!-- END .about-share -->
+        <?php
+			// Single view content wrap inside bottom action
+			do_action( 'ac_action_single_content_wrap_inside_bot' );
+		?>
         
         <?php comments_template(); ?>
         

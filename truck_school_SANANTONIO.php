@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-	 <title>CDL Training and Truck Driving School in San Antonio, Texas - Roadmaster</title>
+	 <title>San Antonio, Texas CDL Training and Truck Driving School - Roadmaster</title>
 <META NAME="DESCRIPTION" CONTENT="Roadmaster San Antonio is a hands-on truck driving school & CDL training center for areas around San Antonio, Texas.">
+<link href="http://www.roadmaster.com/truck_school_SANANTONIO.php" rel="canonical" />
 
   
   <?php include("inc/head.inc"); ?>
@@ -41,7 +42,7 @@
    </aside>
 
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/school-sa-s.jpg, (default)], [img/headers/school-sa-m.jpg, (medium)], [img/headers/school-sa-l.jpg, (large)]" alt="Roadmaster Truck Driving School of San Antonio,TX">
+	   <img src="/img/headers/school-sa-l.jpg" alt="Roadmaster Truck Driving School of San Antonio,TX">
    </div>
    
       <!-- Small Nav-->
@@ -72,16 +73,16 @@
 	  
 	<div class="row">
 	<div class="column small-12 medium-12 large-12">
-		<img data-interchange="[img/cities/sanantonio1-m.jpg, (default)], [img/cities/sanantonio1-l.jpg, (medium)], [img/cities/sanantonio1-l.jpg, (large)]" alt="Roadmaster Truck Driving School">
+		<img src="/img/cities/sanantonio1-l.jpg" alt="Roadmaster Truck Driving School">
 	</div>
 </div>
 
 <div class="row">	
 	<div class="column small-12 text-center">
-		<ul class="clearing-thumbs small-block-grid-3" data-clearing>
-			<li><a class="th" href="img/cities/sanantonio2-l.jpg"><img style="thumb" src="img/cities/sanantonio2-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/sanantonio3-l.jpg"><img style="thumb" src="img/cities/sanantonio3-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/sanantonio4-l.jpg"><img style="thumb" src="img/cities/sanantonio4-s.jpg"></a></li>
+		<ul class="clearing-thumbs small-block-grid-3">
+			<li><a class="th" href="img/cities/sanantonio2-l.jpg"><img style="thumb" src="/img/cities/sanantonio2-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/sanantonio3-l.jpg"><img style="thumb" src="/img/cities/sanantonio3-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/sanantonio4-l.jpg"><img style="thumb" src="/img/cities/sanantonio4-s.jpg"></a></li>
 		</ul>
 	</div>
 </div>
@@ -148,23 +149,16 @@
 					    <li><b>Weekend:</b> Sat & Sun (7am to 6pm)</li>
 					  </ul>
 				  </div>
-			  
 
-			  <h3>San Antonio, TX</h3>
-					  <table class="school-events">
-					  		<thead><tr><td><b>Date</b></td><td><b>Event Name</b></td><td><b>RSVP</b></td></tr></thead>
-					  		<tbody>
-					  			<tr class="repeatable"><td>Coming Soon</td><td>Coming Soon</td><td><a href	="#">Attend</a></td></tr>
-					  </table>
 	 </div><!-- END Column 1-->
 	 
 	 
 	 <div class="columns small-12 medium-6 large-6"><!-- Column 2-->
 	 <h3>Associations</h3>
 	<ul class="small-block-grid-3 text-center">
-		  <li><a href="http://cvta.org" target="_blank"><img src="img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
-		  <li><a href="http://www.truckload.org" target="_blank"><img src="img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
-		  <li><a href="http://www.texasworkforce.org/careerschoolstudents" target="_blank"><img src="img/logos/txw.jpg" border="0" align="left" style="padding:4px;"></a></li>
+		  <li><a href="http://cvta.org" target="_blank"><img src="/img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  <li><a href="http://www.truckload.org" target="_blank"><img src="/img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
+		  <li><a href="http://www.texasworkforce.org/careerschoolstudents" target="_blank"><img src="/img/logos/txw.jpg" border="0" align="left" style="padding:4px;"></a></li>
 	</ul>
 	 
 	 

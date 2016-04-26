@@ -1,0 +1,35 @@
+//// Fastnews-light theme change log ////
+
+#2.0.2
+    * Fix bug: Default title in post single and blog slider.
+
+#2.0.0
+    * Updated: use kopa framework plugin in wordpress.org.
+    * Updated: replace theme options by customize.
+    * Add plugin new-lotus toolkit which included some custom widgets.
+    * Remove sample images in theme by placehold.it
+    * Add sidebar Advertising for header
+    * Change prefix of widgets from Kopa to (Fastnews light).
+
+# 1.0.4
+[REMOVE] Remove Show/hide share: options in Post Settings
+[REMOVE] Remove all banner code, banner link and banner
+
+# 1.0.3
+[REMOVE] Share socials in theme options -> post setting
+[ADDED] text translation in theme-option.php and sidebar-custom-layout.php
+
+# 1.0.2
+[ADD] Add text-domain in style.css
+[FIXED] Replace function kopa_get_domain() with string text-domain
+[ADD] Add unminified versions of imagesloaded.js, modernizr.custom.js, validate.js
+[REMOVE] Remove social sharing
+[ADD] Escape theme options data before output
+
+# 1.0.1
+[UPDATE] Update more detail license for all the images, JS files, and plugins in readme.txt
+
+# 1.0.0
+===========================================================
+Initial release
+

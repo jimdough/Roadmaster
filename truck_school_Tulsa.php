@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-	 <title>CDL Training and Truck Driving School in Tulsa, Oklahoma - Roadmaster</title>
-<META NAME="DESCRIPTION" CONTENT="Roadmaster Tulsa is a hands-on truck driving school & CDL training center for areas around Tulsa, Oklahoma.">
+	 <title>Tulsa, Oklahoma CDL Training and Truck Driving School - Roadmaster</title>
+<meta name="DESCRIPTION" content="Roadmaster Tulsa is a hands-on truck driving school & CDL training center for areas around Tulsa, Oklahoma.">
+<link href="http://www.roadmaster.com/truck_school_Tulsa.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
 
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/school-to-s.jpg, (default)], [img/headers/school-to-m.jpg, (medium)], [img/headers/school-to-l.jpg, (large)]" alt="Roadmaster Truck Driving School of Tulsa,OK">
+	   <img src="/img/headers/school-to-l.jpg" alt="Roadmaster Truck Driving School of Tulsa,OK">
    </div>
    
       <!-- Small Nav-->
@@ -56,7 +57,7 @@
 	  <!-- Column #2 -->
 	  <div class="columns small-12 medium-12 large-10">
 	  
-	  <div class="row school-header editable">
+	  <div class="row school-header editable" id="untitled-region-1">
 	      <div class="column small-6 medium-8 large-8">
 		      <h2>Roadmaster Drivers School<br class="show-for-small-only"> of Tulsa, OK</h2>
 		      2215 N Sheridan Rd.<br>
@@ -71,21 +72,21 @@
 	  
 	<!--<div class="row">
 	<div class="column small-12 text-center">
-		<img data-interchange="[img/cities/fontana1-m.jpg, (default)], [img/cities/fontana1-l.jpg, (medium)], [img/cities/fontana1-l.jpg, (large)]" alt="Roadmaster Truck Driving School">
+		<img data-interchange="[/img/cities/fontana1-m.jpg, (default)], [/img/cities/fontana1-l.jpg, (medium)], [/img/cities/fontana1-l.jpg, (large)]" alt="Roadmaster Truck Driving School">
 	</div>
 </div>
 
 <div class="row">	
 	<div class="column small-12 text-center">
 		<ul class="clearing-thumbs small-block-grid-3" data-clearing>
-			<li><a class="th" href="img/cities/fontana2-l.jpg"><img style="thumb" src="img/cities/fontana2-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/fontana3-l.jpg"><img style="thumb" src="img/cities/fontana3-s.jpg"></a></li>
-			<li><a class="th" href="img/cities/fontana4-l.jpg"><img style="thumb" src="img/cities/fontana4-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/fontana2-l.jpg"><img style="thumb" src="/img/cities/fontana2-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/fontana3-l.jpg"><img style="thumb" src="/img/cities/fontana3-s.jpg"></a></li>
+			<li><a class="th" href="img/cities/fontana4-l.jpg"><img style="thumb" src="/img/cities/fontana4-s.jpg"></a></li>
 		</ul>
 	</div>
 </div>-->
 	  	  
-	  <section class="editable"> <!-- Left Side Content -->
+	  <section class="editable" id="untitled-region-2"> <!-- Left Side Content -->
 	  
 	  <h2>Tulsa, OK, Truck Driving School</h2>
 
@@ -111,7 +112,7 @@
 			  	  
 	  </section>
 	  <?php include("inc/cta.inc"); ?>
-	  <div class="row editable"> <!-- Dual Column -->
+	  <div class="row editable" id="untitled-region-3"> <!-- Dual Column -->
 	  
 			  <div class="columns small-12 medium-6 large-6" id="class-schedule"><!-- Column 1-->
 				  <h3>Class Schedule</h3>
@@ -124,22 +125,15 @@
 					  </ul>
 				  </div>
 			  
-
-			  <h3>Upcoming Events</h3>
-			  			<table class="school-events">
-					  		<thead><tr><td><b>Date</b></td><td><b>Event Name</b></td><td><b>RSVP</b></td></tr></thead>
-					  		<tbody>
-					  			<tr class="repeatable"><td>Coming Soon</td><td>Coming Soon</td><td><a href	="#">Attend</a></td></tr>
-					  </table>
 	 </div><!-- END Column 1-->
 	 
 	 
 	 <div class="columns small-12 medium-6 large-6"><!-- Column 2-->
 	 <h3>Associations</h3>
 	 <ul class="small-block-grid-3 text-center">
-		  <li><a href="#" target="_blank"><img src="img/logos/ar.jpg" alt="Arkansas Trucking Association" /></a></li>
-		  <li><a href="#" target="_blank"><img src="img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
-		  <li><a href="#" target="_blank"><img src="img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
+
+		  <li><a href="#" target="_blank"><img src="/img/logos/CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  <li><a href="#" target="_blank"><img src="/img/logos/tca.jpg" alt="Truckload Carriers Association" /></a></li>
 	</ul>
 	 
 	 
@@ -167,7 +161,7 @@
 		<div class="columns">
 		<a id="viewmap"></a>
 			   <h2>Map & Directions</h2>			   
-			   <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3220.1649103593113!2d-95.90369199999999!3d36.18687099999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6f46fe8b04d45%3A0x46907085693b064e!2sRoadmaster+Drivers+School+of+Tulsa%2C+Inc.!5e0!3m2!1sen!2sus!4v1404225521287" width="800" height="600" frameborder="0" style="border:0"></iframe>
+			   <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3220.1649103593113!2d-95.90369199999999!3d36.18687099999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6f46fe8b04d45%3A0x46907085693b064e!2sRoadmaster+Drivers+School+of+Tulsa%2C+Inc.!5e0!3m2!1sen!2sus!4v1404225521287"></iframe>
 	</div>
 
 	

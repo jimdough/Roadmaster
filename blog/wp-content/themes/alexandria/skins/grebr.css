@@ -83,3 +83,19 @@
 	background:#000 !important;
 	color:#000 !important;
 }
+
+.bizfour-products-services-item{
+	background:#e4e6e9;
+}
+.bizfour-products-services-img{
+	background:#e4e6e9;	
+}
+.bizfour-quote{
+	border:1px solid #e4e6e9;
+}
+.bizfour-quote-text{
+	background:url(images/quote.png) top left no-repeat;		
+}
+.bizfour-quote-name span{
+	background:#e4e6e9;
+}

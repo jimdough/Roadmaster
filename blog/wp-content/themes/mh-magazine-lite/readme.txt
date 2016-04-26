@@ -1,9 +1,9 @@
 === MH Magazine lite WordPress Theme ===
 Theme URI: http://www.mhthemes.com/themes/mh/magazine-lite/
 Tags: Blog, Magazine
-Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 1.8.6
+Requires at least: 4.1.0
+Tested up to: 4.4.0
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 MH Magazine lite WordPress Theme, Copyright 2013-2015 MH Themes
@@ -49,11 +49,16 @@ Source: https://www.google.com/fonts
 Open Sans by Steve Matteson: https://www.google.com/fonts/specimen/Open+Sans
 License: http://scripts.sil.org/OFL
 
-5.) CSS3 Media Queries support for old browsers | MIT license
+5.) Font Awesome Icon Fonts | SIL OFL 1.1 | Code licensed under MIT License
+Source: http://fontawesome.io/
+License: http://opensource.org/licenses/mit-license.php
+License: http://scripts.sil.org/OFL
+
+6.) CSS3 Media Queries support for old browsers | MIT license
 Source: https://code.google.com/p/css3-mediaqueries-js/
 License: http://opensource.org/licenses/mit-license.php
 
-6.) Images from Theme Screenshot
+7.) Images from Theme Screenshot
 Source: http://pixabay.com/
 License: Free Public Domain (GPL Compatible)
 Overview: http://www.mhthemes.com/dev_magazine/credits/
@@ -61,6 +66,95 @@ Overview: http://www.mhthemes.com/dev_magazine/credits/
 ==================================
 Changelog
 ==================================
+
+= v2.0.2 14-12-2015 =
+* Reupload to WordPress.org due to technical issues
+
+= v2.0.1 14-12-2015 =
+* Fixed layout issues on 404 page
+* Several minor CSS fixes
+
+= v2.0.0 13-12-2015 =
+* Overall code maintenance and several code improvements
+* Prefixed functions, options, image sizes and CSS classes
+* Added HTML5 markup support for search form, comments, gallery and image captions
+* Added new functions to handle post and loop meta data
+* Added support for Font Awesome icons
+* Added new file content-author-box.php
+* Added new file content-header.php
+* Added several new custom hooks
+* Added excerpt to MH Slider [lite] widget
+* Added missing structured data (hentry) on archives
+* Removed redundant files author.php and searchform.php
+* Removed redundant hook mh_loop_content()
+* Renamed file loop.php to content-loop.php
+* Renamed file content.php to content-single.php
+* Renamed image placeholders
+* Removed option to disable comments on pages (disabled by default since WP 4.3)
+* Increased site width to 1080px
+* Increased size of thumbnails to optimize for increased site width
+* Improved sanitization of data in custom widgets
+* Improved responsive layout with fluid widths
+* Redesigned comment section
+* Fixed issue with repeating featured image on paginated posts
+* Fixed issue with pagination of paginated posts displaying in excerpts of widgets
+* Moved several functions from functions.php to mh-custom-functions.php
+* Moved page content to new file content-page.php
+* Updated theme screenshot
+* Added russian translation - thanks to Max
+* Updated german translation
+* Updated translation files
+
+= v1.9.8 22-11-2015 =
+* Minor CSS fix in header
+
+= v1.9.7 22-11-2015 =
+* Overall code maintenance
+* Several minor design improvements
+* Prefixed grid to improve plugin compatibility
+* Moved code for custom widgets to separate files
+* Improved handling of site title and tagline for better SEO
+* Improved MH Slider widget to allow multiple sliders per page
+* Fixed W3C warning for MH Slider widget regarding lack of heading
+* Renamed widget areas on Homepage template for more consistency
+* Added missing translation strings
+* Updated german translation
+* Updated translation files
+
+= v1.9.6 08-11-2015 =
+* Fixed issue with WordPress comments appearing on BuddyPress pages
+
+= v1.9.5 02-11-2015 =
+* Updated spanish translation - thanks to Rafael Magdalena
+
+= v1.9.4 19-10-2015 =
+* Minor CSS fixes to prepare for WP 4.4
+
+= v1.9.3 27-09-2015 =
+* Added IDs to widget areas for improved customization experience
+* Removed backwards compatibility of title tag (introduced in WP 4.1)
+
+= v1.9.2 13-09-2015 =
+* Switched loading of Google webfonts to 'https'
+
+= v1.9.1 06-09-2015 =
+* Added bulgarian translation files
+
+= v1.9.0 29-08-2015 =
+* Added CSS class based on widgets to sidebars for flexible styling
+* Added missing escaping to links
+
+= v1.8.9 24-08-2015 =
+* Added indonesian translation files
+
+= v1.8.8 30-07-2015 =
+* Minor CSS fix
+
+= v1.8.7 30-07-2015 =
+* Several minor design improvements
+* Improved handling of excerpts for better plugin support
+* Updated german translation
+* Updated translation files
 
 = v1.8.6 07-07-2015 =
 * Fixed contextual translation strings

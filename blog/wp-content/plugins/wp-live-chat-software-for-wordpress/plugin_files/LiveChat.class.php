@@ -15,7 +15,6 @@ class LiveChat
 	 */
 	protected $login = null;
 	protected $license_number = null;
-	protected $skill = null;
 
 	/**
 	 * Remembers if LiveChat license number is set
@@ -97,24 +96,6 @@ class LiveChat
 		}
 
 		return $this->login;
-	}
-
-	/**
-	 * Returns LiveChat skill number
-	 *
-	 * @return int
-	 */
-	public function get_skill()
-	{
-		if (is_null($this->skill))
-		{
-			$this->skill = (int)get_option('livechat_groups');
-		}
-
-		// skill must be >= 0
-		$this->skill = max(0, $this->skill);
-
-		return $this->skill;
 	}
 
 	/**

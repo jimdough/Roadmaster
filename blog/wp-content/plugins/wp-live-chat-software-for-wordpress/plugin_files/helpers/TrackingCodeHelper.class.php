@@ -8,14 +8,12 @@ class TrackingCodeHelper extends LiveChatHelper
 	{
 		if (LiveChat::get_instance()->is_installed())
 		{
-			$skill = LiveChat::get_instance()->get_skill();
 			$license_number = LiveChat::get_instance()->get_license_number();
 
 			return <<<HTML
 <script type="text/javascript">
   var __lc = {};
   __lc.license = {$license_number};
-  __lc.group = {$skill};
 
   (function() {
     var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;

@@ -23,7 +23,7 @@
                             if( of_get_option('slider_one_headline') ){
                                  echo esc_html( of_get_option('slider_one_headline') );
                             }else {
-								 _e('Responsive Business Theme',  'alexandria');
+								 _e('Responsive Business & Ecommerce Theme',  'alexandria');
                             }
                        ?>                      
                     </h1>

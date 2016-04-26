@@ -18,7 +18,7 @@ function ace_get_embed_paras() {
 	// If array doesn't exist, set defaults
 
 	if ( !is_array( $options ) ) {
-		$options = array( 'opening_ident' => '%', 'keyword_ident' => 'CODE', 'closing_ident' => '%' );
+		$options = array( 'opening_ident' => '%', 'keyword_ident' => 'CODE', 'closing_ident' => '%', 'debug' => '' );
 		$changed = true;
 	}
 

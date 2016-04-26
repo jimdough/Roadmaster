@@ -3,8 +3,9 @@
 <html class="no-js" lang="en" >
 
  <head>
-  <title>Admissions Policy for our CDL Training and Truck Driving School - Roadmaster</title>
-  <meta name="DESCRIPTION" content="Requirements for admission to Roadmaster Drivers School, a hands on truck driving school & Class A CDL license training center">
+  <title>Tuition Reimbursement for CDL Training School- Roadmaster</title>
+  <meta name="DESCRIPTION" content="Tuition Reimbursement for CDL Training ">
+  <link href="http://www.roadmaster.com/tuition-reimbursement.php" rel="canonical" />
   
   <?php include("inc/head.inc"); ?>
   <!-- End Scripts -->
@@ -40,7 +41,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-enrollment-S.gif, (default)], [img/headers/ph-enrollment-M.gif, (medium)], [img/headers/ph-enrollment-L.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-enrollment-S.gif, (default)], [/img/headers/ph-enrollment-M.gif, (medium)], [/img/headers/ph-enrollment-L.gif, (large)]" alt="Tuition reimbursement for truck driver training.">
    </div>
    
       <!-- Small Nav-->
@@ -49,101 +50,44 @@
 	
 		<div class="row">
 	  <!-- Column #1 -->
-	  <div class="small-12 medium-7 large-8 columns editable" id="row-col1">
-	  		<!-- Column 1 Content goes here -->
-	  <section> <!-- Left Side Content -->
- 
-<h3>CDL Class Pre-Enrollment Requirements</h3>
-<p>Prior to enrolling in <a href="cdl_training.php">CDL training</a> at Roadmaster Drivers School, students must:</p>
-<ul>
-<li>Be eighteen (18) years old to drive intrastate or at least twenty-one (21) years old to be employed to drive interstate.</li>
-<li>Have passed the age of compulsory high school attendance as defined by each state.</li>
-<li>Possess a valid driver license at the time of enrollment and one (1) year of automobile driving experience, and must maintain a valid driver license during the CDL A training period.</li>
-<li>Provide Social Security card or valid photo ID.</li>
-<li>Be drug free and agree to random drug testing during CDL A training.</li>
-<li>Have the ability to read, speak and understand the English language sufficiently to converse with the general public, to understand highway traffic signs and signals, to respond to official inquiries and to make legible entries on reports and records.</li>
-	<ul>
-		<li>No language services are provided. Instruction is provided in English only.</li>
-	</ul>
-<li><b>NOTE:</b> There are Special Entrance Requirements for Texas, Utah, Arkansas and Tennessee.*</li></ul>
-
-
-<h3>CDL Class Graduation Requirements</h3>
-<p>In order to successfully graduate from Roadmaster Drivers School, students must meet certain requirements, including, among others:</p>
-<ul>
-  <li>Complete all of the pre-determined hours of CDL A training.</li>
-  <li>Achieve at least a 70% overall grade average.
-    <ul>
-      <li>When a student does not meet specific standards for a phase of training, additional instruction may be required and given.</li>
-      <li>If additional time is required to achieve an approved level of performance, there will be no extra charge to the student.</li>
-      <li>Amount of time spent on any field-training topic may vary among students.</li>
-    </ul>
-  </li>
+	  <div class="small-12 medium-7 large-8 columns editable" id="row-col1"><h1>How Tuition Reimbursement Works</h1>
+<div class="panel radius related-box hide-for-small">
+<h4>Related Topics</h4>
+<ul class="no-bullets">
+<li><a href="blog/roadmaster-offers-new-flexible-repayment-solution/">Flexible Repayment Solutions</a></li>
+<li><a href="blog/5-questions-didnt-know-ask-choosing-a-cdl-school/">5 Questions When Picking a School</a></li>
+<li><a href="job-placement.php">Job Placement</a></li>
+<li><a href="truck_school_finance.php">How to Finance</a></li>
 </ul>
-
-<h3>Certificate of Completion</h3>
-<p>Upon graduation, you will receive a Certificate of Completion and assistance in obtaining your Commercial Driver License (CDL license).</p>
+</div>
+<p>Trainees pay tuition fees for their <a href="cdl_training_class-a.php">Class A CDL</a> courses up front, and are then free to choose a carrier that offers tuition reimbursement. If paying the full cost of tuition isn’t an option, Roadmaster offers financial assistance to those who qualify. For more information, visit our <a href="truck_school_finance.php">Finance page.</a></p>
+<h2>Apply to a Carrier Through Roadmaster’s Job Placement Assistance</h2>
+<p>Roadmaster’s <a href="job-placement.php">Job Placement assistance</a> works alongside students and teaches them essential skills when applying to trucking jobs. Trainees can select from a variety of major carriers to find a job that best fits their lifestyle and preferred benefits. Job Placement begins on day one and is a resource that can be used by all Roadmaster graduates anytime in the future! </p>
+<h2>Sign-on With a Carrier That Meets Your Tuition Reimbursement Preferences</h2>
+<p>It’s a good idea to consider the amount of tuition reimbursement a carrier offers when choosing your future company! Some of our partner carriers offer<strong> up to 90% tuition reimbursement to new hires</strong>. The reimbursement amount varies from carrier to carrier, and should be carefully looked at when selecting your applications. Roadmaster instructors are there help you locate information and make the best decisions as you look through carrier applications.</p>
+<h2>Repayment Conditions</h2>
+<p>Tuition reimbursement is typically broken down over a series of monthly payments. The amount of the reimbursement is distributed over time to make sure drivers are serious about working for their new company. In most cases the carrier will deduct the tuition reimbursement directly from your check so that you don't have to. In addition to the monthly tuition reimbursement, drivers will earn things like</p>
 <ul>
-  <li>In <a href="truck_school_SANANTONIO.php">Texas</a>, students completing the program requirements will receive a Compliance and Completion Certificate.</li>
-  <li>In <a href="truck_school_OHIO.php">Ohio</a>, students completing the program requirements will receive an Ohio Certificate of Completion.</li>
-</ul></p>
-
-
-<h3>Attendance Policy Highlights</h3>
-<p>Below are the primary points of Roadmaster's Attendance Policy. For more information regarding specific circumstances, please contact your individual <a href="http://www.roadmaster.com/locations.php">school location</a>.</p>
-<ul>
-  <li>Attendance at each scheduled CDL class is required and recorded.</li>
-  <li>Students are required to report to class on time.</li>
-  <li>Absences will be recognized as valid in the event of student illness or death of an immediate family member.</li>
-  <li>When an absence is authorized, the student will be entitled to make-up classes at no additional cost, although this does not remove the absence.</li>
-  <li>All missed classes must be made up prior to graduation.</li>
-  <li>It is the responsibility of the student to schedule make-up time with the Director of Training.</li>
-  <li>Each unexcused absence will require the student to repeat the scheduled class related to the absence/tardiness.</li>
-  <li>Students are required to notify the Director of Training when they know they will be absent or tardy.</li>
+<li><span style="font-size: 0.9em; line-height: 1.4em;">Orientation pay</span></li>
+<li><span style="font-size: 0.9em; line-height: 1.4em;">Base mileage pay</span></li>
+<li><span style="font-size: 0.9em; line-height: 1.4em;">Bonuses for mileage</span></li>
+<li><span style="font-size: 0.9em; line-height: 1.4em;">Bonuses for safe driving</span></li>
+<li><span style="font-size: 0.9em; line-height: 1.4em;">Sign-on incentives <a href="trucking_benefits.php">and more</a></span></li>
 </ul>
-
-<?php include("inc/cta.inc"); ?>
-
-<h3>Incomplete Policy</h3>
-<p>Roadmaster students who meet either of the following criteria are eligible for a refund of tuition based on the applicable state refund policy:</p>
+<div class="text-center hide-for-large-up"><a href="#formJump"><img src="/img/applyNow.png" alt="Apply Now" width="80%" border="0"></a><br><br></div>
+<div class="text-center hide-for-medium-down"><a href="#formJump"><img src="/img/apply-now-banner.png" alt="Apply Now" border="0"></a><br><br></div>
+<h2>Carrier Choice</h2>
+<p>At Roadmaster, we work with many major carriers across the country to ensure that our trainees are able to <a href="carrier-choice.php">choose from a variety of opportunities</a>. As a free-choice school, Roadmaster guides trainees through the process of applying to carriers that fit their lifestyle or tuition reimbursement preferences. Roadmaster trainees are free to choose their own path as professional truck drivers!</p>
+<p><strong>Our partner carriers include, amongst others:</strong></p>
 <ul>
-  <li>Any student not completing the CDL A training within the prescribed time frame</li>
-  <li>A student who withdraws or is withdrawn from Roadmaster Drivers School</li>
+<li><strong>Werner</strong></li>
+<li><strong>Swift</strong></li>
+<li><strong>Covenant Transport</strong></li>
+<li><strong>TMC</strong></li>
+<li><strong>U.S. XPRESS</strong></li>
+<li><strong>Stevens Transport</strong></li>
 </ul>
-
-<h3>Veteran Policies</h3>
-<p>Roadmaster is also approved for veterans training. Student eligibility for Veterans Education Benefits is established by the Veterans Administration. Initial eligibility and continued eligibility during enrollment is determined by the VA. The following policies are applicable to students receiving VA benefits:</p>
-
-<h6>Veterans' Attendance Policy Highlights</h6>
-<p>VA-approved students must adhere to the same attendance policy as other students attending Roadmaster Drivers School. In addition to the attendance policy stated in the official catalog, students receiving VA benefits in order to attend Roadmaster Drivers School must also adhere to the following:</p>
-<ul>
-  <li>Excused absences will be granted for extenuating circumstances only and must be substantiated by entries on the student’s academic file.</li>
-  <li>Legitimate documentation of why the absence occurred must be turned in to the Director of Training within a week of the absence.</li>
-  <li>Early departures, class cuts and tardies for any portion of an hour will be counted as a full hour of absence.</li>
-</ul>
-
-<h6>Standards of Satisfactory Progress for VA-Approved Students</h6>
-<p>Students receiving VA benefits are required to maintain satisfactory progress in order to remain in good academic standing. Satisfactory Academic Progress for VA students is defined as follows:</p>
-
-<ul>
-  <li>A veteran must maintain an overall grade point average of at least a C, seventy percent (70%), at the end of each grading period.</li>
-  <li>If the cumulative grade point average falls below a C, seventy percent (70%), the student will be placed on probation for the next evaluation period.</li>
-  <li>If the grade point average remains below seventy percent (70%) at the end of the next evaluation period, the VA will be notified of the probation, thus leading to the termination of the benefits.</li>
-  <li>VA students may request reinstatement after a full term of dismissal has passed.</li>
-</ul>
-
-<h6>Veterans' Refund Policy</h6>
-<p>The refund of the unused portion of tuition, fees and other charges for veterans or eligible persons who fail to enter a course, withdraw or discontinue prior to completion will be made for all amounts paid which exceed the approximate pro rata portion of the total charges that the length of the completed portion bears to the total length of the course. The proration will be determined on the ratio of days or hours of instruction completed to the total number of instructional days or hours in the course.</p>
-  
-<p class="disclaimer">
-*Proof of (1) secondary education; (2) successful completion or equivalent of one full-time academic semester or quarter at an accredited postsecondary school; or (3) proven ability-to-benefit by obtaining minimum acceptable Scale Score (SS) as follows: TABE Form 9 or 10 Survey Level D: Reading 528 and Vocabulary 522. The Education Department administers the test. An applicant may take a second entrance test the same day, provided it is a different Form number; otherwise, the applicant must wait three (3) days prior to a retake of the same Form.
-</p>
-
-			  	  
-	  </section>
-
-
-</div> <!-- End Column 1-->
+<section></section></div> <!-- End Column 1-->
 
  <!-- Column #2 -->
 <div class="hide-for-small-only medium-5 large-4 columns">

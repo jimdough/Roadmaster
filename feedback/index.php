@@ -3,8 +3,8 @@
 <html class="no-js" lang="en" >
 
  <head>
-  <title>Roadmaster Drivers School - Complaints, Reviews and Ripoffs</title>
-  <meta name="DESCRIPTION" content="Roadmaster is a hands on truck driving school & Class A CDL license training center that provides complete truck driver training across the USA">
+  <title>Complaints, Reviews and Ripoffs - Roadmaster Drivers School</title>
+  <meta name="DESCRIPTION" content="Individuals can voice their concerns and complaints directly to corporate officials at Roadmaster so that their issues can be investigated">
   
   <?php include("../inc/head-subdir.inc"); ?>
   <!-- End Scripts -->
@@ -52,7 +52,7 @@
 	  
 	  <section> <!-- Side Content -->
 			  	  <!-- Content goes here -->
-			  	  <h2>Have you experienced difficulties with Roadmaster Drivers School?</h2>
+			  	  <h1>Have you experienced difficulties with Roadmaster Drivers School?</h1>
 			  	  <p>Are you feeling ripped off and thinking of venting on Facebook, RipOffReport, and Pissed Consumer? We take every complaint very seriously and will do everything possible to resolve the situation.</p>
  
 <p>Roadmaster is not in any way a scam, hoax, or ripoff. Alternatively, its CDL training courses seek to provide students with information and resources aimed at success in the Professional Truck Driving Industry. We understand that not everyone’s Roadmaster experience is identical. However, we expect the same level of attention, dedication, and competency from all of our nation-wide truck driving schools and wish to be notified if performing below standards.</p>

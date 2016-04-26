@@ -2,8 +2,8 @@
 Contributors: billknechtel, kburgoine
 Tags: youtube, you tube, vimeo, responsive, video, embed
 Requires at least: 3.0
-Tested up to: 4.2
-Stable tag: 1.3.2
+Tested up to: 4.3
+Stable tag: 1.4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,10 +40,6 @@ Similarly, for a Vimeo video, you can use the full video player URL or just the 
     [responsive_vimeo 29506088]
     
 There is a more complete treatment of the shortcode syntax in the settings screen of the plugin itself.
-
-= Please Note = 
-
-This release, 1.3.x, is a major upgrade.  The settings screen has undergone a complete overhaul, I've added a handful of options to YouTube, and have added the Vimeo options to the settings screen.  Functionally, however, the syntax of the shortcode is identical to the way it used to work (with more optional parameters available), and is indeed fully backwards compatible with all your existing RVL shortcodes.
 
 = Requirements =
 
@@ -82,6 +78,9 @@ setting it to "transparent" will fix the problem.
 Use anonymous svn to get a current trunk copy, or build a patch against your current install, then email the patch to me for consideration.
 
 == Changelog ==
+
+= 1.4.0 =
+* Add loop and autoplay support for Vimeo
 
 = 1.3.2 =
 * Add showinfo parameter support

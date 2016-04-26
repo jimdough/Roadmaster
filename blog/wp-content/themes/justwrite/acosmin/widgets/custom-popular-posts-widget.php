@@ -6,20 +6,33 @@
 // Setup Widget
 class AC_Popular_Posts_Widget extends WP_Widget {
 
-	function AC_Popular_Posts_Widget() {
+	function __construct() {
 		// Settings
 		$widget_ops = array( 'classname' => 'ac_popular_posts_widget', 'description' => 'Displays your most popular articles.' );
 		
 		// Create the widget
-		$this->WP_Widget( 'ac_popular_posts_widget', __('ACOSMIN: Popular Posts', 'acosmin'), $widget_ops );
+		parent::__construct( 'ac_popular_posts_widget', __('AC: Popular Posts', 'justwrite'), $widget_ops );
+		
+		// Default values
+		$this->defaults = array (
+				'title'						=> 'Popular Posts',
+				'popular_posts_number' 	=> 3,
+		);
 	}
 
 	function widget( $args, $instance ) {
+		// Turn $args array into variables.
 		extract( $args );
 
+		// $instance Defaults
+		$instance_defaults = $this->defaults;
+		
+		// Parse $instance
+		$instance = wp_parse_args( $instance, $instance_defaults );
+
 		// Widget Settings
-		$title = apply_filters('widget_title', $instance['title'] );
-		$popular_posts_number	= $instance['popular_posts_number'];
+		$title 					= ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
+		$popular_posts_number	= ( ! empty( $instance['popular_posts_number'] ) ) ? absint( $instance['popular_posts_number'] ) : 3;
 		
 		echo $before_widget;
 
@@ -58,7 +71,7 @@ class AC_Popular_Posts_Widget extends WP_Widget {
 				</div>
 			</li>
 			<?php }; endwhile; else : ?>
-               <li><?php _e('No popular posts available!', 'acosmin'); ?></li>
+               <li><?php _e('No popular posts available!', 'justwrite'); ?></li>
 			<?php endif; wp_reset_postdata(); ?>
 		</ul>
 		<?php
@@ -69,28 +82,29 @@ class AC_Popular_Posts_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['popular_posts_number'] 	= $new_instance['popular_posts_number'];
+		$instance['title'] 					= strip_tags( $new_instance['title'] );
+		$instance['popular_posts_number'] 	= absint( $new_instance['popular_posts_number'] );
 
 		return $instance;
 	}
 
 	function form( $instance ) {
 
-		/* Set up some default widget settings. */
-		$defaults = array( 'title' => 'Popular Posts', 'popular_posts_number' => 3 );
-		$instance = wp_parse_args( (array) $instance, $defaults );
+		// Parse $instance
+		$instance = wp_parse_args( $instance, $this->defaults );
+		extract( $instance, EXTR_SKIP );
+		
 		?>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'acosmin'); ?>:</label><br />
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'justwrite'); ?>:</label><br />
 		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
 		</p>
         
-        <p><strong><?php _e('How many', 'acosmin'); ?> &not;</strong></p>
+        <p><strong><?php _e('How many', 'justwrite'); ?> &not;</strong></p>
         
         <p class="ac_two_columns">
-		<label for="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>"><?php _e('Popular Posts', 'acosmin'); ?>:</label>
+		<label for="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>"><?php _e('Popular Posts', 'justwrite'); ?>:</label>
 		<input  type="text" id="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'popular_posts_number' ); ?>" value="<?php echo $instance['popular_posts_number']; ?>" size="3" />
 		</p>
 

@@ -56,7 +56,7 @@
    </aside>
    
    <div class="row center">
-	   <img width="100%" data-interchange="[img/headers/ph-gen1-s.gif, (default)], [img/headers/ph-gen1-m.gif, (medium)], [img/headers/ph-gen1-l.gif, (large)]" alt="Page Header">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen1-s.gif, (default)], [/img/headers/ph-gen1-m.gif, (medium)], [/img/headers/ph-gen1-l.gif, (large)]" alt="Page Header">
    </div>
    
       <!-- Small Nav-->

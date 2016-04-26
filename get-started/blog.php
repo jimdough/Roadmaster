@@ -139,7 +139,7 @@
 
 <!-- CTA--><div class="row show-for-small uneditable" id="apply"><div class="columns text-center"><a class="button success radius" style="font-size:1.2em; line-height:1.2em;" href="tel:+18008311300" onclick="goog_report_conversion('tel:18008311300')">Click to Call Admissions Office<br>1-800-831-1300</a></div></div><!-- / CTA -->
 
-<!-- CTA--><div class="row hide-for-small uneditable" id="apply"><div class="columns small-12"><h2>Call our Admissions Office Today at <b>1-800-831-1300</b> or fill out the form below to get started!</h2></div></div><br>			
+<!-- CTA--><div class="row hide-for-small editable text-center" id="apply"><div class="columns small-12"><h2>Call our Admissions Office Today at <b>1-800-831-1300</b> or fill out the form below to get started!</h2></div></div><br>			
 		 </div> <!-- End Column 2-->
 	
 	</div>

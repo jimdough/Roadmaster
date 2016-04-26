@@ -1,10 +1,21 @@
 	   	  <!-- First Footer Column -->
 	   	  <div class="small-12 large-4 medium-6 small-12 columns">
-		   		<!-- Event Manager Listing -->
-				<h4>Upcoming Events</h4>
-				<!-- Put an include for this file when live "mm/mm-framed-hp.php"-->
-				<!-- Event Manager Listings End -->
-	   		</div>
+	   	  
+	   	  	 <ul class="medium-block-grid-2 text-center hide-for-small">
+				  <li><a href="http://www.caltrux.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-tca.jpg" alt="Truckload Carriers Association" /></a></li>
+				  <li><a href="http://www.trucking.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-ata.jpg" alt="American TruckingAssociation" /></a></li>
+		  	</ul>
+		  	<ul class="medium-block-grid-1 text-center hide-for-small">
+		  		 <li><a href="http://cvta.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  	</ul>
+		  	
+		  	<ul class="small-block-grid-3 text-center show-for-small">
+				  <li><a href="http://www.caltrux.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-tca.jpg" alt="Truckload Carriers Association" /></a></li>
+				  <li><a href="http://www.trucking.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-ata.jpg" alt="American TruckingAssociation" /></a></li>
+				  <li><a href="http://cvta.org" target="_blank"><img src="http://www.roadmaster.com/img/logos/footer-CVTA.jpg" alt="Commercial Vehicle Training Association" /></a></li>
+		  	</ul>
+	   	  	
+	   	   </div>
    	   		
    	   		<!-- Second Footer Column -->
 	   	<div class="hide-for-medium-only small-12 large-4 columns">
@@ -20,11 +31,11 @@
 	   		<!-- Third Footer Column -->
 	   	<div class="large-4 medium-6 small-12 columns">
 		   		<section class="text-center">	   			
-	   				<a href="index.php"><img id="footerLogo" src="img/logos/roadmaster-logo.png"></a>
+	   				<a href="index.php"><img id="footerLogo" src="http://www.roadmaster.com/img/logos/roadmaster-logo.png"></a>
 		   			<?php include("inc/social.inc"); ?>
 		   			<h2 class="text-center">1-800-831-1300</h2>
 		   			<br>
-		   			<div class="text-center hide-for-small-only"><a href="contact.php"><img src="img/applyNow-white.png" border="0"></a></div>
+		   			<div class="text-center hide-for-small-only"><a href="contact.php"><img src="http://www.roadmaster.com/img/applyNow-white.png" border="0"></a></div>
 		   			
 		   		 </section>
 	   	</div>

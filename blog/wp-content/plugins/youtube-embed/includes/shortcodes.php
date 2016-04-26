@@ -23,7 +23,9 @@
 */
 
 function vye_video_shortcode_default( $paras = '', $content = '' ) {
+
 	return do_shortcode( vye_video_shortcode( $paras, $content ) );
+
 }
 
 add_shortcode( 'youtube', 'vye_video_shortcode_default' );
@@ -42,30 +44,15 @@ add_shortcode( 'youtube', 'vye_video_shortcode_default' );
 * @return   string						YouTube embed code
 */
 
-function vye_video_shortcode_alt1( $paras = '', $content = '' ) {
-	return do_shortcode( vye_video_shortcode( $paras, $content, '', 1 ) );
+function vye_video_shortcode_alt( $paras = '', $content = '' ) {
+
+	return do_shortcode( vye_video_shortcode( $paras, $content, '', true ) );
+
 }
+
 $shortcode = vye_set_shortcode_option();
-if ( $shortcode[ 1 ] != '' ) { add_shortcode( $shortcode[ 1 ], 'vye_video_shortcode_alt1' ); }
 
-/**
-* Alternative Video shortcode 2
-*
-* 2nd alternative shortcode to display video
-*
-* @since	2.0
-*
-* @uses		vye_video_shortcode			Action the shortcode parameters
-*
-* @param    string		$paras			Shortcode parameters
-* @param	string		$content		Shortcode content
-* @return   string						YouTube embed code
-*/
-
-function vye_video_shortcode_alt2( $paras = '', $content = '' ) {
-	return do_shortcode( vye_video_shortcode( $paras, $content, '', 2 ) );
-}
-if ( $shortcode[ 2 ] != '' ) { add_shortcode( $shortcode[ 2 ], 'vye_video_shortcode_alt2' ); }
+if ( isset( $shortcode ) && $shortcode != '' ) { add_shortcode( $shortcode, 'vye_video_shortcode_alt' ); }
 
 /**
 * Video shortcode
@@ -85,22 +72,18 @@ if ( $shortcode[ 2 ] != '' ) { add_shortcode( $shortcode[ 2 ], 'vye_video_shortc
 * @return   string						YouTube embed code
 */
 
-function vye_video_shortcode( $paras = '', $content = '', $callback = '', $alt_shortcode = '' ) {
+function vye_video_shortcode( $paras = '', $content = '', $callback = '', $alt_shortcode = false ) {
 
-	extract( shortcode_atts( array( 'type' => '', 'width' => '', 'height' => '', 'fullscreen' => '', 'related' => '', 'autoplay' => '', 'loop' => '', 'start' => '', 'info' => '', 'annotation' => '', 'cc' => '', 'style' => '', 'link' => '', 'react' => '', 'stop' => '', 'sweetspot' => '', 'disablekb' => '', 'ratio' => '', 'autohide' => '', 'controls' => '', 'profile' => '', 'embedplus' => '', 'audio' => '', 'id' => '', 'url' => '', 'rel' => '', 'fs' => '', 	'cc_load_policy' => '', 'iv_load_policy' => '', 'showinfo' => '', 'youtubeurl' => '', 'template' => '', 'list' => '', 'hd' => '', 'color' => '', 'theme' => '', 'ssl' => '', 'height' => '', 'width' => '', 'dynamic' => '', 'h' => '', 'w' => '', 'search' => '', 'user' => '', 'vq' => '' ), $paras ) );
+	extract( shortcode_atts( array( 'width' => '', 'height' => '', 'fullscreen' => '', 'related' => '', 'autoplay' => '', 'loop' => '', 'start' => '', 'info' => '', 'annotation' => '', 'cc' => '', 'style' => '', 'stop' => '', 'disablekb' => '', 'ratio' => '', 'autohide' => '', 'controls' => '', 'profile' => '', 'id' => '', 'url' => '', 'rel' => '', 'fs' => '', 	'cc_load_policy' => '', 'iv_load_policy' => '', 'showinfo' => '', 'youtubeurl' => '', 'template' => '', 'list' => '', 'color' => '', 'theme' => '', 'ssl' => '', 'height' => '', 'width' => '', 'dynamic' => '', 'h' => '', 'w' => '', 'search' => '', 'user' => '', 'modest' => '', 'playsinline' => '', 'html5' => '' ), $paras ) );
 
 	// If no profile specified and an alternative shortcode used, get that shortcodes default profile
 
-	if ( ( $profile == '' ) && ( $alt_shortcode != '' ) ) {
-
-		// Profile is now blank or 2
-
-		if ( $alt_shortcode == '1' ) { $alt_shortcode = ''; }
+	if ( ( $profile == '' ) && ( $alt_shortcode ) ) {
 
 		// Get general options
 
 		$options = vye_set_general_defaults();
-		$profile = $options[ 'alt_profile' . $alt_shortcode ];
+		$profile = $options[ 'alt_profile' ];
 	}
 
 	// If an alternative field is set, use it
@@ -123,18 +106,14 @@ function vye_video_shortcode( $paras = '', $content = '', $callback = '', $alt_s
 	if ( ( $content == '' ) && ( $paras[ 0 ] != '' ) ) {
 		$content = $paras[ 0 ];
 		if  ( (substr( $content, 0, 1 ) == ":" ) or ( substr( $content, 0, 1 ) == "=" ) ) { $content = substr( $content, 1 ); }
-		
+
 		if ( array_key_exists( 1, $paras ) ) {
 			if ( $paras[ 1 ] != '' ) { $width = $paras[ 1 ]; }
 		}
-		if ( array_key_exists( 2, $paras ) ) {		
+		if ( array_key_exists( 2, $paras ) ) {
 			if ( $paras[ 2 ] != '' ) { $height = $paras[ 2 ]; }
 		}
 	}
-
-	// Get Embed type
-
-	$type = vye_get_embed_type( $type, $embedplus );
 
 	// Set up Autohide parameter
 
@@ -142,9 +121,9 @@ function vye_video_shortcode( $paras = '', $content = '', $callback = '', $alt_s
 
 	// Create YouTube code
 
-	$youtube_code = vye_generate_youtube_code( $content, $type, $width, $height, vye_convert( $fullscreen ), vye_convert( $related ), vye_convert( $autoplay ), vye_convert( $loop ), $start, vye_convert( $info ), vye_convert_3( $annotation ), vye_convert( $cc ), $style, vye_convert( $link ), vye_convert( $react ), $stop, vye_convert( $sweetspot ), vye_convert( $disablekb ), $ratio, $autohide, $controls, $profile, $list, vye_convert( $audio ), $template, vye_convert( $hd ), $color, $theme, vye_convert( $ssl ), vye_convert( $dynamic ), vye_convert( $search ), vye_convert( $user ), $vq );
+	$youtube_code = vye_generate_youtube_code( $content, $width, $height, vye_convert( $fullscreen ), vye_convert( $related ), vye_convert( $autoplay ), vye_convert( $loop ), $start, vye_convert( $info ), vye_convert_3( $annotation ), vye_convert( $cc ), $style, $stop, vye_convert( $disablekb ), $ratio, $autohide, $controls, $profile, $list, $template, $color, $theme, vye_convert( $ssl ), vye_convert( $dynamic ), vye_convert( $search ), vye_convert( $user ), vye_convert( $modest ), vye_convert( $playsinline ), vye_convert( $html5 ) );
 
-	return do_shortcode( $youtube_code );
+    return apply_filters( 'a3_lazy_load_html', do_shortcode( $youtube_code ) );
 }
 
 /**
@@ -162,8 +141,11 @@ function vye_video_shortcode( $paras = '', $content = '', $callback = '', $alt_s
 */
 
 function vye_thumbnail_sc( $paras = '', $content = '' ) {
+
 	extract( shortcode_atts( array( 'style' => '', 'class' => '', 'rel' => '', 'target' => '', 'width' => '', 'height' => '', 'alt' => '', 'version' => '', 'nolink' => '' ), $paras ) );
+
 	return do_shortcode( vye_generate_thumbnail_code( $content, $style, $class, $rel, $target, $width, $height, $alt, $version, $nolink ) );
+
 }
 
 add_shortcode( 'youtube_thumb', 'vye_thumbnail_sc' );
@@ -183,8 +165,11 @@ add_shortcode( 'youtube_thumb', 'vye_thumbnail_sc' );
 */
 
 function vye_shorturl_sc( $paras = '', $content = '' ) {
+
 	extract( shortcode_atts( array( 'id' => '' ), $paras ) );
+
 	return do_shortcode( vye_generate_shorturl_code( $id ) );
+
 }
 
 add_shortcode( 'youtube_url', 'vye_shorturl_sc' );
@@ -207,6 +192,26 @@ function vye_video_download( $paras = '', $content = '' ) {
 
 	extract( shortcode_atts( array( 'id' => '' ), $paras ) );
 
+	if ( $id == '' ) { return do_shortcode( vye_error( __ ( 'No YouTube ID was found.', 'youtube-embed' ) ) ); }
+
+	// Extract the ID if a full URL has been specified
+
+	$id = vye_extract_id( $id );
+
+	// Check what type of video it is and whether it's valid
+
+	$embed_type = vye_validate_id( $id );
+
+	if ( $embed_type != 'v' ) {
+
+		if ( strlen( $embed_type ) > 1 ) {
+			return do_shortcode( vye_error( $embed_type ) );
+		} else {
+			return do_shortcode( vye_error( sprintf( __( 'The YouTube ID of %s is invalid.', 'youtube-embed' ), $id ) ) );
+		}
+
+	}
+
 	// Get the download code
 
 	$link = vye_generate_download_code( $id );
@@ -217,86 +222,4 @@ function vye_video_download( $paras = '', $content = '' ) {
 }
 
 add_shortcode( 'download_video', 'vye_video_download' );
-
-/**
-* Transcript Shortcode
-*
-* Shortcode to return YouTube transcripts
-*
-* @since	2.0
-*
-* @uses		vye_generate_transcript		Generate the transcript
-*
-* @param    string		$paras			Shortcode parameters
-* @param	string		$content		Shortcode content
-* @return   string						Transcript XHTML
-*/
-
-function vye_transcript_sc( $paras = '', $content = '' ) {
-
-	extract( shortcode_atts( array( 'language' => '' ), $paras ) );
-
-	return do_shortcode( vye_generate_transcript( $content, $language ) );
-}
-
-add_shortcode( 'transcript', 'vye_transcript_sc' );
-
-/**
-* Video Name Shortcode
-*
-* Shortcode to return the name of a YouTube video
-*
-* @since	2.0
-*
-* @uses		vye_extract_id				Extract the video ID
-* @uses		vye_validate_id				Get the name and video type
-* @uses		vye_error					Return an error
-*
-* @param    string		$paras			Shortcode parameters
-* @param	string		$content		Shortcode content
-* @return   string						Video name
-*/
-
-function vye_video_name_shortcode( $paras = '', $content = '' ) {
-
-	// Extract the ID if a full URL has been specified
-
-	$id = vye_extract_id( $content );
-
-	// Check what type of video it is and whether it's valid
-
-	$return = vye_validate_id( $id, true );
-	if ( !$return[ 'type' ] ) { return vye_error( sprintf( __( 'The YouTube ID of %s is invalid.', 'youtube-embed' ), $id ) ); }
-	if ( strlen( $return[ 'type' ] ) != 1 ) { return vye_error( $return[ 'type' ] ); }
-
-	// Return the video title
-
-	return do_shortcode( $return['title'] );
-}
-
-add_shortcode( 'youtube_name', 'vye_video_name_shortcode' );
-
-/**
-* Comments Shortcode
-*
-* Shortcode to return YouTube comments
-*
-* @since	3.2
-*
-* @uses		vye_generate_comments		Generate the comments
-*
-* @param    string		$paras			Shortcode parameters
-* @param	string		$content		Shortcode content
-* @return   string						Comments output
-*/
-
-function vye_comments_sc( $paras = '', $content = '' ) {
-
-	$paras = shortcode_atts( array( 'avatar' => '', 'limit' => '', 'cache' => '' ), $paras );
-	$paras[ 'id' ] = $content;
-
-	return do_shortcode( vye_generate_comments( $paras ) );
-}
-
-add_shortcode( 'youtube_comments', 'vye_comments_sc' );
 ?>

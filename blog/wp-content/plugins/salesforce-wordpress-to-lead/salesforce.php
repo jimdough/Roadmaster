@@ -3,8 +3,8 @@
 Plugin Name: WordPress-to-Lead for Salesforce CRM
 Plugin URI: http://wordpress.org/plugins/salesforce-wordpress-to-lead/
 Description: Easily embed a contact form into your posts, pages or your sidebar, and capture the entries straight into Salesforce CRM. Also supports Web to Case and Comments to leads.
-Author: Daddy Analytics & Thought Refinery
-Version: 2.6.6
+Author: Daddy Analytics & Cimbura.com
+Version: 2.6.7
 Author URI: http://try.daddyanalytics.com/wordpress-to-lead-general?utm_source=ThoughtRefinery&utm_medium=link&utm_campaign=WP2L_Plugin_01&utm_content=da1_author_uri
 License: GPL2
 */
@@ -183,6 +183,9 @@ function salesforce_form($options, $is_sidebar = false, $errors = null, $form_id
 
 	if( $label_location == 'placeholders' )
 		wp_enqueue_script( 'sfwp2ljqph', plugins_url('/assets/js/jquery-placeholder/jquery.placeholder.js', __FILE__)  );
+
+	if( $options['wpcf7css'] && $options['wpcf7jsfix'] )
+		wp_dequeue_script( 'contact-form-7');
 
 	$custom_css = '/salesforce-wordpress-to-lead/custom.css';
 
@@ -508,9 +511,9 @@ function salesforce_form($options, $is_sidebar = false, $errors = null, $form_id
 
 	if( $date_fields ){
 		wp_enqueue_script('jquery-ui-datepicker');
-		wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style('jquery-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
 
-		$content .= "<script>jQuery(document).ready(function() {";
+		$content .= "<script>jQuery(document).ready(function( $ ) {";
 
 		foreach( $date_fields as $id => $date_field ){
 
@@ -610,14 +613,20 @@ function submit_salesforce_form( $post, $options ) {
 	$body = preg_replace('/%5B[0-9]+%5D/simU', '', http_build_query($post) ); // remove php style arrays for array values [1]
 	//echo $body .'<hr>';
 
-	// Set SSL verify to false because of server issues.
+	$sslverify = false;
+
+	// setting to override
+	if( !empty( $options['sslverify'] ) )
+		$sslverify = (bool) $options['sslverify'];
+
+	// Set SSL verify to false because of server issues, unless setting is set... a filter can also be used to override arguments
 	$args = array(
 		'body' 		=> $body,
 		'headers' 	=> array(
 			'Content-Type' => 'application/x-www-form-urlencoded',
 			'user-agent' => 'WordPress-to-Lead for Salesforce plugin - WordPress/'.$wp_version.'; '.get_bloginfo('url'),
 		),
-		'sslverify'	=> false,
+		'sslverify'	=> $sslverify,
 	);
 
 	$args = apply_filters( 'salesforce_w2l_post_args', $args );
@@ -629,7 +638,7 @@ function submit_salesforce_form( $post, $options ) {
 	}
 
 	// Do we need to change the URL we're submitting to?
-	$url = apply_filters( 'salesforce_w2l_api_url', $url, $form_type );
+	$url = apply_filters( 'salesforce_w2l_api_url', $url, $form_type, $post );
 
 	// Pre submit actions
 	do_action( 'salesforce_w2l_before_submit', $post, $form_id, $form_type );
@@ -819,7 +828,7 @@ function salesforce_cc_admin( $post, $options, $form_id = 1, $subject = '', $app
 	//print_r( $emails );
 
 	$message = apply_filters('salesforce_w2l_cc_admin_email_content', $message );
-	$subject = apply_filters('salesforce_w2l_cc_admin_email_subject', $subject, $form_type );
+	$subject = apply_filters('salesforce_w2l_cc_admin_email_subject', $subject, $form_type, $post );
 
 	if( WP_DEBUG )
 		error_log( 'salesforce_cc_admin:'.print_r( array($emails,$message,$subject),1 ) );

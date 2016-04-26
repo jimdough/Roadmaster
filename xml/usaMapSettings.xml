@@ -66,7 +66,7 @@ pinSize = "10"
 <stateData stateName="Illinois" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
 </stateData>
 
-<stateData stateName="Indiana" url = "truck_school_INDIANA.php" stateMode = "ON" initialStateColor= "073e8a" stateOverColor = "068cba" stateSelectedColor = "064e68">
+<stateData stateName="Indiana" url = "#" stateMode = "OFF"  initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
 </stateData>
 
 <stateData stateName="Iowa" url = "#" stateMode = "OFF" initialStateColor= "58798D" stateOverColor = "FF9900" stateSelectedColor = "feb41c">
@@ -205,9 +205,6 @@ pinSize = "10"
 </pinData>
 
 <pinData pinName="Columbus, OH" url = "truck_school_OHIO.php" pinX="700" pinY="240" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
-</pinData>
-
-<pinData pinName="Indianapolis, IN" url = "truck_school_INDIANA.php" pinX="650" pinY="250" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">
 </pinData>
 
 <pinData pinName="Fontana, CA" url = "truck_school_fontanaCalifornia.php" pinX="90" pinY="340" initialPinColor= "ffd700" pinOverColor = "fff1a8" pinSelectedColor = "ffd700">

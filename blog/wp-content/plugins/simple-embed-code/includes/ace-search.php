@@ -11,8 +11,11 @@
 */
 ?>
 <div class="wrap">
-<div class="icon32"><img src="<?php echo plugins_url(); ?>/simple-embed-code/images/screen_icon.png" alt="" title="" height="32px" width="32px"/><br /></div>
-<h2><?php _e( 'Code Embed Search', 'simple-embed-code' ); ?></h2>
+<?php
+global $wp_version;
+if ( ( float ) $wp_version >= 4.3 ) { $heading = '1'; } else { $heading = '2'; }
+?>
+<h<?php echo $heading; ?>><?php _e( 'Code Embed Search', 'simple-embed-code' ); ?></h<?php echo $heading; ?>>
 
 <?php
 echo '<p>' . __( 'Enter the suffix to search for below and press the \'Search\' button to view the results. Further help can be found by clicking on the Help tab at the top right-hand of the screen.', 'simple-embed-code' ) . '</p>';

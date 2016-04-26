@@ -6,18 +6,22 @@
 
 <?php get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 	
     <?php get_sidebar( 'browse' ); ?>
     
     <div class="wrap-template-1 clearfix">
     
     <section class="content-wrap with-title" role="main">
+    	<?php
+			// Author content wrap inside top action
+			do_action( 'ac_action_author_content_wrap_inside_top' );
+		?>
     
     	<?php if ( have_posts() ) : ?>
     	<header class="main-page-title">
         
-        	<h1 class="page-title"><?php the_post(); printf( __( 'All posts by <span>%s</span>', 'acosmin' ), get_the_author() ) . ac_icon( 'angle-down' ) ?></h1>
+        	<h1 class="page-title"><?php the_post(); printf( __( 'All posts by %s', 'justwrite' ), '<span>' . get_the_author() . '</span>' ) . ac_icon( 'angle-down' ) ?></h1>
             
             <aside class="about-share clearfix">
                 <div class="as-wrap clearfix">
@@ -29,13 +33,13 @@
                         $user_url			= get_the_author_meta( 'user_url', $author_id );
                     ?>	
                     <div class="about-the-author clearfix">
-                        <h2 class="title"><?php _e('About the author','acosmin'); ?> <span class="author"><?php echo $display_name; ?></span></h2>
+                        <h2 class="title"><?php _e('About the author','justwrite'); ?> <span class="author"><?php echo esc_html( $display_name ); ?></span></h2>
                         <div class="ata-wrap clearfix">
                             <figure class="avatar-wrap">
                                 <?php echo get_avatar( $author_id, 58 ); ?>
                                 <?php if( $user_url ) { ?>
                                 <figcaption class="links">
-                                    <a href="<?php echo esc_url( $user_url ) ?>" class="author-link" title="<?php _e("Author's Link", 'acosmin'); ?>"><?php ac_icon('link');?></a>
+                                    <a href="<?php echo esc_url( $user_url ) ?>" class="author-link" title="<?php _e("Author's Link", 'justwrite'); ?>"><?php ac_icon('link');?></a>
                                 </figcaption>
                                 <?php } ?>
                             </figure>
@@ -70,7 +74,13 @@
         
         </div><!-- END .posts-wrap -->
         
-        <?php ac_paginate(); ?>
+        <?php
+			// Pagination
+			ac_paginate();
+			
+			// Author content wrap inside bottom action
+			do_action( 'ac_action_author_content_wrap_inside_bot' );
+		?>
         
     </section><!-- END .content-wrap -->
     

@@ -40,7 +40,7 @@
    </aside>
     
    <div class="row center topPad">
-	   <img width="100%" data-interchange="[img/headers/ph-gen1-s.gif, (default)], [img/headers/ph-gen1-m.gif, (medium)], [img/headers/ph-gen1-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
+	   <img width="100%" data-interchange="[/img/headers/ph-gen1-s.gif, (default)], [/img/headers/ph-gen1-m.gif, (medium)], [/img/headers/ph-gen1-l.gif, (large)]" alt="Class A CDL License Training and Truck Driving Classes">
    </div>
    
       <!-- Small Nav-->
@@ -73,7 +73,7 @@
 <script src='http://www.feedgrabbr.com/widget/fgwidget.js'></script>
 			</div>
 	  	<div class="columns text-center hide-for-medium-down large-4">
-	<a href="http://www.estoresbyzome.com/roadmasterdriversschool.php" target="_blank"><img src="img/storeGraphic.gif" border="0"></a>	  	</div>
+	<a href="http://www.estoresbyzome.com/roadmasterdriversschool.php" target="_blank"><img src="/img/storeGraphic.gif" border="0"></a>	  	</div>
 	  </div>
 
 

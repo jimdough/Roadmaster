@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 
 	<?php get_template_part( 'page-templates/template', 'page' ); ?>
     

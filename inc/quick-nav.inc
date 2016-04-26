@@ -1,5 +1,8 @@
 <div class="row" id="quickNav">
 	<div class="show-for-small-only small-12">
+		<h2>Locations</h2>
+		<div class="text-center"><a href="locations.php"><img title="Roadmaster Locations" src="/img/map-s.jpg" alt="Roadmaster Locations"></a><br><br></div>
+		
 		<table width="100%">
 		<tr><td colspan="2" class="header-row">Quick Links</td></tr>
 		<tr>

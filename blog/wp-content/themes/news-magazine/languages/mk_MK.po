@@ -1,362 +1,283 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: magazine\n"
-"POT-Creation-Date: 2014-06-23 17:13+0400\n"
-"PO-Revision-Date: 2014-07-15 17:37+0400\n"
+"POT-Creation-Date: 2014-07-07 12:05+0400\n"
+"PO-Revision-Date: 2014-07-07 12:09+0400\n"
 "Last-Translator: dianna <dianna.arakelyan@gmail.com>\n"
 "Language-Team: magazine\n"
-"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.3\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\wordpress_for_theme\\wp-content\\themes"
-"\\magazin_new\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: magazine;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress_for_theme\\wp-content\\themes"
-"\\magazin_new\n"
+"\\magazin\n"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/404.php:22
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:64
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-search.php:38
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/search.php:45
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/404.php:26
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-search.php:46
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/search.php:28
 msgid "Type here"
-msgstr "Тип тука"
+msgstr "тип тука "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/404.php:23
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-search.php:33
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/search.php:40
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/404.php:27
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-search.php:47
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/search.php:22
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/search.php:29
 msgid "Search"
-msgstr "Барај"
+msgstr "Барај "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:33
-msgid "Archive for the"
-msgstr "Архива за"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:33
-msgid "Category"
-msgstr "Категорија"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:35
-msgid "Posts Tagged"
-msgstr "Мислења тагирани"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:37
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:39
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:41
-msgid "Archive for"
-msgstr "Архива за"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:43
-#, php-format
-msgid "All posts by %s"
-msgstr "Сите мислења од %s"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:45
-msgid "Blog Archives"
-msgstr "Архива на блогот"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:65
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-search.php:39
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/search.php:46
-msgid "SEARCH"
-msgstr "Пребарување"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:26
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:22
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:33
 msgid "&#8249; Older comments"
-msgstr "< Постари коментари"
+msgstr "&#8249; постари коментар"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:27
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:23
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:34
 msgid "Newer comments &#8250;"
-msgstr "Понови коментари>"
+msgstr "поновите коментар &#8250;"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:38
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:45
 msgid "Pings&#47;Trackbacks"
-msgstr "Pings / Правила на форумот"
+msgstr "Pings&#47;Правила на форумот "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:41
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:48
 #, php-format
 msgid "%1$d %2$s for \"%3$s\""
-msgstr "%1$d %2$s за \"%3$s\""
+msgstr "%1$d %2$s за  \"%3$s\""
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:54
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:62
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:44
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:132
 msgid "Name"
-msgstr "Име"
+msgstr "име "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:55
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:63
 msgid "E-mail"
-msgstr "Е-пошта"
+msgstr "Е-пошта "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:56
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:64
 msgid "Website"
-msgstr "Веб-страница"
+msgstr "веб-страница"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:63
-msgid "Leave a Reply"
-msgstr "Остави Одговори"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:64
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr "Остави Одговори на %s"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:65
-msgid "Cancel Reply"
-msgstr "Откажи Одговори"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:66
-msgid "Post Comment"
-msgstr "Испрати коментар"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:67
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:68
 msgid "Comment"
-msgstr "Коментар"
+msgstr "коментар "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:68
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Мора да биде <a href = \"%s\"> логирани </a> за да испратите коментар."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:142
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/functions.php:37
 #, php-format
 msgid ""
-"<div class=\"entry-meta-cat\"><span class=\"sep date\"></span><a href=\"%1$s"
-"\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s"
-"\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep author\"></"
-"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
-"\"%6$s\" rel=\"author\">%7$s</a></span></span></div>"
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a>"
 msgstr ""
-"<div class=\"entry-meta-cat\"><span class=\"sep date\"></span><a href=\"%1$s"
-"\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s"
-"\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep author\"></"
-"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
-"\"%6$s\" rel=\"author\">%7$s</a></span></span></div>"
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a>"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:148
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/functions.php:46
+#, php-format
+msgid ""
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
+"a><span class=\"by-author\"> <span class=\"sep author\"></span> <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
+"\"author\">%7$s</a></span></span>"
+msgstr ""
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
+"a><span class=\"by-author\"> <span class=\"sep author\"></span> <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
+"\"author\">%7$s</a></span></span>"
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/functions.php:52
 #, php-format
 msgid "View all posts by %s"
 msgstr "Прикажи ги сите мислења од %s"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:197
-msgid "Primary Widget Area"
-msgstr "Основно виџети Површина"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:68
+msgid "Our facebook page"
+msgstr "Нашата Фејсбук страница "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:201
-msgid "The primary widget area"
-msgstr "Примарната графичка област"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:69
+msgid "Our twitter page"
+msgstr "Нашата Твитер страница "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:218
-msgid "Secondary Widget Area"
-msgstr "Средно виџети Површина"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:70
+msgid "Our Google plus page"
+msgstr "Нашите Google плус страница "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:222
-msgid "The secondary widget area"
-msgstr "Во средното графичка област"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:71
+msgid "Our RSS"
+msgstr "нашиот RSS"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:237
-msgid "Footer Left Widget Area"
-msgstr "Footer Лево виџети Површина"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-blog.php:101
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:433
+msgid "More"
+msgstr "повеќе "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:241
-msgid "The footer left widget area"
-msgstr "Подножјето лево графичка област"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:50
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:140
+msgid "Your Email"
+msgstr "вашата е-мејл "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:254
-msgid "Footer Right Widget Area"
-msgstr "Footer Право виџети Површина"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:62
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:156
+msgid "Comments"
+msgstr "коментари "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:258
-msgid "The footer right widget area"
-msgstr "Подножјето право графичка област на"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:307
-msgid "Primary Menu"
-msgstr "Основно Мени"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:533
-msgid "Edit"
-msgstr "Уредување"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:79
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:78
 msgid "The name field is required."
-msgstr "Поле името е потребен."
+msgstr "Поле името е потребен. "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:84
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:83
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
 msgid "Incorrect Captcha code. Please try again."
 msgstr "Неточни CAPTCHA код. Ве молиме обидете се повторно."
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:89
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:88
 msgid "Error submitting message."
-msgstr "Грешка при испраќањето порака."
+msgstr "Грешка при испраќањето порака. "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:95
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:93
 msgid "Your message was submitted successfully"
 msgstr "Вашата порака беше успешно испратена"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:135
-msgid "Full Name"
-msgstr "Целосно име"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:140
-msgid "Your Email"
-msgstr "Вашата е-мејл"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:145
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:148
 msgid "Message title"
-msgstr "Наслов на пораката"
+msgstr "Наслов на пораката "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:150
-msgid "Comments"
-msgstr "коментари"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:166
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:173
 msgid "Reset"
-msgstr "Ресетирај"
+msgstr "Ресетирај "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
 msgid "Send"
-msgstr "Испрати"
+msgstr "Испрати "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
 msgid "The Name field is required."
-msgstr "Име на полето е потребно."
+msgstr "Име на полето е потребно. "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
 msgid "The Email field is required."
-msgstr "E-mail поле е задолжително."
+msgstr "E-mail поле е задолжително. "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
 msgid "Please provide a valid email address."
-msgstr "Ве молиме внесете валидна е-мејл адреса."
+msgstr "Ве молиме внесете валидна е-мејл адреса. "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
 msgid "The Message field is required."
-msgstr "Поле порака е потребно."
+msgstr "Поле порака е потребно. "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:42
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:48
-msgid "Log In"
-msgstr "Вклучи се"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:41
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:47
+msgid "Log in"
+msgstr "Пријавете се во системот "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:45
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:44
 msgid "Password"
-msgstr "Лозинка"
+msgstr "лозинка "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:62
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:61
 msgid "Log Out"
-msgstr "Одјави се"
+msgstr "Одјавете се "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-most_popular.php:88
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:119
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:122
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:155
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:301
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:306
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:338
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:853
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:857
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:907
-msgid "More"
-msgstr "Повеќе"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:50
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:44
 msgid "Static Pages:"
-msgstr "Статични страници:"
+msgstr "Статични страници: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:66
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:51
 msgid "All Categories:"
-msgstr "Сите категории:"
+msgstr "Сите категории: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:82
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:59
 msgid "Tags:"
-msgstr "Тагови:"
+msgstr "Тагови: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:102
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:72
 msgid "Archives:"
-msgstr "Архива:"
+msgstr "Архива: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:118
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:80
 msgid "Authors:"
-msgstr "Автори:"
+msgstr "автори: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:134
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:87
 msgid "Blog Posts:"
-msgstr "Блог мислења:"
+msgstr "Блог мислења: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/searchform.php:1
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/searchform.php:2
 msgid "Search..."
-msgstr "Барај ..."
+msgstr "Барај ... "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/single.php:55
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/single.php:58
 msgid "Page"
-msgstr "Страница"
+msgstr "страница "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/color_control.php:403
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/color_control.php:588
 msgid "Schemes"
-msgstr "Шеми"
+msgstr "шеми "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/install_sampl_date.php:1406
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/install_sampl_date.php:1420
 msgid "Home"
-msgstr "Хом"
+msgstr "дома "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/typography_page.php:442
-msgid "Fonts"
-msgstr "Фонтови"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/includes/meta/seo_meta.php:16
+msgid "SEO Web Business"
+msgstr "Оптимизација за Веб Бизнис "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/includes/meta/seo_meta.php:22
-msgid "SEO Exclusive"
-msgstr "Оптимизација Ексклузивно"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:15
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:15
 msgid "Insert Button Shortcode"
-msgstr "Вметнете Батон Shortcode"
+msgstr "Вметнете Батон Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:26
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:26
 msgid "Insert Link Shortcode"
-msgstr "Вметнете линк Shortcode"
+msgstr "Вметнете линк Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:40
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:40
 msgid "Insert Info Box Shortcode"
-msgstr "Вметнете Инфо кутија Shortcode"
+msgstr "Вметнете Инфо кутија Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:50
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:50
 msgid "Insert Quote Box Shortcode"
-msgstr "Додади цитат кутија Shortcode"
+msgstr "Додади цитат кутија Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:61
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:61
 msgid "Insert Contact Form Shortcode"
-msgstr "Вметнете Контакт форма Shortcode"
+msgstr "Вметнете Контакт форма Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:71
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:71
 msgid "Insert Tabs Creator Shortcode"
-msgstr "Вметнете Батерии Создателот Shortcode"
+msgstr "Вметнете Батерии Создателот Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:80
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:80
 msgid "Insert Related Posts Shortcode"
-msgstr "Вметнете Поврзани Мислења Shortcode"
+msgstr "Вметнете Поврзани Мислења Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:89
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:89
 msgid "Insert Columns Layout Shortcode"
-msgstr "Вметнете Колумни распределба Shortcode"
+msgstr "Вметнете Колумни распределба Shortcode "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/categories-vertical-tabs/php/front.end.php:155
-msgid "More Information"
-msgstr "Повеќе информации"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:330
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:605
+msgid "Left"
+msgstr "лево "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:956
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\"> ← </ span> Постари мислења"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:331
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:606
+msgid "Right"
+msgstr "право "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:957
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Понови мислења <span class=\"meta-nav\"> → </ span>"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:646
+msgid "Random"
+msgstr "Случајни "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/categories-vertical-tabs/php/front.end.php:155
-msgid "Previous page"
-msgstr "Претходна страница "
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:653
+msgid "Popular"
+msgstr "Популарни "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/categories-vertical-tabs/php/front.end.php:155
-msgid "Next page"
-msgstr "Следна страница"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:660
+msgid "Recent"
+msgstr "Последни"

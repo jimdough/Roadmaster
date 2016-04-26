@@ -21,6 +21,21 @@
   
   </style>
   
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1549939651885554');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1549939651885554&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+  
  </head>
  <body>
  <?php include("../inc/analytics.inc"); ?>
@@ -92,7 +107,7 @@
 					<li>You may be pre-hired by on-site recruiters before finishing school if qualified</li>
 					<li>Job placement assistance</li>
 					<li>3-4 weeks of classes that focus on CDL training and Class A CDL license exam preparation</li>
-					<li>12 training locations nationwide</li>
+					<li>11 training locations nationwide</li>
 					<li>Financial assistance for those who qualify</li>
 			  	</ul>
 	  </div><!-- end column-->
@@ -102,7 +117,7 @@
 	  
 		  <div class="panel">
 				  <h2>Truck Driver Salary & Benefits</h2>
-			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year, but that is just the beginning to what a truck driver can earn! </p>
+			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year*, but that is just the beginning to what a truck driver can earn! </p>
 			  
 			  <ul class="yes-bullet">
 			  		<li>Starting pay averaging <b>$40,000</b> per year</li>
@@ -122,6 +137,10 @@
 
 	  </div><!-- end column-->
   </div><!-- end row-->
+  
+  <div class="row">
+			 <div class="columns editable" id="dynamic-disclaimer"><p class="small-disclaimer"><span class="s1">*wage info supplied by Werner Enterprises</span></p></div>
+		 </div>
 	
 		 </div> <!-- End Column 2-->
 	
@@ -168,11 +187,12 @@
 				      </div>
 			    </div>
 			    
+
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Phone Number</label>
-			        <input name="phone" type="text" required pattern="(\S.*){10,}" id="phone" placeholder="555-555-1212">
-			        <small class="error">A valid phone number is required.</small>
+			        <label>Phone Number<span class="form-disclaimer"> (dashes only)</span></label>
+			        <input name="phone" type="tel" required pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" id="phone" placeholder="555-555-1212">
+			        <small class="error">A valid phone number is required. 10 digit minimum</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">
@@ -184,9 +204,9 @@
 			    
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Zip Code</label>
-			        <input name="zip" type="text" required pattern="number" id="zip" placeholder="55555">
-			        <small class="error">Your zip code is required.</small>
+			        <label>Zip Code <span class="form-disclaimer">(no dashes)</span></label>
+			        <input name="zip" type="text" required pattern="^[0-9]{5}$" id="zip" placeholder="55555">
+			        <small class="error">Your zip code is required. Only use 5 digits</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">

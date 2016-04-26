@@ -31,12 +31,6 @@
       <td class="show-for-large-up"><a href="/truck_school_TAMPA.php">School Website</a></td>
     </tr>
         <tr>
-      <td><a href="/truck_school_INDIANA.php">Indianapolis, IN</a></td>
-      <td class="hide-for-small-only"><a href="/truck_school_INDIANA.php">3016 Bluff Road | Indianapolis, IN 46217</a></td>
-      <td><a href="/truck_school_INDIANA.php">(317) 783-7483</a></td>
-      <td class="show-for-large-up"><a href="/truck_school_INDIANA.php">School Website</a></td>
-    </tr>
-        <tr>
       <td><a href="/truck_school_northcarolina.php">Dunn, NC</a></td>
       <td class="hide-for-small-only"><a href="/truck_school_northcarolina.php">1111 South Clinton Avenue | Dunn, North Carolina 28335</a></td>
       <td><a href="/truck_school_northcarolina.php">(910) 891-1344</a></td>

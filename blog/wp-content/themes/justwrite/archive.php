@@ -6,28 +6,32 @@
 
 <?php get_header(); ?>
 
-<section class="container<?php ac_mini_disabled() ?> clearfix">
+<section class="container<?php ac_mini_disabled() ?> main-section clearfix">
 	
     <?php get_sidebar( 'browse' ); ?>
     
     <div class="wrap-template-1 clearfix">
     
     <section class="content-wrap with-title" role="main">
+    	<?php
+			// Archives content wrap inside top action
+			do_action( 'ac_action_archives_content_wrap_inside_top' );
+		?>
     
     	<header class="main-page-title">
         	<h1 class="page-title">
             <?php
 				if ( is_day() ) :
-					printf( __( 'Daily Archives: <span>%s</span>', 'acosmin' ), get_the_date() ) . ac_icon( 'angle-down' );
+					printf( __( 'Daily Archives: <span>%s</span>', 'justwrite' ), get_the_date() ) . ac_icon( 'angle-down' );
 
 				elseif ( is_month() ) :
-					printf( __( 'Monthly Archives: <span>%s</span>', 'acosmin' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'acosmin' ) ) ) . ac_icon( 'angle-down' );
+					printf( __( 'Monthly Archives: <span>%s</span>', 'justwrite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'justwrite' ) ) ) . ac_icon( 'angle-down' );
 
 				elseif ( is_year() ) :
-					printf( __( 'Yearly Archives: <span>%s</span>', 'acosmin' ), get_the_date( _x( 'Y', 'yearly archives date format', 'acosmin' ) ) ) . ac_icon( 'angle-down' );
+					printf( __( 'Yearly Archives: <span>%s</span>', 'justwrite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'justwrite' ) ) ) . ac_icon( 'angle-down' );
 
 				else :
-					_e( 'Archives', 'acosmin' ) . ac_icon( 'angle-down' );
+					_e( 'Archives', 'justwrite' ) . ac_icon( 'angle-down' );
 
 				endif;
 			?>
@@ -49,7 +53,13 @@
         
         </div><!-- END .posts-wrap -->
         
-        <?php ac_paginate(); ?>
+        <?php
+			// Pagination
+			ac_paginate();
+			
+			// Archives content wrap inside bottom action
+			do_action( 'ac_action_archives_content_wrap_inside_bot' );
+		?>
         
     </section><!-- END .content-wrap -->
     

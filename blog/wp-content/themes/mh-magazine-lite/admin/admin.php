@@ -18,21 +18,21 @@ if (!function_exists('mh_magazine_lite_display_theme_page')) {
 			<hr>
 			<div class="theme-links clearfix">
 				<p><strong><?php _e('Important Links:', 'mh-magazine-lite'); ?></strong>
-					<a href="http://www.mhthemes.com/themes/mh/magazine-lite/" target="_blank"><?php _e('Theme Info Page', 'mh-magazine-lite'); ?></a>
-					<a href="http://www.mhthemes.com/support/" target="_blank"><?php _e('Support Center', 'mh-magazine-lite'); ?></a>
-					<a href="https://wordpress.org/support/view/theme-reviews/mh-magazine-lite?filter=5" target="_blank"><?php _e('Rate this theme', 'mh-magazine-lite'); ?></a>
+					<a href="<?php echo esc_url('http://www.mhthemes.com/themes/mh/magazine-lite/'); ?>" target="_blank"><?php _e('Theme Info Page', 'mh-magazine-lite'); ?></a>
+					<a href="<?php echo esc_url('http://www.mhthemes.com/support/'); ?>" target="_blank"><?php _e('Support Center', 'mh-magazine-lite'); ?></a>
+					<a href="<?php echo esc_url('https://wordpress.org/support/view/theme-reviews/mh-magazine-lite?filter=5'); ?>" target="_blank"><?php _e('Rate this theme', 'mh-magazine-lite'); ?></a>
 				</p>
 			</div>
 			<hr>
 			<div id="getting-started">
 				<h3><?php printf(__('Getting Started with %s', 'mh-magazine-lite'), $theme_data->Name); ?></h3>
-				<div class="row clearfix">
-					<div class="col-1-2">
+				<div class="mh-row clearfix">
+					<div class="mh-col-1-2">
 						<div class="section">
 							<h4><?php _e('Theme Documentation', 'mh-magazine-lite'); ?></h4>
 							<p class="about"><?php printf(__('Need any help to setup and configure %s? Please have a look at the instructions on the Theme Info Page or read the Documentations and Tutorials in our Support Center.', 'mh-magazine-lite'), $theme_data->Name); ?></p>
 							<p>
-								<a href="http://www.mhthemes.com/documentation-mh-magazine-lite/" target="_blank" class="button button-secondary"><?php _e('Visit Documentation', 'mh-magazine-lite'); ?></a>
+								<a href="<?php echo esc_url('http://www.mhthemes.com/documentation-mh-magazine-lite/'); ?>" target="_blank" class="button button-secondary"><?php _e('Visit Documentation', 'mh-magazine-lite'); ?></a>
 							</p>
 						</div>
 						<div class="section">
@@ -46,11 +46,11 @@ if (!function_exists('mh_magazine_lite_display_theme_page')) {
 							<h4><?php _e('Upgrade to Premium', 'mh-magazine-lite'); ?></h4>
 							<p class="about"><?php _e('Need more features and options? Check out the Premium Version of this theme which comes with additional features and advanced customization options for your website.', 'mh-magazine-lite'); ?></p>
 							<p>
-								<a href="http://www.mhthemes.com/themes/mh/magazine/" target="_blank" class="button button-secondary"><?php _e('Learn more about the Premium Version', 'mh-magazine-lite'); ?></a>
+								<a href="<?php echo esc_url('http://www.mhthemes.com/themes/mh/magazine/'); ?>" target="_blank" class="button button-secondary"><?php _e('Learn more about the Premium Version', 'mh-magazine-lite'); ?></a>
 							</p>
 						</div>
 					</div>
-					<div class="col-1-2">
+					<div class="mh-col-1-2">
 						<img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="Theme Screenshot" />
 					</div>
 				</div>

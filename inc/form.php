@@ -39,9 +39,9 @@
 			    
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Phone Number</label>
-			        <input name="phone" type="tel" required pattern="(\S.*){10,}" id="phone" placeholder="555-555-1212">
-			        <small class="error">A valid phone number is required.</small>
+			        <label>Phone Number<span class="form-disclaimer"> (dashes only)</span></label>
+			        <input name="phone" type="tel" required pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" id="phone" placeholder="555-555-1212">
+			        <small class="error">A valid phone number is required. 10 digit minimum</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">
@@ -53,9 +53,9 @@
 			    
 			    <div class="row">
 			      <div class="large-6 medium-6 small-12 columns">
-			        <label>Zip Code</label>
-			        <input name="zip" type="text" required pattern="(\S.*){5,}" id="zip" placeholder="55555">
-			        <small class="error">Your zip code is required.</small>
+			        <label>Zip Code <span class="form-disclaimer">(no dashes)</span></label>
+			        <input name="zip" type="text" required pattern="^[0-9]{5}$" id="zip" placeholder="55555">
+			        <small class="error">Your zip code is required. Only use 5 digits</small>
 			      </div>
 			      
 			      <div class="large-6 medium-6 small-12 columns">

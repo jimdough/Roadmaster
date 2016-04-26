@@ -7,7 +7,7 @@
 	clear:both;
 	width:100% !important;
 	overflow:hidden !important;
-	
+
 }
 
 
@@ -24,7 +24,7 @@
   }
 
   .bwg_slideshow_image {
-		width:100%;
+		width:100% !important;
   }
   .bwg_slideshow_prev_btn,
   .bwg_slideshow_next_btn {
@@ -70,22 +70,24 @@
 	bottom: 0;
 	cursor: pointer;
 	display: inline;
+	height: 100%;
 	outline: medium none;
 	position: absolute;
+	width: 10px;
+	/*z-index: 10130;*/
 	z-index: 13;
-	height:5%;
-	width:1%;
-	background-size: 100% 100% !important;
+	height:30px;
+	bottom:50%;
   }
   #spider_slideshow_left {	
-	left: 10px;
-	top:50%;
-	background:url(Arrow-left.png);
+  	left:10px;
+	margin-top:-10px;
+	background:url(arrow.left.png) right bottom no-repeat; 
   }
   #spider_slideshow_right {
 	right:10px;
-	top:50%;
-	background:url(Arrow-right.png);  
+	margin-top:-10px;
+	background:url(arrow.right.png) left bottom no-repeat; 
   }
   
   #spider_slideshow_left:hover,
@@ -167,10 +169,7 @@
 	/*vertical-align FROM HEADER.PHP*/
   }
   .bwg_slideshow_description_span {
-	
 	display: table-cell !important;
-	
-
 	overflow: hidden;
 	position: relative;
 	/*text-align FROM HEADER.PHP*/
@@ -185,10 +184,12 @@
 	z-index: 11;
 	display: inline-block;
 	max-width: 33%;
-	word-break: break-all;   
+	word-wrap: break-word;
+	word-break: break-word;  
+	padding:10px;
 	margin:10px;
 	font-weight:bold;
-	background:rgba(0,0,0,0.5);
+	background:rgba(0,0,0,0.3);
   }
   
   .bwg_slideshow_description_text {
@@ -196,61 +197,51 @@
 	position: relative;
 	z-index: 11;
 	margin: 5px;
+	padding:10px;
 	display: inline-block;
 	max-width: 33%;
-	word-break: break-all;   
 	margin:10px;
-	background:rgba(0,0,0,0.5);
-	font-weight: 600;
-	text-align:right;
-	padding:0 7px 7px;
-  }
-  .bwg_slideshow_description_text h2{
-	line-height: 100%;  
+	background:rgba(0,0,0,0.4);
+	word-break: break-word;
   }
   
-    @media screen and (max-width: 640px){
-    .bwg_slideshow_description_text {
-		 overflow : hidden;
-		  text-overflow: ellipsis;
-		  display: -webkit-box;
-		  -webkit-line-clamp: 3;
-		  -webkit-box-orient: vertical;
-       	width:100%;
-		max-width:100%;
+  @media screen and (max-width: 640px){
+		.bwg_slideshow_description_text {
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-inline-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		/*width:100%;*/
+		max-width:50%;
 		font-size:12px !important;
 		margin:0px;
 		padding:0px;
-	}
-	
-	.bwg_slideshow_description_text h1,
-	.bwg_slideshow_description_text h2
-	{
-        line-height: 100%;
-		font-size: 18px;
-	}
-	.bwg_slideshow_description_span {
+		}
+		.bwg_slideshow_description_span {
 		display: table-cell !important;
 		overflow: hidden;
 		position: relative;
 		padding-right:8%;
 		padding-left:8%;
 		padding-bottom:10px;
-		/*text-align FROM HEADER.PHP*/
-		/*vertical-align FROM HEADER.PHP*/
-
- 	}
-
+		
+		}
+		.bwg_slideshow_description_text p{
+			padding-right:5px;	
+		}
+		.bwg_slideshow_description_text h1,
+		.bwg_slideshow_description_text h2,
+		.bwg_slideshow_description_text h3,
+		.bwg_slideshow_description_text h4,
+		.bwg_slideshow_description_text h5,
+		.bwg_slideshow_description_text h6{
+		   white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width:320px;
+		}
 }
-  
-  .bwg_slideshow_description_text p{
-	margin-bottom:0;
-}
-
-.bwg_slideshow_description_text h4{
-	font-weight: normal;
-}
-  
    .bwg_slideshow_title_text.none, .bwg_slideshow_description_text.none {display:none;}
 
   .bwg_slide_container {
@@ -271,6 +262,7 @@
 	height: inherit;
 	width: inherit;
   }
+
   .bwg_slideshow_image_span {
 	width: inherit;
 	height: inherit;
@@ -311,7 +303,7 @@
 	position: relative;
 	cursor: pointer;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset, 1px 1px 1px rgba(255,255,255,0.1);
-	 width:10px;
+	width:10px;
 	height: 10px;
 	border-radius: 10px;
 	background: #00f;
@@ -323,13 +315,15 @@
   .bwg_slideshow_dots_container {
 	display: table;
 	position: absolute;
+	
 	/*width FROM HEADER.PHP*/
   }
   .bwg_slideshow_dots_thumbnails {
 	left: 0px;
 	margin: 0 auto;
 	overflow: hidden;
-	position: relative;
+	position: absolute;
+	width:100%;
 	
   }
   .bwg_slideshow_dots_active {

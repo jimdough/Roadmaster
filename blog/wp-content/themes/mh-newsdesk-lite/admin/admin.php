@@ -18,9 +18,9 @@ if (!function_exists('mh_newsdesk_lite_display_theme_info_page')) {
 			<hr>
 			<div class="theme-links clearfix">
 				<p><strong><?php _e('Important Links:', 'mh-newsdesk-lite'); ?></strong>
-					<a href="http://www.mhthemes.com/themes/mh/newsdesk-lite/" target="_blank"><?php _e('Theme Info Page', 'mh-newsdesk-lite'); ?></a>
-					<a href="http://www.mhthemes.com/support/" target="_blank"><?php _e('Support Center', 'mh-newsdesk-lite'); ?></a>
-					<a href="http://wordpress.org/support/view/theme-reviews/mh-newsdesk-lite?filter=5" target="_blank"><?php _e('Rate this theme', 'mh-newsdesk-lite'); ?></a>
+					<a href="<?php echo esc_url('http://www.mhthemes.com/themes/mh/newsdesk-lite/'); ?>" target="_blank"><?php _e('Theme Info Page', 'mh-newsdesk-lite'); ?></a>
+					<a href="<?php echo esc_url('http://www.mhthemes.com/support/'); ?>" target="_blank"><?php _e('Support Center', 'mh-newsdesk-lite'); ?></a>
+					<a href="<?php echo esc_url('http://wordpress.org/support/view/theme-reviews/mh-newsdesk-lite?filter=5'); ?>" target="_blank"><?php _e('Rate this theme', 'mh-newsdesk-lite'); ?></a>
 				</p>
 			</div>
 			<hr>
@@ -32,7 +32,7 @@ if (!function_exists('mh_newsdesk_lite_display_theme_info_page')) {
 							<h4><?php _e('Theme Documentation', 'mh-newsdesk-lite'); ?></h4>
 							<p class="about"><?php printf(__('Need any help to setup and configure %s? Please have a look at the instructions on the theme info page or read the documentations and tutorials in our support center.', 'mh-newsdesk-lite'), $theme_data->Name); ?></p>
 							<p>
-								<a href="http://www.mhthemes.com/themes/mh/newsdesk-lite/" target="_blank" class="button button-secondary"><?php _e('Visit Documentation', 'mh-newsdesk-lite'); ?></a>
+								<a href="<?php echo esc_url('http://www.mhthemes.com/themes/mh/newsdesk-lite/'); ?>" target="_blank" class="button button-secondary"><?php _e('Visit Documentation', 'mh-newsdesk-lite'); ?></a>
 							</p>
 						</div>
 						<div class="section">
@@ -46,7 +46,7 @@ if (!function_exists('mh_newsdesk_lite_display_theme_info_page')) {
 							<h4><?php _e('Upgrade to Premium', 'mh-newsdesk-lite'); ?></h4>
 							<p class="about"><?php _e('Need more features and options? Check out the premium version of this theme which comes with more features, additional widgets and advanced customization options for your website.', 'mh-newsdesk-lite'); ?></p>
 							<p>
-								<a href="http://www.mhthemes.com/themes/mh/newsdesk/" target="_blank" class="button button-secondary"><?php _e('Learn more about the Premium Version', 'mh-newsdesk-lite'); ?></a>
+								<a href="<?php echo esc_url('http://www.mhthemes.com/themes/mh/newsdesk/'); ?>" target="_blank" class="button button-secondary"><?php _e('Learn more about the Premium Version', 'mh-newsdesk-lite'); ?></a>
 							</p>
 						</div>
 					</div>

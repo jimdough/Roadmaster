@@ -1,15 +1,55 @@
 <?php
+
+	$themename = 'alexandria';
+	$optionsframework_settings = get_option('optionsframework');
+	if($optionsframework_settings){
+	$optionsframework_settings['id'] = $themename;
+	update_option('optionsframework', $optionsframework_settings);
+	}
+	
+if ( ! function_exists( 'of_get_option' ) ) {
+
+	/**
+	 * Get Option.
+	 *
+	 * Helper function to return the theme option value.
+	 * If no value has been saved, it returns $default.
+	 * Needed because options are saved as serialized strings.
+	 */
+	 
+	function of_get_option( $name, $default = false ) {
+		
+		if(get_theme_mod($name)){
+			
+			return get_theme_mod($name);
+			
+		}else{
+		
+			$config = get_option( 'optionsframework' );
+	
+			if ( ! isset( $config['id'] ) ) {
+				return $default;
+			}
+	
+			$options = get_option( $config['id'] );
+	
+			if ( isset( $options[$name] ) ) {
+				return $options[$name];
+			}
+	
+			return $default;
+			
+		}
+		
+	}
+}	
+
 /**
  * alexandria functions and definitions
  *
  * @package alexandria
  */
  
-/* 
- * Loads the Options Panel
- */
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/' );
-require_once dirname( __FILE__ ) . '/admin/options-framework.php';
 
 if ( ! function_exists( 'alexandria_setup' ) ) :
 /**
@@ -91,6 +131,11 @@ function alexandria_setup() {
 	 * Enable support for Title tag
 	 */	  
 	  add_theme_support( 'title-tag' );
+	  
+	/**
+	 * Add woocommerce support
+	 */	
+	add_theme_support( 'woocommerce' );	  
 	  
 }
 endif; // alexandria_setup
@@ -236,3 +281,11 @@ function alexandria_backupmenu() {
 		}
 }
 endif; // alexandria_backupmenu
+
+function alexandria_upgrade(){
+	
+	wp_enqueue_style('alexandria_upgrade', get_template_directory_uri().'/skins/alexandria-upgrade.css' );
+	
+}
+
+add_action('customize_controls_print_scripts', 'alexandria_upgrade');

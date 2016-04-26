@@ -91,7 +91,6 @@ ins {
 /* - 2.0 Body */
 html .mceContentBody {
 	font-size: 18px;
-	width: 100%;
 	max-width: 1150px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
@@ -137,7 +136,7 @@ h6:first-child {
 
 /* - 4.0 Text Elements */
 a, a:visited {
-	color: #be5656;
+	color: #dd3333;
 	text-decoration: none;
 }
 a:hover {

@@ -1,33 +1,25 @@
-<?php get_header();
-news_magazine_slideshow(); ?>
-</div>	
-
-<div id="content" >
-		<div class="container">		
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-			<div id="sidebar1" style="margin-top:10px !important;">
-				<div class="sidebar-container">				
-				<?php  dynamic_sidebar( 'sidebar-1' ); 	?>					
-				</div>
+<?php get_header(); 
+global $wdwt_front;
+$wdwt_front =  new news_magazine_front($wdwt_options); ?>
+</header>
+<div class="container">
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		<aside id="sidebar1" >
+			<div class="sidebar-container">			
+				<?php  dynamic_sidebar( 'sidebar-1' ); 	?>
+				<div class="clear"></div>
 			</div>
-			<?php } ?>
-			
-			<div id="blog" class="blog" >
-			
-		    <?php news_magazine_content_posts_for_home(); ?>
-			
+		</aside>
+	<?php } 
+	news_magazine_frontend_functions::content_posts_for_home();
+	if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
+		<aside id="sidebar2">
+			<div class="sidebar-container">
+			  <?php  dynamic_sidebar( 'sidebar-2' ); 	?>
+			  <div class="clear"></div>
 			</div>
-			
-			<?php wp_reset_query();  ?>
-			
-            <?php if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
-				<div id="sidebar2"  style="margin-top:10px !important;">
-					<div class="sidebar-container">
-						<?php  dynamic_sidebar( 'sidebar-2' ); 	?>
-					</div>
-				</div>
-          <?php } ?>
-		<div class="clear"></div>
-  </div>
+		</aside>
+	<?php } ?>
+	<div class="clear"></div>
 </div>
 <?php get_footer(); ?>

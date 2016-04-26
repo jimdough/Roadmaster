@@ -251,3 +251,155 @@ blockquote{
 	box-shadow:none !important;
 	text-shadow:none !important;
 }
+
+.bizfour-products-services-item{
+	background:#a0b4b1;
+}
+.bizfour-products-services-img{
+	background:#a0b4b1;	
+}
+.bizfour-quote{
+	border:1px solid #a0b4b1;
+}
+.bizfour-quote-text{
+	background:url(images/quote.png) top left no-repeat;		
+}
+.bizfour-quote-name span{
+	background:#a0b4b1;
+}
+
+
+.eone-latest-products{
+	background:#aabdba;
+}
+.eone-product{
+	background:#9bb0ad;
+}
+.eone-product-image{
+	background:#90a7a3;
+}
+.eone-product-price{
+	background:#869d99;
+}
+.eone-product-buy{
+	background:#7a918d;
+}
+.eone-product-buy span a{
+	background:#000;
+	color:#fff;	
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+	background:#000;
+}
+.woocommerce-tabs{
+	background:#aabdba;
+}
+.woocommerce-tabs .wc-tabs{
+	background:none;
+}
+.woocommerce div.product .woocommerce-tabs .panel{
+	background:#7a918d;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li{
+	background:#90a7a3;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active{
+	background:#7a918d;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+	background-color:#000;
+	color:#fff;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
+	background-color:#565656;
+	color:#fff;	
+}
+.woocommerce #respond input#submit.disabled:hover, .woocommerce #respond input#submit:disabled:hover, .woocommerce #respond input#submit[disabled]:disabled:hover, .woocommerce a.button.disabled:hover, .woocommerce a.button:disabled:hover, .woocommerce a.button[disabled]:disabled:hover, .woocommerce button.button.disabled:hover, .woocommerce button.button:disabled:hover, .woocommerce button.button[disabled]:disabled:hover, .woocommerce input.button.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button[disabled]:disabled:hover {
+	background-color:#565656;
+	color:#fff;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+	background-color:#565656;
+	color:#fff;	
+}
+
+
+.woocommerce .related{
+	background:#7a918d;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	background:#9bb0ad;
+}
+.woocommerce ul.products li.product h3{
+	background:#869d99;
+}
+.woocommerce nav.woocommerce-pagination ul{
+	background:#9bb0ad;	
+}
+.woocommerce nav.woocommerce-pagination ul li{
+	 border-right: 1px solid #7a918d;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current{
+	background:#7a918d;
+}
+.woocommerce .woocommerce-ordering select{
+	background:#515151;
+}
+
+.woocommerce .quantity .qty{
+	color:#000;
+}
+.woocommerce table.shop_table{
+	background:#7a918d;
+}
+.woocommerce table.shop_table thead, .cart-subtotal, .order-total{
+	background:#7a918d;
+}
+.woocommerce table.shop_table tbody tr{
+	background:#9bb0ad;
+}
+
+.woocommerce table.shop_table td{
+	border-bottom:1px solid #9bb0ad;;
+}
+.woocommerce #content table.cart td.actions, .woocommerce table.cart td.actions, .woocommerce-page #content table.cart td.actions, .woocommerce-page table.cart td.actions{
+	background: #7a918d;
+}
+
+.woocommerce .woocommerce-message::before, .woocommerce .woocommerce-info::before{
+	color:#7a918d;
+}
+.woocommerce .woocommerce-message, .woocommerce .woocommerce-info{
+	border-top-color: #7a918d;
+}
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message{
+	background:#7a918d;
+	color:#fff;
+}
+
+.woocommerce ul.products li.product .price{
+	color:#fff;
+}
+
+.woocommerce .col2-set, .woocommerce-page .col2-set{
+	background:#7a918d;
+}
+.woocommerce-checkout #payment{
+	background:#7a918d;
+}
+.woocommerce-checkout #payment div.payment_box{
+	background:#7a918d;
+	color:#fff;
+}
+.woocommerce-checkout .input-text, .woocommerce-checkout .select2-container{
+	background:#323232;
+	border-color:#7a918d;
+	color:#fff;
+}
+
+.woocommerce .order_details{
+	background:#7a918d;
+}

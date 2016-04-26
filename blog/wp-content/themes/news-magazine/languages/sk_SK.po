@@ -1,363 +1,283 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: magazine\n"
-"POT-Creation-Date: 2014-06-23 17:13+0400\n"
-"PO-Revision-Date: 2014-07-15 17:38+0400\n"
+"POT-Creation-Date: 2014-07-07 13:54+0400\n"
+"PO-Revision-Date: 2014-07-07 14:00+0400\n"
 "Last-Translator: dianna <dianna.arakelyan@gmail.com>\n"
 "Language-Team: magazine\n"
-"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.3\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\wordpress_for_theme\\wp-content\\themes"
-"\\magazin_new\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: magazine;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress_for_theme\\wp-content\\themes"
-"\\magazin_new\n"
+"\\magazin\n"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/404.php:22
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:64
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-search.php:38
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/search.php:45
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/404.php:26
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-search.php:46
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/search.php:28
 msgid "Type here"
-msgstr "Sem tu"
+msgstr "sem tu "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/404.php:23
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-search.php:33
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/search.php:40
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/404.php:27
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-search.php:47
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/search.php:22
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/search.php:29
 msgid "Search"
-msgstr "Hľadať"
+msgstr "hľadanie "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:33
-msgid "Archive for the"
-msgstr "Archív pre"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:33
-msgid "Category"
-msgstr "Kategória"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:35
-msgid "Posts Tagged"
-msgstr "Príspevky Tagged"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:37
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:39
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:41
-msgid "Archive for"
-msgstr "Archív pre"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:43
-#, php-format
-msgid "All posts by %s"
-msgstr "Všetky príspevky od %s"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:45
-msgid "Blog Archives"
-msgstr "Blog Archív"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/archive.php:65
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-search.php:39
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/search.php:46
-msgid "SEARCH"
-msgstr "HĽADAŤ"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:26
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:22
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:33
 msgid "&#8249; Older comments"
-msgstr "< Staršie komentáre"
+msgstr "&#8249; staršie komentár "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:27
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:23
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:34
 msgid "Newer comments &#8250;"
-msgstr "Novšie komentáre>"
+msgstr "novšie komentár &#8250;"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:38
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:45
 msgid "Pings&#47;Trackbacks"
-msgstr "Ping / Spätné odkazy"
+msgstr "Ping&#47;spätné odkazy "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:41
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:48
 #, php-format
 msgid "%1$d %2$s for \"%3$s\""
-msgstr "%1$d %2$s na \"%3$s\""
+msgstr "%1$d %2$s pre  \"%3$s\""
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:54
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:62
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:44
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:132
 msgid "Name"
-msgstr "Názov"
+msgstr "Názov "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:55
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:63
 msgid "E-mail"
-msgstr "E-mail:"
+msgstr "E-mail"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:56
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:64
 msgid "Website"
-msgstr "Internetová stránka"
+msgstr "webové stránky "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:63
-msgid "Leave a Reply"
-msgstr "Odpovedať"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:64
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr "Zanechať odpoveď na %s"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:65
-msgid "Cancel Reply"
-msgstr "Zrušiť odpoveď"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:66
-msgid "Post Comment"
-msgstr "Komentár príspevku"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:67
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/comments.php:68
 msgid "Comment"
-msgstr "Komentár"
+msgstr "komentár "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/comments.php:68
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-"Musíte byť <a href = \"%s\"> prihlásený</a>, aby ste mohli písať komentár."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:142
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/functions.php:37
 #, php-format
 msgid ""
-"<div class=\"entry-meta-cat\"><span class=\"sep date\"></span><a href=\"%1$s"
-"\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s"
-"\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep author\"></"
-"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
-"\"%6$s\" rel=\"author\">%7$s</a></span></span></div>"
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a>"
 msgstr ""
-"<div class=\"entry-meta-cat\"><span class=\"sep date\"></span><a href=\"%1$s"
-"\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s"
-"\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep author\"></"
-"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
-"\"%6$s\" rel=\"author\">%7$s</a></span></span></div>"
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a>"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:148
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/functions.php:46
+#, php-format
+msgid ""
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
+"a><span class=\"by-author\"> <span class=\"sep author\"></span> <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
+"\"author\">%7$s</a></span></span>"
+msgstr ""
+"<span class=\"sep date\"></span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
+"a><span class=\"by-author\"> <span class=\"sep author\"></span> <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
+"\"author\">%7$s</a></span></span>"
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/functions.php:52
 #, php-format
 msgid "View all posts by %s"
-msgstr "Zobraziť všetky príspevky od užívateľa %s"
+msgstr "Zobraziť všetky príspevky  %s"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:197
-msgid "Primary Widget Area"
-msgstr "Primárne Widget Area"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:68
+msgid "Our facebook page"
+msgstr "Naše facebook stránky "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:201
-msgid "The primary widget area"
-msgstr "Primárne Widget oblasť"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:69
+msgid "Our twitter page"
+msgstr "Naše twitter stránku "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:218
-msgid "Secondary Widget Area"
-msgstr "Sekundárny Widget Area"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:70
+msgid "Our Google plus page"
+msgstr "Naše twitter stránku "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:222
-msgid "The secondary widget area"
-msgstr "Sekundárny Widget oblasť"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/header.php:71
+msgid "Our RSS"
+msgstr "naše RSS "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:237
-msgid "Footer Left Widget Area"
-msgstr "Päta Left Widget Area"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:241
-msgid "The footer left widget area"
-msgstr "Päta vľavo widgetu plochu"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:254
-msgid "Footer Right Widget Area"
-msgstr "Päta Právo Widget Area"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:258
-msgid "The footer right widget area"
-msgstr "Päta vpravo Widget oblasť"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:307
-msgid "Primary Menu"
-msgstr "Primárne Menu"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/functions.php:533
-msgid "Edit"
-msgstr "Upraviť"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:79
-msgid "The name field is required."
-msgstr "Je nutné názov poľa."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:84
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
-msgid "Incorrect Captcha code. Please try again."
-msgstr "Nesprávny Captcha kód. Skúste to prosím znova."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:89
-msgid "Error submitting message."
-msgstr "Chyba pri odosielaní správy."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:95
-msgid "Your message was submitted successfully"
-msgstr "Vaša správa bola úspešne odoslaná"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:135
-msgid "Full Name"
-msgstr "Meno a priezvisko"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:140
-msgid "Your Email"
-msgstr "Váš e-mail"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:145
-msgid "Message title"
-msgstr "Predmet správy"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:150
-msgid "Comments"
-msgstr "Komentáre"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:166
-msgid "Reset"
-msgstr "Vynulovať"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
-msgid "Send"
-msgstr "Odoslať"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
-msgid "The Name field is required."
-msgstr "Je nutné názov poľa."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
-msgid "The Email field is required."
-msgstr "Je nutné Email poľa."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
-msgid "Please provide a valid email address."
-msgstr "Zadajte prosím platnú e-mailovú adresu."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-contact.php:167
-msgid "The Message field is required."
-msgstr "Je nutné pole správy."
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:42
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:48
-msgid "Log In"
-msgstr "Prihlásiť sa"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:45
-msgid "Password"
-msgstr "Heslo"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-login.php:62
-msgid "Log Out"
-msgstr "Odhlásiť sa"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-most_popular.php:88
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:119
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:122
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:155
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:301
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:306
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:338
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:853
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:857
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:907
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-blog.php:101
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:433
 msgid "More"
-msgstr "Viac"
+msgstr "viac "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:50
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:50
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:140
+msgid "Your Email"
+msgstr "Váš e-mail "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:62
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:156
+msgid "Comments"
+msgstr "Komentáre "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:78
+msgid "The name field is required."
+msgstr "Je nutné názov poľa. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:83
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
+msgid "Incorrect Captcha code. Please try again."
+msgstr "Nesprávny Captcha kód. Skúste to prosím znova. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:88
+msgid "Error submitting message."
+msgstr "Chyba pri odosielaní správy. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:93
+msgid "Your message was submitted successfully"
+msgstr "Vaša správa bola úspešne odoslaná "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:148
+msgid "Message title"
+msgstr "predmet správy "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:173
+msgid "Reset"
+msgstr "obnoviť "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
+msgid "Send"
+msgstr "odoslať "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
+msgid "The Name field is required."
+msgstr "Je nutné názov poľa. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
+msgid "The Email field is required."
+msgstr "Je nutné Email poľa. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
+msgid "Please provide a valid email address."
+msgstr "Zadajte prosím platnú e-mailovú adresu. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-contact.php:174
+msgid "The Message field is required."
+msgstr "Je nutné pole správy. "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:41
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:47
+msgid "Log in"
+msgstr "prihlásiť sa "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:44
+msgid "Password"
+msgstr "heslo "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-login.php:61
+msgid "Log Out"
+msgstr "Odhlásiť sa "
+
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:44
 msgid "Static Pages:"
 msgstr "Statické stránky:"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:66
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:51
 msgid "All Categories:"
 msgstr "Všetky kategórie:"
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:82
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:59
 msgid "Tags:"
-msgstr "Tagy:"
+msgstr "Tagy: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:102
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:72
 msgid "Archives:"
-msgstr "Archív:"
+msgstr "Archív: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:118
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:80
 msgid "Authors:"
-msgstr "Autori:"
+msgstr "Autori: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/page-sitemap.php:134
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/page-sitemap.php:87
 msgid "Blog Posts:"
-msgstr "Príspevkov v blogu:"
+msgstr "Príspevkov v blogu: "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/searchform.php:1
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/searchform.php:2
 msgid "Search..."
-msgstr "Hľadať ..."
+msgstr "Hľadať ... "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/single.php:55
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/single.php:58
 msgid "Page"
-msgstr "Strana"
+msgstr "strana "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/color_control.php:403
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/color_control.php:588
 msgid "Schemes"
-msgstr "Schémy"
+msgstr "schémy "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/install_sampl_date.php:1406
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/install_sampl_date.php:1420
 msgid "Home"
-msgstr "Domov"
+msgstr "domáce "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/typography_page.php:442
-msgid "Fonts"
-msgstr "Písma"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/includes/meta/seo_meta.php:16
+msgid "SEO Web Business"
+msgstr "SEO Web firmy "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/includes/meta/seo_meta.php:22
-msgid "SEO Exclusive"
-msgstr "SEO Exclusive"
-
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:15
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:15
 msgid "Insert Button Shortcode"
-msgstr "Vložte Tlačidlo skrátený"
+msgstr "Vložte Tlačidlo skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:26
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:26
 msgid "Insert Link Shortcode"
-msgstr "Vložte odkaz skrátený"
+msgstr "Vložte odkaz skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:40
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:40
 msgid "Insert Info Box Shortcode"
-msgstr "Vložte Info Box skrátený"
+msgstr "Vložte Info Box skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:50
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:50
 msgid "Insert Quote Box Shortcode"
-msgstr "Vložte Citácia Box skrátený"
+msgstr "Vložte Citácia Box skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:61
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:61
 msgid "Insert Contact Form Shortcode"
-msgstr "Vložte Kontaktný formulár skrátený"
+msgstr "Vložte Kontaktný formulár skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:71
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:71
 msgid "Insert Tabs Creator Shortcode"
-msgstr "Vložte Tabs Creator skrátený"
+msgstr "Vložte Tabs Creator skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:80
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:80
 msgid "Insert Related Posts Shortcode"
-msgstr "Vložte Súvisiace príspevky skrátený"
+msgstr "Vložte Súvisiace príspevky skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/admin/shortcode/tinymce/config.php:89
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/admin/shortcode/tinymce/config.php:89
 msgid "Insert Columns Layout Shortcode"
-msgstr "Vložiť stĺpce Rozvrhnutie skrátený"
+msgstr "Vložiť stĺpce Rozvrhnutie skrátený "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/categories-vertical-tabs/php/front.end.php:155
-msgid "More Information"
-msgstr "Viac informácií"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:330
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:605
+msgid "Left"
+msgstr "vľavo "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:956
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</ span> Staršie príspevky"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:331
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:606
+msgid "Right"
+msgstr "právo "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/front_end/front_end_functions.php:957
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Novšie príspevky <span class=\"meta-nav\">&rarr;</ span>"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:646
+msgid "Random"
+msgstr "náhodný "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/categories-vertical-tabs/php/front.end.php:155
-msgid "Previous page"
-msgstr "Prejšnja stran  "
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:653
+msgid "Popular"
+msgstr "populárne "
 
-#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin_new/categories-vertical-tabs/php/front.end.php:155
-msgid "Next page"
-msgstr "Naslednja stran"
+#: C:\wamp\www\wordpress_for_theme\wp-content\themes\magazin/front_end/front_end_functions.php:660
+msgid "Recent"
+msgstr "nedávny"

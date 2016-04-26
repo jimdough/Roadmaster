@@ -24,7 +24,6 @@
 * @uses		vye_set_profile_defaults	Set default profile options
 *
 * @param	string		$id				Video ID
-* @param	string		$type			Embed type
 * @param	string		$width			Video width
 * @param	string		$height			Video height
 * @param	string		$fullscreen		Fullscreen button
@@ -36,34 +35,36 @@
 * @param	string		$annotation		Annotations
 * @param	string		$cc				Closed captions
 * @param	string		$style			Stylesheet information
-* @param	string		$link			Link back to YouTube
-* @param	string		$react			Show EmbedPlus reactions
 * @param	string		$stop			Stop in seconds
-* @param	string		$sweetspot		Show EmbedPlus sweetspots
 * @param	string		$disablekb		Disable keyboard controls
 * @param	string		$ratio			Video size ratio
 * @param	string		$autohide		Autohide controls
 * @param	string		$controls		Display controls
 * @param	string		$profile		Which profile to use
 * @param	string		$list_style		How to use a list, if used
-* @param	string		$audio			Only show controls, for audio playback
 * @param	string		$template		Display template
-* @param	string		$hd				Use HD, if available
 * @param	string		$color		 	Progress bar color
 * @param	string		$theme			Use dark or light theme
 * @param	string		$https			Use HTTPS for links
 * @param    string      $dynamic        Show dynamic output
 * @param    string      $search         Perform a search
 * @param    string      $user           Look up user videos
-* @param	string		$vq				Video quality
+* @param    string      $modest         Modest browsing
+* @param	string		$playsinline	Playsinline on iOS
+* @param	string		$html5			Force HTML5
 * @return	string						Code output
 */
 
-function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height = '', $fullscreen = '', $related = '', $autoplay = '', $loop = '', $start = '', $info = '', $annotation = '', $cc = '', $style = '', $link = '', $react = '', $stop = '', $sweetspot = '', $disablekb = '', $ratio = '', $autohide = '', $controls = '', $profile = '', $list_style = '', $audio = '', $template = '', $hd = '', $color = '', $theme = '', $https = '', $dynamic = '', $search = '', $user = '', $vq = '' )  {
+function vye_generate_youtube_code( $id = '', $width = '', $height = '', $fullscreen = '', $related = '', $autoplay = '', $loop = '', $start = '', $info = '', $annotation = '', $cc = '', $style = '', $stop = '', $disablekb = '', $ratio = '', $autohide = '', $controls = '', $profile = '', $list_style = '', $template = '', $color = '', $theme = '', $https = '', $dynamic = '', $search = '', $user = '', $modest = '', $playsinline = '', $html5 = '' )  {
+
+	$start_time = microtime( true );
 
 	// Ensure an ID is passed
 
 	if ( $id == '' ) { return vye_error( __( 'No video/playlist ID has been supplied', 'youtube-embed' ) ); }
+
+    $newline = "\n";
+    $tab = "\t";
 
 	// Get general options
 
@@ -77,11 +78,11 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 
 	$options = vye_set_profile_defaults( $profile );
 
-	// If a user look-up or search has been requested, mis-out looking up list details and
+	// If a user look-up or search has been requested, miss out looking up list details and
 	// simple assign it as an IFRAME video
 
-        $playlist_ids = '';
-        $embed_type = '';
+	$playlist_ids = '';
+	$embed_type = '';
 
 	if ( ( $user == 0 ) && ( $search == 0 ) ) {
 
@@ -99,28 +100,15 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 
 			$id = vye_extract_id( $id );
 
-			// Is it being previewed? In which case remove any cache
-
-			if ( preg_match( '/p=([0-9]*)&preview=true/', $_SERVER['QUERY_STRING'] ) == 1 ) {
-				delete_transient( 'vye_type_' . $id );
-				delete_transient( 'vye_title_' . $id );
-			}
-
 			// Check what type of video it is and whether it's valid
 
-			$return = vye_validate_id( $id, true );
-			$embed_type = $return[ 'type' ];
+			$embed_type = vye_validate_id( $id );
 
-			// If the video is invalid, output an appropriate error
+			// If the video is invalid, output an error
 
 			if ( ( $embed_type == '' ) or ( strlen ( $embed_type ) != 1 ) ) {
-				if ( $embed_type == '' ) {
-					$error = sprintf( __( 'The YouTube ID of %s is invalid.', 'youtube-embed' ), $id );
-				} else {
-					$error = $embed_type;
-				}
-				$result = "\n<!-- YouTube Embed v" . youtube_embed_version . " -->\n";
-				$result .= "<!-- " . $error . " -->\n" . vye_decode( $general[ 'error_message' ] ) . "\n<!-- End of YouTube Embed code -->\n";
+				$result = $newline . '<!-- YouTube Embed v' . youtube_embed_version . ' -->' . $newline;
+				$result .= sprintf( __( 'The YouTube ID of %s is invalid.', 'youtube-embed' ), $id ) . $newline . '<!-- End of YouTube Embed code -->' . $newline;
 				return $result;
 			}
 
@@ -159,24 +147,10 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 		}
 	}
 
-	// Generate a cache key for the above passed parameters
-
-	$hash_key = $id . $type . $width . $height . $fullscreen . $related . $autoplay . $loop . $start . $info . $annotation . $cc . $style . $link . $react . $stop . $sweetspot . $disablekb . $ratio . $autohide . $controls . $profile . $list_style . $audio . $template . $hd . $color . $theme . $https . $dynamic . $search . $user . serialize( $general ) . serialize( $options );
-	if ( isset( $list ) ) { $hash_key .= serialize( $list ); }
-	if ( isset( $return ) ) { $hash_key .= serialize( $return ); }
-
-	$cache_key = 'vye_video_' . md5( $hash_key );
-
-	// Try and get the output from cache. If it exists, return the code
-
-	if ( ( $general[ 'embed_cache' ] != 0 ) && ( !is_feed() ) && ( $list_style != 'random' ) ) {
-		$result = get_transient( $cache_key );
-		if ( $result !== false) { return $result; }
-	}
-
 	$metadata = $general[ 'metadata' ];
 
     // Correct the ID if a playlist
+
     if ( strtolower( substr( $id, 0, 2 ) ) == 'pl') {
         $id = substr( $id, 2 );
     }
@@ -191,11 +165,11 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 	if ( is_feed () ) {
 		$result = '';
 		if ( $playlist_ids != '' ) {
-			$result .= '<p>'.__( 'A video list cannot be viewed within this feed - please view the original content', 'youtube-embed' ).".</p>\n";
+			$result .= '<p>'.__( 'A video list cannot be viewed within this feed - please view the original content', 'youtube-embed' ) . '.</p>' . $newline;
 		} else {
 			$youtube_url = 'http' . $https . '://www.youtube.com/watch?' . $embed_type . '=' . $id;
-			if ( ( $embed_type == 'v' ) && ( $general[ 'feed' ] != 't' ) ) { $result .= '<p><a href="' . $youtube_url . '"><img src="http://img.youtube.com/vi/' . $id . '/' . $general[ 'thumbnail' ] . ".jpg\"></a></p>\n"; }
-			if ( ( $general ['feed'] != 'v' ) or ( $embed_type != 'v' ) ) { $result .= '<p><a href="' . $youtube_url . '">' . __( 'Click here to view the video on YouTube', 'youtube-embed' ) . "</a>.</p>\n"; }
+			if ( ( $embed_type == 'v' ) && ( $general[ 'feed' ] != 't' ) ) { $result .= '<p><a href="' . $youtube_url . '"><img src="http://img.youtube.com/vi/' . $id . '/' . $general[ 'thumbnail' ] . '.jpg"></a></p>' . $newline; }
+			if ( ( $general ['feed'] != 'v' ) or ( $embed_type != 'v' ) ) { $result .= '<p><a href="' . $youtube_url . '">' . __( 'Click here to view the video on YouTube', 'youtube-embed' ) . '</a>.</p>' . $newline; }
 		}
 		return $result;
 	}
@@ -234,19 +208,18 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 	if ( $info == '' ) { $info = $options[ 'info' ]; }
 	if ( $annotation == '' ) { $annotation = $options[ 'annotation' ]; }
 	if ( $cc == '' ) { $cc = $options[ 'cc' ]; }
-	if ( $link == '' ) { $link = $options[ 'link' ]; }
-	if ( $react == '' ) { $react = $options[ 'react' ]; }
-	if ( $sweetspot == '' ) { $sweetspot = $options[ 'sweetspot' ]; }
 	if ( $disablekb == '' ) { $disablekb = $options[ 'disablekb' ]; }
 	if ( $autohide == '' ) { $autohide = $options[ 'autohide' ]; }
 	if ( $controls == '' ) { $controls = $options[ 'controls' ]; }
-	if ( $audio == '' ) { $audio = $options[ 'audio' ]; }
-	if ( $hd == '' ) { $hd = $options[ 'hd' ]; }
 	if ( $style == '' ) { $style = $options[ 'style' ]; }
 	if ( $color == '' ) { $color = $options[ 'color' ]; }
 	if ( $theme == '' ) { $theme = $options[ 'theme' ]; }
-	if ( $vq == '' ) { $vq = $options[ 'vq' ]; }
+    if ( $modest == '' ) { $modest = $options[ 'modest' ]; }
+	if ( $playsinline == '' ) { $playsinline = $options[ 'playsinline' ]; }
+	if ( $html5 == '' ) { $html5 = $options[ 'html5' ]; }
 
+	$language = $general[ 'language'];
+	$debug = $general[ 'debug' ];
 	$wmode = $options[ 'wmode' ];
 
 	if ( $theme == '' ) { $theme = $options[ 'theme' ]; }
@@ -256,28 +229,10 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 	if ( $template == '' ) { $template = $options[ 'template' ]; } else { $template = vye_decode( $template ); }
 	if ( strpos( $template, '%video%' ) === false ) { $template = '%video%'; }
 
-	// If a multi-play list has been specified and EmbedPlus selected, use fallback embedding method instead
-
-	if ( ( $playlist_ids != '' ) && ( $type == 'm' ) && ( $list_style != 'single' ) ) { $type = $options[ 'fallback' ]; }
-
 	// If looping and no playlist has been generated, add the current ID
 	// This is a workaround for the AS3 player which won't otherwise loop
 
 	if ( ( $loop == 1 ) && ( $embed_type != 'p' ) && ( $playlist_ids == '' ) ) { $playlist_ids = $id; }
-
-	// If no type was specified, depending on whether this is a video or playlist, set the specific default
-
-	if ( $type == '' ) {
-		if ( $embed_type == 'v' ) {
-			$type = $options[ 'type' ];
-		} else {
-			$type = $options[ 'playlist' ];
-		}
-	}
-
-	// If a playlist, user or search was specified and this is is Chromeless, switch back to IFRAME to allow
-
-	if  ( ( ( $embed_type == 'p' ) or ( $user != 0 ) or ( $search != 0 ) ) && ( $type == 'c' ) ) { $type = 'v'; }
 
 	// Set parameters without default values
 
@@ -313,109 +268,77 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 	// Set Frameborder output
 
 	$frameborder = '';
-	if ( isset( $general[ 'frameborder' ] ) ) { if ( $general[ 'frameborder' ] == 1 ) { $frameborder = 'frameborder="0" '; } }
-
-	// If audio playback option is set, restrict the height to just show the player toolbar
-
-	if ( $audio == '1' ) { $height = 27; }
+	$amp = '&';
+	if ( isset( $general[ 'frameborder' ] ) ) {
+		if ( $general[ 'frameborder' ] != 1 ) {
+			$frameborder = 'frameborder="0" ';
+		} else {
+			$amp = '&amp;';
+		}
+	}
 
 	// Set up embed types
 
-	$tab = '';
 	$class = 'youtube-player';
-	$paras = '?enablejsapi=1';
-
-	$embedplus = false;
-	$swf = false;
-	$iframe = false;
-	$chromeless = false;
-
-	if ( ( $type == 'm' ) && ( ( $user != 0 ) or ( $search != 0 ) ) ) { $type = $options[ 'fallback' ]; }
-
-	if ( $type != 'v' ) {
-		if ( $type == 'm' ) {
-			$embedplus = true;
-			$tab = "\t";
-			$embedheight = $height + 32;
-			$class = 'cantembedplus';
-			$fallback = $options[ 'fallback' ];
-		} else {
-			if ( $type == "c" ) {
-				$chromeless = true;
-			} else {
-				$swf = true;
-			}
-		}
-		$paras .= '&amp;version=3';
-	} else {
-		$iframe = true;
-	}
+	$paras = '';
 
 	// Generate parameters to add to URL
 
-	if ( $options[ 'modest' ] == 1 ) { $paras .= '&amp;modestbranding=1'; }
-	if ( $fullscreen == 1 ) { $paras .= '&amp;fs=1'; } else { $paras .= '&amp;fs=0'; }
-	if ( $related != 1 ) { $paras .= '&amp;rel=0'; }
-	if ( $autoplay == 1 ) { $paras .= '&amp;autoplay=1'; $paras_ep .= '&amp;autoplay=1'; }
-	if ( $loop == 1 ) { $paras .= '&amp;loop=1'; }
-	if ( $info != 1 ) { $paras .= '&amp;showinfo=0'; }
-	if ( $annotation != 1 ) { $paras .= '&amp;iv_load_policy=3'; }
-	if ( $cc == 1 ) { $paras .= '&amp;cc_load_policy=1'; }
-	if ( $disablekb == 1 ) { $paras .= '&amp;disablekb=1'; }
-	if ( $autohide != 2 ) { $paras .= '&amp;autohide=' . $autohide; }
-	if ( $controls != 1 ) { $paras .= '&amp;controls=' . $controls; }
-	if ( strtolower( $color ) != 'red' ) { $paras .= '&amp;color=' . strtolower( $color ); }
-	if ( strtolower( $theme ) != 'dark' ) { $paras .= '&amp;theme=' . strtolower( $theme ); }
-	if ( $vq != '' ) { $paras .= '&amp;vq=' . strtolower( $vq ); }
+	if ( $modest == 1 ) { $paras .= $amp . 'modestbranding=1'; }
+	if ( $fullscreen != 1 ) { $paras .= $amp . 'fs=0'; }
+	if ( $related != 1 ) { $paras .= $amp . 'rel=0'; }
+	if ( $autoplay == 1 ) { $paras .= $amp . 'autoplay=1'; }
+	if ( $loop == 1 ) { $paras .= $amp . 'loop=1'; }
+	if ( $info != 1 ) { $paras .= $amp . 'showinfo=0'; }
+	if ( $annotation != 1 ) { $paras .= $amp . 'iv_load_policy=3'; }
+	if ( $cc != '' ) { $paras .= $amp . 'cc_load_policy=' . $cc; }
+	if ( $disablekb == 1 ) { $paras .= $amp . 'disablekb=1'; }
+	if ( $autohide != 2 ) { $paras .= $amp . 'autohide=' . $autohide; }
+	if ( $controls != 1 ) { $paras .= $amp . 'controls=' . $controls; }
+	if ( strtolower( $color ) != 'red' ) { $paras .= $amp . 'color=' . strtolower( $color ); }
+	if ( strtolower( $theme ) != 'dark' ) { $paras .= $amp . 'theme=' . strtolower( $theme ); }
+	if ( $wmode != 'window' ) { $paras .= $amp . 'wmode=' . $wmode; }
+	if ( $playsinline == 1 ) { $paras .= $amp . 'playsinline=1'; }
+	if ( $html5 == 1 ) { $paras .= $amp . 'html5=1'; }
+	if ( $language != '' ) { $paras .= $amp . 'hl=' . $language; }
 
 	// If not a playlist, add the playlist parameter
 
-	if ( ( $playlist_ids != '' ) && ( $playlist_ids != $id ) ) { $paras .= '&amp;playlist=' . $playlist_ids; }
-
-	// Generate EmbedPlus parameters
-
-	$paras_ep = '&amp;width=' . $width . '&amp;height=' . $height;
-	if ( $react != 1 ) { $paras_ep .= '&amp;react=0'; }
-	if ( $sweetspot != 1 ) { $paras_ep .= '&amp;sweetspot=0'; }
-	if ( $hd == 1 ) { $paras_ep .= '&amp;hd=1'; }
+	if ( ( $playlist_ids != '' ) && ( $playlist_ids != $id ) ) { $paras .= $amp . 'playlist=' . $playlist_ids; }
 
 	// Add start & stop parameters
 
-	if ( $start != 0 ) { $paras .= '&amp;start=' . $start; $paras_ep .= '&amp;start=' . $start; }
-	if ( $stop != 0 ) { $paras_ep .= '&amp;stop=' . $stop; $paras .= '&amp;end=' . $stop; }
+	if ( $start != 0 ) { $paras .= $amp . 'start=' . $start; }
+	if ( $stop != 0 ) { $paras .= $amp . 'end=' . $stop; }
 
 	// Generate DIVs to wrap around video
 
-	if ( ( $dynamic == 1) or ( $metadata != 0 ) ) {
-		$result = '<div';
-        if ( $dynamic == 1 ) { $result .= ' class="ye-container"'; }
-        if ( $metadata != 0 ) { $result .= ' itemprop="video" itemscope itemtype="http://schema.org/VideoObject"'; }
-        $result .= ">\n";
-		if ( ( $dynamic == 1 ) && ( $fixed == 1) ) { $result = '<div style="width: ' . $width . 'px; max-width: 100%">' . "\n" . $result; }
+	$ttab = $tab;
+	$result = '<div class="youtube-embed';
+	if ( $dynamic == 1 ) { $result .= ' ye-container'; }
+	$result .= '"';
+	if ( $metadata != 0 ) { $result .= ' itemprop="video" itemscope itemtype="http://schema.org/VideoObject"'; }
+	$result .= '>' . $newline;
+	if ( ( $dynamic == 1 ) && ( $fixed == 1) ) {
+		$result = '<div style="width: ' . $width . 'px; max-width: 100%">' . $newline . $tab . $result;
+		$ttab .= $tab;
 	}
 
     // Add Metadata
 
     if ( $metadata != 0 ) {
-        $newline = "\n";
-        if ( $return[ 'title' ] != '' ) { $result .= '<meta itemprop="name" content="' . htmlentities( $return[ 'title' ] ) . '"/>' . $newline; }
-        $result .= '<meta itemprop="thumbnailUrl" content="http://i.ytimg.com/vi/' . $id . '/hqdefault.jpg" />' . $newline;
-        $result .= '<meta itemprop="embedURL" content="http' . $https . '://www.youtube.com/' . $embed_type . '/' . $id . '" />' . $newline;
-        $result .= '<meta itemprop="height" content="' . $height . '" />' . $newline;
-        $result .= '<meta itemprop="width" content="' . $width . '" />' . $newline;
+
+		$title = get_the_title();
+
+        $result .= $ttab . '<meta itemprop="url" content="http' . $https . '://www.youtube.com/' . $embed_type . '/' . $id . '" />' . $newline;
+        $result .= $ttab . '<meta itemprop="name" content="' . $title . '" />' . $newline;
+        $result .= $ttab . '<meta itemprop="description" content="' . $title . '" />' . $newline;
+        $result .= $ttab . '<meta itemprop="uploadDate" content="' . get_the_date( 'c' ) . '" />' . $newline;
+        $result .= $ttab . '<meta itemprop="thumbnailUrl" content="http://i.ytimg.com/vi/' . $id . '/hqdefault.jpg" />' . $newline;
+        $result .= $ttab . '<meta itemprop="embedUrl" content="http' . $https . '://www.youtube.com/embed/' . $id . '" />' . $newline;
+        $result .= $ttab . '<meta itemprop="height" content="' . $height . '" />' . $newline;
+        $result .= $ttab . '<meta itemprop="width" content="' . $width . '" />' . $newline;
     }
-
-	// Add EmbedPlus code
-
-	if ( $embedplus ) {
-		$result .= "<object type=\"application/x-shockwave-flash\" width=\"" . $width . "\" height=\"" . $embedheight . "\" data=\"http://getembedplus.com/embedplus.swf\" style=\"" . $style . "\" id=\"" . uniqid( 'ep_', true ) . "\" >\n";
-		$result .= "\t<param value=\"http://getembedplus.com/embedplus.swf\" name=\"movie\" />\n";
-		$result .= "\t<param value=\"high\" name=\"quality\" />\n";
-		$result .= "\t<param value=\"" . $wmode . "\" name=\"wmode\" />\n";
-		$result .= "\t<param value=\"always\" name=\"allowscriptaccess\" />\n";
-		if ( $fullscreen == 1 ) { $result .= "\t<param name=\"allowFullScreen\" value=\"true\" />\n"; }
-		$result .= "\t<param name=\"flashvars\" value=\"ytid=" . $id . $paras_ep . "\" />\n";
-	}
 
 	// Work out, depending on privacy settings, the main address to use
 
@@ -430,19 +353,8 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 
 	// Generate the first part of the embed URL along with the ID section
 
-	if ( $chromeless ) {
-		$embed_url = 'http' . $https . '://www.youtube.com/apiplayer';
-		$id_paras = '?video_id=' . $id;
-	} else {
-		$embed_url = 'http' . $https . '://www.' . $url_privacy . '/';
-		if ( $type == 'v' ) {
-			$embed_url .= 'embed';
-		} else {
-			$embed_url .= 'v/';
-		}
-		$id_paras = $id;
-		if ( $type == 'v' ) { $id_paras = '/' . $id_paras; }
-	}
+	$embed_url = 'http' . $https . '://www.' . $url_privacy . '/embed';
+    $id_paras = '/' . $id;
 
 	// If a playlist, user or download build the ID appropriately
 
@@ -453,9 +365,7 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 		if ( $user != 0 ) { $list_type = 'user_uploads'; }
 		if ( $search != 0 ) { $list_type = 'search'; $id = urlencode( $id ); }
 
-		$id_paras = '';
-		if ( $type == 'p' ) { $id_paras .= 'videoseries'; }
-		$id_paras .= '?listType=' . $list_type . '&amp;list=';
+		$id_paras = '?listType=' . $list_type . '&list=';
 		if ( ( $embed_type == 'p' ) && ( strtolower( substr ( $id, 0, 2 ) ) != 'pl' ) ) { $id_paras .= 'PL'; }
 		$id_paras .= $id;
 	}
@@ -463,56 +373,45 @@ function vye_generate_youtube_code( $id = '', $type = '', $width = '', $height =
 	// Combine URL parts together
 
 	$embed_url .= $id_paras;
-	if ( strpos( $embed_url, '?' ) > 0 ) { $paras = '&amp;' . substr( $paras, 1 ); }
+	if ( ( !strpos( $embed_url, '?' ) ) && ( $paras != '' ) ) { $paras = '?' . substr( $paras, 1 ); }
 	$embed_url .= $paras;
 
-	// Add AS3 YouTube embed code
+	// Check length of URL to ensure it doesn't exceed 2000 characters
 
-	if ( ( $swf ) or ( $chromeless ) or ( ( $embedplus ) && ( ( $fallback == 'o' ) or ( $fallback == 'p' ) ) ) ) {
-		$result .= $tab . "<object class=\"" . $class . "\" type=\"application/x-shockwave-flash\" data=\"" . $embed_url . "\" width=\"" . $width . "\" height=\"" . $height . "\" style=\"" . $style . "\"";
-		$result .= $tab . "\t<param name=\"movie\" value=\"" . $embed_url . "\" />\n";
-		$result .= $tab . "\t<param name=\"wmode\" value=\"" . $wmode . "\" />\n";
-		if ( $fullscreen == 1 ) { $result .= $tab . "\t<param name=\"allowFullScreen\" value=\"true\" />\n"; }
-		if ( ( $link != 1 ) && ( $link != '' ) ) { $result .= $tab . "\t<param name=\"allowNetworking\" value=\"internal\" />\n"; }
-		$result .= $tab . "</object>\n";
-	}
+	if ( strlen( $embed_url ) > 2000 ) { return vye_error( __( 'The maximum URL length has been exceeded. Please reduce your parameter and/or playlist.', 'youtube-embed' ) ); }
 
 	// Add IFRAME embed code
 
-	if ( ( $iframe ) or ( ( $embedplus ) && ( $fallback == "v" ) ) ) {
-		if ( $embed_type == "p" ) { $playlist_para = "p/"; } else { $playlist_para = ''; }
-		$result .= $tab . '<iframe ' . $frameborder . 'style="border: 0;' . $style . '" class="' . $class . '" width="' . $width . '" height="' . $height . '" src="' . $embed_url . '&amp;wmode=' . $wmode . '"';
-		if ( $fullscreen == 1 ) { $result .= ' allowfullscreen="allowfullscreen"'; }
-		$result .= " ></iframe>\n";
-	}
-
-	// If using EmbedPlus, add the OBJECT closure tag
-
-	if ( $embedplus ) { $result .= "</object>\n<!--[if lte IE 6]> <style type=\"text/css\">.cantembedplus{display:none;}</style><![endif]-->\n"; }
+	if ( $embed_type == "p" ) { $playlist_para = "p/"; } else { $playlist_para = ''; }
+	$result .= $ttab . '<iframe ' . $frameborder . 'style="border: 0;' . $style . '" class="' . $class . '" width="' . $width . '" height="' . $height . '" src="' . $embed_url . '"';
+	if ( $fullscreen == 1 ) { $result .= ' allowfullscreen'; }
+	$result .= ' ></iframe>' . $newline;
 
 	// Now apply the template to the result
 
 	$end_tag = '';
-	if ( ( $dynamic == 1 ) or ( $metadata != 0 ) ) {
-		$end_tag .= "</div>\n";
-		if ( ( $dynamic == 1 ) && ( $fixed == 1 ) ) { $end_tag .= "</div>\n"; }
+	if ( ( $dynamic == 1 ) && ( $fixed == 1 ) ) {
+		$end_tag .= $tab . '</div>' . $newline . '</div>' . $newline;
+	} else {
+		$end_tag .= '</div>' . $newline;
 	}
 	$result = str_replace( '%video%', $result . $end_tag, $template );
 
 	// Add the download link, if required
 
-	if ( $options[ 'download' ] == 1 ) { $result .= '<div style="' . $options[ 'download_style' ] . '" class="aye_download"><a href="' . vye_generate_download_code( $id ) . "\">" . $options[ 'download_text' ] . "</a></div>\n"; }
+	if ( ( $options[ 'download' ] == 1 ) && ( $embed_type == 'v' ) ) {
+		$result .= '<div style="' . $options[ 'download_style' ] . '" class="aye_download">' . $newline . $tab . '<a href="' . vye_generate_download_code( $id ) . "\">" . $options[ 'download_text' ] . '</a>' . $newline . '</div>' . $newline;
+	}
 
 	// Now add a commented header and trailer
 
-	$result = "\n<!-- YouTube Embed v" . youtube_embed_version . " -->\n" . $result;
-	$result .= "<!-- End of YouTube Embed code -->\n";
+	if ( $debug == 1 ) {
+		$result = '<!-- YouTube Embed v' . youtube_embed_version . ' -->' . $newline . $result;
+		$runtime = round( microtime( true ) - $start_time, 5 );
+		$result .= '<!-- End of YouTube Embed code. Generated in ' . $runtime . ' seconds -->' . $newline;
+	}
 
-	// Cache the output
-
-	if ( $general[ 'embed_cache' ] != 0 ) { set_transient( $cache_key, $result, 3600 * $general[ 'embed_cache' ] );	}
-
-	return $result;
+	return $newline . $result;
 }
 
 /**
@@ -616,12 +515,12 @@ function vye_get_url_para( $id, $para, $current ) {
 	// Look for an ampersand
 
 	$start_pos = false;
-	if ( strpos( $id, '&amp;' . $para . '=' ) !== false ) {	$start_pos = strpos( $id, '&amp;' . $para . '=' ) + 6 + strlen( $para ); }
+	if ( strpos( $id, '&' . $para . '=' ) !== false ) {	$start_pos = strpos( $id, '&' . $para . '=' ) + 6 + strlen( $para ); }
 
 	// If a parameter was found, look for the end of it
 
 	if ( $start_pos !== false ) {
-		$end_pos = strpos( $id, '&amp;', $start_pos + 1 );
+		$end_pos = strpos( $id, '&', $start_pos + 1 );
 		if ( !$end_pos ) { $end_pos = strlen( $id ); }
 
 		// Extract the parameter and return it

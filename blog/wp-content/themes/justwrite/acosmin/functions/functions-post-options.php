@@ -26,11 +26,11 @@ function ac_post_options() {
 	?>
     <form>
 		<p>
-			<input type="checkbox" class="checkbox" name="ac_featured_article" value="1" <?php checked(get_post_meta($post->ID, 'ac_featured_article', true), 1 ); ?> /><label for="ac_featured_article"><?php _e('Mark this post as featured', 'acosmin') ?></label>
+			<input type="checkbox" class="checkbox" name="ac_featured_article" value="1" <?php checked(get_post_meta($post->ID, 'ac_featured_article', true), 1 ); ?> /><label for="ac_featured_article"><?php _e('Mark this post as featured', 'justwrite') ?></label>
 		</p>
         
         <p>
-			<input type="checkbox" class="checkbox" name="ac_show_post_thumbnail" value="1" <?php checked(get_post_meta($post->ID, 'ac_show_post_thumbnail', true), 1 ); ?> /><label for="ac_show_post_thumbnail"><?php _e('Post thumbnail in single view', 'acosmin') ?></label>
+			<input type="checkbox" class="checkbox" name="ac_show_post_thumbnail" value="1" <?php checked(get_post_meta($post->ID, 'ac_show_post_thumbnail', true), 1 ); ?> /><label for="ac_show_post_thumbnail"><?php _e('Post thumbnail in single view', 'justwrite') ?></label>
 		</p>
     </form>
     

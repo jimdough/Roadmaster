@@ -196,3 +196,19 @@
 	background:#000 !important;
 	color:#000 !important;
 }
+
+.bizfour-products-services-item{
+	background:#cccccb;
+}
+.bizfour-products-services-img{
+	background:#cccccb;	
+}
+.bizfour-quote{
+	border:1px solid #cccccb;
+}
+.bizfour-quote-text{
+	background:url(images/quote.png) top left no-repeat;		
+}
+.bizfour-quote-name span{
+	background:#cccccb;
+}

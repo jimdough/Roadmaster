@@ -7,16 +7,15 @@
 * @package	YouTube-Embed
 * @since	2.0
 */
-?>
-<div class="wrap" style="width: 1010px;">
-<h2><?php _e( 'YouTube Embed Lists', 'youtube-embed' ); ?></h2>
 
-<?php
 // Set current list number
+
 if ( isset( $_POST[ 'youtube_embed_list_no' ] ) ) { $list_no = $_POST[ 'youtube_embed_list_no' ]; } else { $list_no = 0; }
 if ( $list_no == '' ) { $list_no = 1; }
 
 // If options have been updated on screen, update the database
+
+$message = '';
 if ( ( !empty( $_POST[ 'Submit' ] ) ) && ( check_admin_referer( 'youtube-embed-general', 'youtube_embed_general_nonce' ) ) ) {
 
 	$class = 'updated fade';
@@ -32,19 +31,25 @@ if ( ( !empty( $_POST[ 'Submit' ] ) ) && ( check_admin_referer( 'youtube-embed-g
 		$valid = true;
 
 		// Loop through the video IDs
+
 		while ( $loop < count( $id_array ) ) {
+
 			// Extract the ID from the provided data
+
 			$id = trim( vye_extract_id( $id_array[ $loop ] ) );
+
 			// Now check its validity
+
 			if ( $id != '' ) {
-				$video_info = vye_validate_id( $id, true );
-				if ( $video_info[ 'type' ] != 'v' ) { $valid = false; }
+				$type = vye_validate_id( $id );
+				if ( $type != 'v' ) { $valid = false; }
 				$new_id_list .= $id . "\n";
 			}
 			$loop ++;
 		}
 
 		// If one or more IDs weren't valid, output an error
+
 		if (!$valid) {
 			$class = 'error';
 			$message = __( 'Errors were found with your video list. See the list below for details.', 'youtube-embed' );
@@ -52,6 +57,7 @@ if ( ( !empty( $_POST[ 'Submit' ] ) ) && ( check_admin_referer( 'youtube-embed-g
 	}
 
 	// Update the options
+
 	$options[ 'name' ] = $_POST[ 'youtube_embed_name' ];
 
 	if ( $new_id_list == '' ) {
@@ -61,17 +67,49 @@ if ( ( !empty( $_POST[ 'Submit' ] ) ) && ( check_admin_referer( 'youtube-embed-g
 	}
 
 	if ( substr( $class, 0, 7 ) == 'updated' ) { update_option( 'youtube_embed_list' . $list_no, $options ); }
-	echo '<div class="' . $class . '"><p><strong>' . $message . "</strong></p></div>\n";
+
 } else {
 	$class = '';
 }
 
 // Fetch options into an array
+
 if ( $class != "error" ) { $options = vye_set_list_defaults( $list_no ); }
 $general = vye_set_general_defaults();
+
+// Get number of lists in use
+
+$loop = 1;
+$max_list = 0;
+while ( $loop <= $general[ 'list_no' ] ) {
+
+	$list = get_option( 'youtube_embed_list' . $loop );
+
+	if ( $list == '' ) {
+		$max_list = $loop - 1;
+		$loop = $general[ 'list_no' ];
+	}
+	$loop ++;
+}
+
+// Display any screen headings
+
+?>
+<div class="wrap" style="width: 1010px;">
+<?php
+global $wp_version;
+if ( ( float ) $wp_version >= 4.3 ) { $heading = '1'; } else { $heading = '2'; }
+?>
+<h<?php echo $heading; ?>><?php _e( 'YouTube Embed Lists', 'youtube-embed' ); ?><span class="title-count"><?php echo $max_list; ?></span></h<?php echo $heading; ?>>
+
+<?php
+
+// Output any messages
+
+if ( $message != '' ) {	echo '<div class="' . $class . '"><p><strong>' . $message . "</strong></p></div>\n"; }
 ?>
 
-<form method="post" action="<?php echo get_bloginfo( 'wpurl' ) . '/wp-admin/admin.php?page=list-options'; ?>">
+<form method="post" action="<?php echo get_bloginfo( 'wpurl' ) . '/wp-admin/admin.php?page=ye-list-options'; ?>">
 
 <span class="alignright">
 <select name="youtube_embed_list_no">
@@ -81,12 +119,14 @@ while ( $loop <= $general[ 'list_no' ] ) {
 
 	$listfiles = get_option( 'youtube_embed_list' . $loop );
 	$listname = $listfiles[ 'name' ];
+	$list_found = true;
 
-	if ( $listname == '' ) { $listname = __( 'List', 'youtube-embed' ) . ' ' . $loop; }
-	if ( strlen( $listname ) > 30 ) { $listname = substr( $listname, 0, 30 ) . '&#8230;'; }
+	if ( $listname == '' ) { $listname = __( 'List', 'youtube-embed' ) . ' ' . $loop; $list_found = false; }
 	echo '<option value="' . $loop . '"';
 	if ( $list_no == $loop ) { echo " selected='selected'"; }
-	echo '>' . $listname . "</option>\n";
+	echo '>' . $listname;
+	if ( !$list_found ) { echo ' [undefined]'; }
+	echo "</option>\n";
 
 	$loop ++;
 }
@@ -99,21 +139,26 @@ while ( $loop <= $general[ 'list_no' ] ) {
 
 <table class="form-table">
 
-<tr>
-<th scope="row"><?php _e( 'List name', 'youtube-embed' ); ?></th><td>
-<input type="text" size="20" name="youtube_embed_name" value="<?php echo $options[ 'name' ]; ?>"/>
-<?php echo '&nbsp;<span class="description">' . __( 'The name you wish to give this list', 'youtube-embed' ) . '</span>'; ?>
-</td></tr>
+<!-- List Name -->
 
 <tr>
-<th scope="row"><?php _e( 'Video IDs (one per line)', 'youtube-embed' ); ?></th><td>
-<textarea name="youtube_embed_video_list" id="youtube_embed_video_list" cols="12" rows="10" class="widefat"><?php echo $options[ 'list' ]; ?></textarea>
-</td></tr>
+<th scope="row"><?php _e( 'List Name', 'youtube-embed' ); ?></th>
+<td><label for="youtube_embed_name"><input type="text" size="20" name="youtube_embed_name" value="<?php echo $options[ 'name' ]; ?>"/>
+<?php _e( 'The name you wish to give this list', 'youtube-embed' ); ?></label></td>
+</tr>
+
+<!-- Video IDs -->
+
+<tr>
+<th scope="row"><?php _e( 'Video IDs (one per line)', 'youtube-embed' ); ?></th>
+<td><label for="youtube_embed_list"><textarea name="youtube_embed_video_list" rows="10" cols="12" class="large-text code"><?php echo $options[ 'list' ]; ?></textarea></label></td>
+</tr>
+
 </table>
 
 <?php wp_nonce_field( 'youtube-embed-general','youtube_embed_general_nonce', true, true ); ?>
 
-<p class="submit"><input type="submit" name="Submit" class="button-primary" value="<?php _e( 'Save Settings', 'youtube-embed' ); ?>"/></p>
+<p class="submit"><input type="submit" name="Submit" class="button-primary" value="<?php _e( 'Save Changes', 'youtube-embed' ); ?>"/></p>
 
 </form>
 
@@ -136,8 +181,7 @@ if ( $options[ 'list' ] != '' ) {
 
 			// Validate the video type
 
-			$video_info = vye_validate_id( $id, true );
-			$type = $video_info[ 'type' ];
+			$type = vye_validate_id( $id );
 
 			if ( $type == 'p' ) {
 				$text = __( 'This is a playlist', 'youtube-embed' );
@@ -160,7 +204,6 @@ if ( $options[ 'list' ] != '' ) {
 			// Output the video information
 
 			echo "\t<tr>\n\t\t<td>" . $id . "</td>\n";
-			echo "\t\t<td>" . $video_info[ 'title' ] . "</td>\n";
 			echo "\t\t<td style=\"";
 
 			if ( $status != 0 ) {

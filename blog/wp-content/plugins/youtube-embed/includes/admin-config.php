@@ -26,7 +26,7 @@ function vye_add_settings_link( $links, $file ) {
 	if ( !$this_plugin ) { $this_plugin = plugin_basename( __FILE__ ); }
 
 	if ( strpos( $file, 'youtube-embed.php' ) !== false ) {
-		$settings_link = '<a href="admin.php?page=general-options">' . __( 'Settings', 'youtube-embed' ) . '</a>';
+		$settings_link = '<a href="options-general.php?page=ye-general-options">' . __( 'Settings', 'youtube-embed' ) . '</a>';
 		array_unshift( $links, $settings_link );
 	}
 
@@ -79,24 +79,16 @@ function vye_menu_initialise() {
 	$menu_access = $options[ 'menu_access' ];
 
 	// Add main admin option
-	
+
 	$menu_icon = 'dashicons-video-alt3';
 
-	add_menu_page( __( 'About YouTube Embed', 'youtube-embed' ), __( 'YouTube', 'youtube-embed' ), $menu_access, 'general-options', 'vye_general_options', $menu_icon, 12 );
-
-	// Add options sub-menu
-
-	global $vye_options_hook;
-
-	$vye_options_hook = add_submenu_page( 'general-options', __( 'YouTube Embed Options', 'youtube-embed' ),  __( 'Options', 'youtube-embed' ), $menu_access, 'general-options', 'vye_general_options' );
-
-	add_action( 'load-' . $vye_options_hook, 'vye_add_options_help' );
+	add_menu_page( __( 'About YouTube Embed', 'youtube-embed' ), __( 'YouTube', 'youtube-embed' ), $menu_access, 'ye-profile-options', 'vye_profile_options', $menu_icon, 12 );
 
 	// Add profiles sub-menu
 
 	global $vye_profiles_hook;
 
-	$vye_profiles_hook = add_submenu_page( 'general-options', __( 'YouTube Embed Profiles', 'youtube-embed' ), __( 'Profiles', 'youtube-embed' ), $menu_access, 'profile-options', 'vye_profile_options' );
+	$vye_profiles_hook = add_submenu_page( 'ye-profile-options', __( 'YouTube Embed Profiles', 'youtube-embed' ), __( 'Profiles', 'youtube-embed' ), $menu_access, 'ye-profile-options', 'vye_profile_options' );
 
 	add_action( 'load-' . $vye_profiles_hook, 'vye_add_profiles_help' );
 
@@ -104,9 +96,17 @@ function vye_menu_initialise() {
 
 	global $vye_lists_hook;
 
-	$vye_lists_hook = add_submenu_page( 'general-options', __( 'YouTube Embed Lists', 'youtube-embed' ), __( 'Lists', 'youtube-embed' ), $menu_access, 'list-options', 'vye_list_options' );
+	$vye_lists_hook = add_submenu_page( 'ye-profile-options', __( 'YouTube Embed Lists', 'youtube-embed' ), __( 'Lists', 'youtube-embed' ), $menu_access, 'ye-list-options', 'vye_list_options' );
 
 	add_action( 'load-' . $vye_lists_hook, 'vye_add_lists_help' );
+
+	// Add options sub-menu
+
+	global $vye_options_hook;
+
+	$vye_options_hook = add_submenu_page( 'options-general.php', __( 'YouTube Embed Options', 'youtube-embed' ),  __( 'YouTube Embed', 'youtube-embed' ), $menu_access, 'ye-general-options', 'vye_general_options' );
+
+	add_action( 'load-' . $vye_options_hook, 'vye_add_options_help' );
 
 }
 
@@ -171,28 +171,9 @@ function vye_add_options_help() {
 
 	if ( $screen->id != $vye_options_hook ) { return; }
 
-	$screen -> add_help_tab( array( 'id' => 'options-help-tab', 'title'	=> __( 'Help', 'youtube-embed' ), 'content' => vye_options_help() ) );
-}
+	$screen -> add_help_tab( array( 'id' => 'options-help-tab', 'title'	=> __( 'Help', 'youtube-embed' ), 'content' => youtube_embed_help( 'options' ) ) );
 
-/**
-* Options Help
-*
-* Return help text for options screen
-*
-* @since	2.5
-*
-* @return	string	Help Text
-*/
-
-function vye_options_help() {
-
-	$help_text = '<p>' . __( 'This screen allows you to select non-specific options for the YouTube Embed plugin. For the default embedding settings, please select the <a href="admin.php?page=profile-options">Profiles</a> administration option.', 'youtube-embed' ) . '</p>';
-	$help_text .= '<p>' . __( 'Remember to click the Save Settings button at the bottom of the screen for new settings to take effect.', 'youtube-embed' ) . '</p>';
-	$help_text .= '<p><strong>' . __( 'For more information:', 'youtube-embed' ) . '</strong></p>';
-	$help_text .= '<p><a href="https://wordpress.org/plugins/youtube-embed/">' . __( 'YouTube Embed Plugin Documentation', 'youtube-embed' ) . '</a></p>';
-	$help_text .= '<p><a href="http://code.google.com/apis/youtube/player_parameters.html">' . __( 'YouTube Player Documentation', 'youtube-embed' ) . '</a></p>';
-
-	return $help_text;
+	$screen -> add_help_tab( array( 'id' => 'options-links-tab', 'title'	=> __( 'Links', 'youtube-embed' ), 'content' => youtube_embed_help( 'options', 'links' ) ) );
 }
 
 /**
@@ -212,29 +193,9 @@ function vye_add_profiles_help() {
 
 	if ( $screen->id != $vye_profiles_hook ) { return; }
 
-	$screen -> add_help_tab( array( 'id' => 'profiles-help-tab', 'title'	=> __( 'Help', 'youtube-embed' ), 'content' => vye_profiles_help() ) );
-}
+	$screen -> add_help_tab( array( 'id' => 'profiles-help-tab', 'title'	=> __( 'Help', 'youtube-embed' ), 'content' => youtube_embed_help( 'profiles' ) ) );
 
-/**
-* Profiles Help
-*
-* Return help text for profiles screen
-*
-* @since	2.5
-*
-* @return	string	Help Text
-*/
-
-function vye_profiles_help() {
-
-	$help_text = '<p>' . __( 'This screen allows you to set the options for the default and additional profiles. If you don\'t specify a specific parameter when displaying your YouTube video then the default profile option will be used instead. Additional profiles, which you may name, can be used as well and used as required.', 'youtube-embed' ) . '</p>';
-	$help_text .= '<p>' . __( 'Remember to click the Save Settings button at the bottom of the screen for new settings to take effect.', 'youtube-embed' ) . '</p>';
-	$help_text .= '<p><strong>' . __( 'For more information:' ) . '</strong></p>';
-	$help_text .= '<p><a href="https://wordpress.org/plugins/youtube-embed/">' . __( 'YouTube Embed Plugin Documentation', 'youtube-embed' ) . '</a></p>';
-	$help_text .= '<p><a href="http://code.google.com/apis/youtube/player_parameters.html">' . __( 'YouTube Player Documentation', 'youtube-embed' ) . '</a></p>';
-	$help_text .= '<p><a href="http://embedplus.com/">' . __( 'EmbedPlus website', 'youtube-embed' ) . '</a></p>';
-
-	return $help_text;
+	$screen -> add_help_tab( array( 'id' => 'profiles-links-tab', 'title'	=> __( 'Links', 'youtube-embed' ), 'content' => youtube_embed_help( 'profiles', 'links' ) ) );
 }
 
 /**
@@ -254,108 +215,172 @@ function vye_add_lists_help() {
 
 	if ( $screen->id != $vye_lists_hook ) { return; }
 
-	$screen -> add_help_tab( array( 'id' => 'lists-help-tab', 'title'	=> __( 'Help', 'youtube-embed' ), 'content' => vye_lists_help() ) );
+	$screen -> add_help_tab( array( 'id' => 'lists-help-tab', 'title'	=> __( 'Help', 'youtube-embed' ), 'content' => youtube_embed_help( 'lists' ) ) );
+
+	$screen -> add_help_tab( array( 'id' => 'lists-links-tab', 'title'	=> __( 'Links', 'youtube-embed' ), 'content' => youtube_embed_help( 'lists', 'links' ) ) );
 }
 
 /**
-* List Help
+* Help Screens
 *
-* Return help text for lists screen
+* Generate help screen text
 *
-* @since	2.5
+* @since	4.1
 *
-* @return	string	Help Text
+* @param	string	$screen		Which help screen to return text for
+* @param	string	$tab		Which tab of the help this is for
+* @return	string				Help Text
 */
 
-function vye_lists_help() {
+function youtube_embed_help( $screen, $tab = 'help' ) {
 
-	$help_text = '<p>' . __( 'This screen allows you to create lists of YouTube videos, which may be named. These lists can then be used in preference to a single video ID.', 'youtube-embed' ) . '</p>';
-	$help_text .= '<p>' . __( 'Remember to click the Save Settings button at the bottom of the screen for new settings to take effect.', 'youtube-embed' ) . '</p>';
-	$help_text .= '<p><strong>' . __( 'For more information:', 'youtube-embed' ) . '</strong></p>';
-	$help_text .= '<p><a href="https://wordpress.org/plugins/youtube-embed/">' . __( 'YouTube Embed Plugin Documentation', 'youtube-embed' ) . '</a></p>';
-	$help_text .= '<p><a href="http://code.google.com/apis/youtube/player_parameters.html">' . __( 'YouTube Player Documentation', 'youtube-embed' ) . '</a></p>';
+	$text = '';
 
-	return $help_text;
+	if ( ( $screen == 'options' ) && ( $tab == 'help' ) ) {
+
+		$text .= '<p>' . __( 'This screen allows you to select non-specific options for the YouTube Embed plugin. For the default embedding settings, please select the <a href="admin.php?page=ye-profile-options">Profiles</a> administration option.', 'youtube-embed' ) . '</p>';
+	}
+
+	if ( ( $screen == 'profiles' ) && ( $tab == 'help' ) ) {
+
+		$text .= '<p>' . __( 'This screen allows you to set the options for the default and additional profiles. If you don\'t specify a specific parameter when displaying your YouTube video then the default profile option will be used instead. Additional profiles, which you may name, can be used as well and used as required.', 'youtube-embed' ) . '</p>';
+		$text .= '<p>' . __( 'All settings will work whether the Flash or HTML5 player is used, unless one of the following icons is shown, indicating which format the option works with...', 'youtube-embed' ) . '</p>';
+		$text .= "<p><img src='" . plugins_url() . "/youtube-embed/images/flash.png' width='10px'/> - " . __( 'Flash player', 'youtube-embed' ) . '</br>';
+		$text .= "<img src='" . plugins_url() . "/youtube-embed/images/html5.png' width='10px'/> - " . __( 'HTML5 player', 'youtube-embed' ) . '</br>';
+	}
+
+	if ( ( $screen == 'lists' ) && ( $tab == 'help' ) ) {
+
+		$text .= '<p>' . __( 'This screen allows you to create lists of YouTube videos, which may be named. These lists can then be used in preference to a single video ID.', 'youtube-embed' ) . '</p>';
+	}
+
+	if ( $tab == 'help' ) {
+		$text .= '<p>' . __( 'Remember to click the Save Changes button at the bottom of the screen for any changes to take effect.', 'youtube-embed' ) . '</p>';
+	}
+
+	if ( $tab == 'links' ) {
+
+		$text .= '<p><strong>' . __( 'For more information:', 'youtube-embed' ) . '</strong></p>';
+		$text .= '<p><a href="https://wordpress.org/plugins/youtube-embed/">' . __( 'YouTube Embed Plugin Documentation', 'youtube-embed' ) . '</a></p>';
+
+		if ( $screen != 'lists' ) {
+			$text .= '<p><a href="http://code.google.com/apis/youtube/player_parameters.html">' . __( 'YouTube Player Documentation', 'youtube-embed' ) . '</a></p>';
+		}
+
+		if ( $screen == 'options' ) {
+
+			$text .= '<p><a href="https://github.com/davatron5000/FitVids.js">FitVids.js</a></p>';
+			$text .= '<p><a href="https://github.com/davidjbradshaw/iframe-resizer">iFrame Resizer</a></p>';
+		}
+	}
+
+	return $text;
 }
 
 /**
-* Detect plugin activation
+* Set up TinyMCE button
 *
-* Upon detection of activation set an option
+* Add filters (assuming user is editing) for TinyMCE
 *
-* @since	2.4
+* @uses     vye_set_general_defaults    Set default options
+*
+* @since 	2.0
 */
 
-function vye_plugin_activate() {
+function youtube_embed_button() {
 
-	update_option( 'youtube_embed_activated', true );
+	// Ensure user is in rich editor and button option is switched on
 
+	if ( get_user_option( 'rich_editing' ) == 'true' ) {
+
+		$options = vye_set_general_defaults();
+		if ( $options[ 'editor_button' ] != '' ) {
+
+			// Add filters
+
+			add_filter( 'mce_external_plugins', 'add_youtube_embed_mce_plugin' );
+			add_filter( 'mce_buttons', 'register_youtube_embed_button' );
+		}
+	}
 }
+add_action( 'init', 'youtube_embed_button' );
 
-register_activation_hook( WP_PLUGIN_DIR . "/youtube-embed/youtube-embed.php", 'vye_plugin_activate' );
+/**
+* Register new TinyMCE button
+*
+* Register details of new TinyMCE button
+*
+* @since	2.0
+*
+* @param	string	$buttons	TinyMCE button data
+* @return	string				TinyMCE button data, but with new YouTube button added
+*/
 
-// If plugin activated, run activation commands and delete option
+function register_youtube_embed_button( $buttons ) {
 
-if ( get_option( 'youtube_embed_activated' ) ) {
+	array_push( $buttons, 'mce4_youtube_button' );
 
-	add_action( 'admin_enqueue_scripts', 'vye_admin_enqueue_scripts' );
-
-	delete_option( 'youtube_embed_activated' );
+	return $buttons;
 }
 
 /**
-* Enqueue Feature Pointer files
+* Register TinyMCE Script
 *
-* Add the required feature pointer files
+* Register JavaScript that will be actioned when the new TinyMCE button is used
 *
-* @since	2.4
+* @since	2.0
+*
+* @param	string	$plugin_array	Array of MCE plugin data
+* @return	string					Array of MCE plugin data, now with URL of MCE script
 */
 
-function vye_admin_enqueue_scripts() {
+function add_youtube_embed_mce_plugin( $plugin_array ) {
 
-	wp_enqueue_style( 'wp-pointer' );
-	wp_enqueue_script( 'wp-pointer' );
+	$plugin_array[ 'mce4_youtube_button' ] = plugins_url() . '/youtube-embed/js/mce4-button.min.js';
 
-	add_action( 'admin_print_footer_scripts', 'vye_admin_print_footer_scripts' );
+	return $plugin_array;
 }
 
 /**
-* Show Feature Pointer
+* Show Admin Messages
 *
-* Display feature pointer
+* Display messages on the administration screen
 *
-* @since	2.4
+* @since	4.1
+*
 */
 
-function vye_admin_print_footer_scripts() {
+function youtube_embed_admin_messages() {
 
-	$pointer_content = '<h3>' . __( 'Welcome to YouTube Embed', 'youtube-embed' ) . '</h3>';
-	$pointer_content .= '<p style="font-style:italic;">' . __( 'Thank you for installing this plugin.', 'youtube-embed' ) . '</p>';
-	$pointer_content .= '<p>' . __( 'These new menu options will allow you to configure your videos to just how you want them and provide links for help and support.', 'youtube-embed' ) . '</p>';
-	$pointer_content .= '<p>' . __( 'Even if you do nothing else, please visit the Profiles option to check your default video values.', 'youtube-embed' ) . '</p>';
-?>
-<script>
-jQuery(function () {
-	var body = jQuery(document.body),
-	menu = jQuery('#toplevel_page_support-about'),
-	collapse = jQuery('#collapse-menu'),
-	yembed = menu.find("a[href='admin.php?page=profile-options']"),
-	options = {
-		content: '<?php echo $pointer_content; ?>',
-		position: {
-			edge: 'left',
-			align: 'center',
-			of: menu.is('.wp-menu-open') && !menu.is('.folded *') ? yembed : menu
-		},
-		close: function() {
-		}};
+	$shortcode_site = get_option( 'youtube_embed_shortcode_site' );
 
-	if ( !yembed.length )
-		return;
+	$shortcode_admin = get_option( 'youtube_embed_shortcode_admin' );
 
-	body.pointer(options).pointer('open');
-});
-</script>
-<?php
+	if ( ( $shortcode_admin != 0 ) or ( $shortcode_site != 0 ) ) {
+
+		$options = vye_set_general_defaults();
+
+		if ( $options[ 'prompt' ] == 1 ) {
+
+			if ( $shortcode_site == 3 ) {
+				$message = __( 'For some reason the shortcode <strong>[youtube]</strong> is not working on the main site' );
+			}
+
+			$alternative = __( 'An alternative plugin is using the <strong>[youtube]</strong> shortcode' );
+
+			if  ( ( $shortcode_admin == 1 ) or ( $shortcode_site == 1 ) ) {
+				$message = $alternative;
+			}
+
+			if  ( ( $shortcode_admin == 2 ) or ( $shortcode_site == 2 ) ) {
+				$message = __( $alternative . ', possibly the <a href="admin.php?page=jetpack_modules&activated=true">Shortcode Embeds module</a> in Jetpack' );
+			}
+
+			echo '<div class="error notice"><p>YouTube Embed: ' . $message . '.</p></div>';
+		}
+	}
+
 }
+
+add_action( 'admin_notices', 'youtube_embed_admin_messages' );
 ?>

@@ -33,24 +33,6 @@ if (!function_exists('mh_newsdesk_lite_logo')) {
 	}
 }
 
-/***** wp_title Output *****/
-
-if (!function_exists('mh_newsdesk_lite_wp_title')) {
-	function mh_newsdesk_lite_wp_title($title, $sep) {
-		global $paged, $page, $post;
-		if (is_feed())
-			return $title;
-		$title .= get_bloginfo('name');
-		$site_description = get_bloginfo('description', 'display');
-		if ($site_description && (is_home() || is_front_page()))
-			$title = "$title $sep $site_description";
-		if ($paged >= 2 || $page >= 2)
-			$title = "$title $sep " . sprintf(__('Page %s', 'mh-newsdesk-lite'), max($paged, $page));
-		return $title;
-	}
-}
-add_filter('wp_title', 'mh_newsdesk_lite_wp_title', 10, 2);
-
 /***** Page Title Output *****/
 
 if (!function_exists('mh_newsdesk_lite_page_title')) {
@@ -121,7 +103,7 @@ if (!function_exists('mh_newsdesk_lite_featured_image')) {
 			echo "\n" . '<div class="entry-thumbnail">' . "\n";
 				the_post_thumbnail('content-single');
 				if ($caption_text) {
-					echo '<span class="wp-caption-text">' . esc_attr($caption_text) . '</span>' . "\n";
+					echo '<span class="wp-caption-text">' . wp_kses_post($caption_text) . '</span>' . "\n";
 				}
 			echo '</div>' . "\n";
 		}

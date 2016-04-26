@@ -7,8 +7,8 @@
 				get_template_part('content', 'single');
 				mh_newsdesk_lite_postnav();
 				get_template_part('template', 'authorbox');
+				comments_template();
 			endwhile;
-			comments_template();
 		endif; ?>
 	</div>
 	<?php get_sidebar(); ?>

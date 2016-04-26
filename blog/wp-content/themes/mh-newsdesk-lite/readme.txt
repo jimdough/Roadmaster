@@ -1,9 +1,9 @@
 === MH Newsdesk lite - Dynamic News WordPress Theme ===
 Theme URI: http://www.mhthemes.com/themes/mh/newsdesk-lite/
 Tags: Magazine, News, Blog, Responsive
-Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 1.0.7
+Requires at least: 4.1.0
+Tested up to: 4.3.1
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 MH Newsdesk lite WordPress Theme, Copyright 2015 MH Themes
@@ -56,6 +56,33 @@ Overview: http://demo.mhthemes.com/newsdesk/credits/
 ==================================
 Changelog
 ==================================
+
+= v1.2.3 08-11-2015 =
+* Fixed issue with WordPress comments appearing on BuddyPress pages
+
+= v1.2.2 02-11-2015 =
+* Added spanish translation - thanks to Rafael Magdalena
+
+= v1.2.1 19-10-2015 =
+* Minor CSS fixes to prepare for WP 4.4
+
+= v1.2.0 27-09-2015 =
+* Added IDs to widget areas for improved customization experience
+* Added theme support for title tag (introduced in WP 4.1)
+* Added missing escaping to links
+
+= v1.1.0 13-09-2015 =
+* Switched loading of Google webfonts to 'https'
+
+= v1.0.9 24-08-2015 =
+* Added indonesian translation files
+
+= v1.0.8 30-07-2015 =
+* Fixed small issue with translations in comments.php
+* Fixed escaping of featured image caption to allow HTML
+* Added czech translation - thanks to Karolina Vyskocilova
+* Updated german translation
+* Updated translation files
 
 = v1.0.7 07-07-2015 =
 * Fixed contextual translation strings

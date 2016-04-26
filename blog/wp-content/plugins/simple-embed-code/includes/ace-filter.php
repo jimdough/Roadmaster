@@ -95,7 +95,7 @@ function ace_filter( $content ) {
 
             // Build the string of code to replace with
 
-            $replace = ace_generate_code( $html, 'Code Embed', $responsive, $max_width );
+            $replace = ace_generate_code( $html, 'Code Embed', $responsive, $max_width, $options[ 'debug' ] );
 
             // Now modify all references
 
@@ -164,12 +164,14 @@ function ace_quick_replace( $content = '', $options = '', $search = '' ) {
 * @param	$plugin_name	string	The name of the plugin (required)
 * @param	$responsive		string	Responsive output required? (optional)
 * @param    $max_width      string  Maximum width of responsive output (optional)
+* @param	$debug			boolean	Whether to suppress debug output (1) or not
 * @return					string	The embed code
 */
 
-function ace_generate_code( $html, $plugin_name, $responsive = '', $max_width = '' ) {
+function ace_generate_code( $html, $plugin_name, $responsive = '', $max_width = '', $debug = '' ) {
 
-    $code = "\n<!-- " . $plugin_name . ' v' . artiss_code_embed_version . " -->\n";
+    $code = "\n";
+	if ( $debug != 1 ) { $code .= '<!-- ' . $plugin_name . ' v' . artiss_code_embed_version . " -->\n"; }
 
     if ( $max_width !== false ) { $code .= '<div style="width: ' . $max_width . 'px; max-width: 100%">'; }
 
@@ -181,7 +183,8 @@ function ace_generate_code( $html, $plugin_name, $responsive = '', $max_width = 
 
     if ( $max_width !== false ) { $code .= '</div>'; }
 
-    $code .= "\n<!-- End of " . $plugin_name . " code -->\n";
+    $code .= "\n";
+	if ( $debug != 1 ) { $code .= '<!-- End of ' . $plugin_name . " code -->\n"; }
 
     return $code;
 }

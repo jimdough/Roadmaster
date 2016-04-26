@@ -18,10 +18,10 @@ $show_thumbnail = get_post_meta( get_the_ID(), 'ac_show_post_thumbnail', true );
     	<?php the_title( '<h2 class="title">', '</h2>' ); ?>
         <header class="details clearfix">
         	<time class="detail left index-post-date" datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'M d, Y' ); ?></time>
-			<span class="detail left index-post-author"><em><?php _e( 'by', 'acosmin' ); ?></em> <?php the_author_posts_link(); ?></span>
-			<span class="detail left index-post-category"><em><?php _e( 'in', 'acosmin' ); ?></em> <?php ac_output_first_category(); ?></span>
+			<span class="detail left index-post-author"><em><?php _e( 'by', 'justwrite' ); ?></em> <?php the_author_posts_link(); ?></span>
+			<span class="detail left index-post-category"><em><?php _e( 'in', 'justwrite' ); ?></em> <?php ac_output_first_category(); ?></span>
         	<?php if ( !$show_thumbnail ) : ?>
-            <a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php _e( 'Links Archive', 'acosmin' ); ?>" class="post-format-icon"><?php ac_icon( 'link' ); ?></a>
+            <a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php _e( 'Links Archive', 'justwrite' ); ?>" class="post-format-icon"><?php ac_icon( 'link' ); ?></a>
             <?php else : endif; ?>
         </header><!-- END .details -->
         <?php if( $show_thumbnail && ac_check_paged() ) { ?>
@@ -30,7 +30,7 @@ $show_thumbnail = get_post_meta( get_the_ID(), 'ac_show_post_thumbnail', true );
 			if ( has_post_thumbnail() && $paged == false ) : 
 				the_post_thumbnail( 'ac-sidebar-featured' );
 			else :
-				echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'acosmin' ) . '" />';
+				echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'justwrite' ) . '" />';
 			endif;
 			?>
         </figure>
@@ -39,10 +39,10 @@ $show_thumbnail = get_post_meta( get_the_ID(), 'ac_show_post_thumbnail', true );
 			<?php 
 				the_content();
 				
-				the_tags('<div class="post-tags-wrap clearfix"><strong>' . __( 'Tagged with:', 'acosmin' ) . '</strong> <span>','</span>, <span>','</span></div>');
+				the_tags('<div class="post-tags-wrap clearfix"><strong>' . __( 'Tagged with:', 'justwrite' ) . '</strong> <span>','</span>, <span>','</span></div>');
 				
 				wp_link_pages( array(
-				'before'      => '<footer class="page-links-wrap"><div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'acosmin' ) . '</span>',
+				'before'      => '<footer class="page-links-wrap"><div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'justwrite' ) . '</span>',
 				'after'       => '</div></footer>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
