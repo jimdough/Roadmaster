@@ -14,7 +14,7 @@
  <body class="landing-page">
  <?php include("../../inc/analytics.inc"); ?>
 
-<!-- OFFTXNVAS MENU -->
+<!-- OFFCANVAS MENU -->
 <div class="off-canvas-wrap row" data-offcanvas>
 
   <div class="inner-wrap"> <!-- All Content in Here -->

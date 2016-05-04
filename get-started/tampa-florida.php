@@ -22,7 +22,7 @@
   </style>
   
  </head>
- <body>
+ <body class="landing-page">
  <?php include("../inc/analytics.inc"); ?>
 
 <!-- OFFCANVAS MENU -->
@@ -128,7 +128,7 @@
  
   <!-- Row 3 -->
       <div class="row">
-  	  <div class="large-12 columns">	  	  
+  	  <div class="large-6 columns">	  	  
 	  	  <h2>Why choose Roadmaster of Tampa, FL?</h2>
 	  	  <p>Becoming a truck driver is possible with the right driver training school behind you. With a solid reputation in the field, Roadmaster Drivers School can help you become a professional truck driver with only 3 to 4 weeks of specialized hands-on training.  For over 20 years, Roadmaster has trained over 75,000 entry level drivers and continues to help put people to work every day!</p>
 	  	  
@@ -136,7 +136,7 @@
 
 	  </div><!-- end column-->
 	  
-	  	  <!---<div class="large-6"><h2>Location Information</h2>
+	  	  <div class="large-6 columns"><h2>Location Information</h2>
 <p><img src="../../img/cities/tampa1-l.jpg" alt="Roadmaster Truck Driving School"></p>
 <div class="columns small-12 medium-7">
 <p><b><a href="../../truck_school_tampa.php">Roadmaster Drivers School of Tampa, Florida</a></b><br> 5025 Orient Road<br> Tampa, FL 33610<br> <a href="tel:+18136262400">Phone: (813) 626-2400</a> <span class="show-for-small"><a href="../../truck_school_tampa.php#viewmap" target="_blank">Get Directions</a></span></p>

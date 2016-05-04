@@ -3,8 +3,8 @@
 <html class="no-js" lang="en" >
  <head>
 
-  <title>CDL Training and Truck Driving School in Jacksonville,FL - Roadmaster</title>
-<META NAME="DESCRIPTION" CONTENT="Roadmaster of Dunn. North Carolina is a hands-on truck driving school & CDL training center for areas around Raleigh-Durham, North Carolina.">
+  <title>CDL Training and Truck Driving School in West Memphis, AR - Roadmaster</title>
+<META NAME="DESCRIPTION" CONTENT="Roadmaster of West Memphis, AR is a hands-on truck driving school & CDL training center for areas around Orlando,Florida.">
   
   <?php include("../inc/head-subdir.inc"); ?>
   <!-- End Scripts -->
@@ -22,7 +22,7 @@
   </style>
   
  </head>
- <body class="landing-page">
+ <body>
  <?php include("../inc/analytics.inc"); ?>
 
 <!-- OFFCANVAS MENU -->
@@ -62,7 +62,7 @@
 		<div class="row">
 	  <!-- Column #1 -->
 	  <div class="small-12 medium-12 large-12 column">
-	  
+
    </div> <!-- End Column 1-->
    
    	  <section class="editable"> <!-- Side Content -->
@@ -81,7 +81,7 @@
 		<div class="column small-12 large-6 medium-12">
 			<div class="panel">
 				  <h2>Truck Driver Salary & Benefits</h2>
-			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year*, but that is just the beginning to what a truck driver can earn! </p>
+			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year, but that is just the beginning to what a truck driver can earn! </p>
 			  
 			  <ul class="yes-bullet">
 			  		<li>Starting pay averaging <b>$40,000</b> per year</li>
@@ -128,26 +128,25 @@
  
   <!-- Row 3 -->
       <div class="row">
-  	  <div class="large-6 columns">	  	  
-	  	  <h2>Why choose Roadmaster of Jacksonville,FL?</h2>
+  	  <div class="large-12 columns">	  	  
+	  	  <h2>Why choose Roadmaster of West Memphis, AR?</h2>
 	  	  <p>Becoming a truck driver is possible with the right driver training school behind you. With a solid reputation in the field, Roadmaster Drivers School can help you become a professional truck driver with only 3 to 4 weeks of specialized hands-on training.  For over 20 years, Roadmaster has trained over 75,000 entry level drivers and continues to help put people to work every day!</p>
 	  	  
 	  	  <p>Offering 11 training locations across the country, Roadmaster is an industry leader in CDL training, employing experienced instructors and offering students comprehensive classroom and behind the wheel truck driving education so they are fully prepared to start their new job in the trucking industry.  By focusing on giving students the best education and maintaining high job placement standards, Roadmaster has gained an excellent reputation in the trucking industry for quality training of entry-level commercial truck drivers. At Roadmaster, you will gain the confidence and know-how needed to enter into the professional trucking industry, setting yourself apart from the rest. Roadmaster is serious when it comes to helping graduates find a job and begins job placement assistance in the first week of training.  If qualified, you could even be pre-hired with a trucking company during your first week of training at Roadmaster!  Many graduates receive multiple offers of employment from major transportation carriers such as Werner, Schneider, TMC, Covenant, Swift and more!</p>
-	  	  
-  	  </div>
 
 	  </div><!-- end column-->
-	  
-		  <div class="large-6 columns"><h2>Location Information</h2>
-<p><img src="../../img/cities/jax4.jpg" alt="Roadmaster Truck Driving School"></p>
+	
+	  <!---<div class="large-6 columns editable" id="untitled-region-3"><h2>Location Information</h2>
+<p><img src="../../img/cities/wm1-l.jpg" alt="Roadmaster Truck Driving School"></p>
 <div class="columns small-12 medium-7">
-<p><b><a href="../../truck_school_jacksonville.php">Roadmaster Drivers School of Jacksonville, Florida</a></b><br> 1409 Pickettville Road<br> Jacksonville, FL 32220<br> <a href="tel:+19047833333">Phone: (904) 783-3333</a> <span class="show-for-small"><a href="../../truck_school_jacksonville.php#viewmap" target="_blank">Get Directions</a></span></p>
+<p><b><a href="../../truck_school_westmemphis.php">Roadmaster Drivers School of West Memphis, Arkansas</a></b><br> 2080 East North Service Road<br> West Memphis, Arkansas 72301<br> <a href="tel:+18704004090">Phone: (870) 400-4090</a> <span class="show-for-small"><a href="../../truck_school_westmemphis.php#viewmap" target="_blank">Get Directions</a></span></p>
 </div>
-<div class="columns small-12 medium-5" style="padding: 0; margin: 0;"><a class="hide-for-small button default round" style="padding: .5em; margin: .5em;" href="../../truck_school_jacksonville.php#viewmap" target="_blank">Get Directions <i class="fi-arrow-right"></i></a></div></div>
-	   </div><!-- end row-->	
-	     		
+<div class="columns small-12 medium-5" style="padding: 0; margin: 0;"><a class="hide-for-small button default round" style="padding: .5em; margin: .5em;" href="../../truck_school_westmemphis.php#viewmap" target="_blank">Get Directions <i class="fi-arrow-right"></i></a></div></div>
+	   </div><!-- end row-->
+	   	  		
 	  		 <div class="row">
 			 <div class="columns editable" id="dynamic-disclaimer"><p class="small-disclaimer"><span class="s1">*wage info supplied by Werner Enterprises</span></p></div>
+		 </div>
 
 <!-- CTA--><div class="row show-for-small uneditable" id="apply"><div class="columns text-center"><a class="button success radius" style="font-size:1.2em; line-height:1.2em;" href="tel:+18008311300" onclick="goog_report_conversion('tel:18008311300')">Click to Call Admissions Office<br>1-800-831-1300</a></div></div><!-- / CTA -->
 
@@ -156,7 +155,7 @@
 	
 	</div>
 </div>
-	  </section>
+</section>
 	
 <!-- Begin W2L Form -->
 <div class="row" id="hpForm">
@@ -171,7 +170,7 @@
 					<!-- Organization ID-->	  	  		
 		  	  		<input type=hidden name="oid" value="00Dj0000000KHK4">
 		  	  		<!-- Parent Campaign ID-->
-		  	  		 <input name="00Nj00000095OEC" type="hidden" value="701m0000000A3AUAA0" /> 
+		  	  		 <input name="00Nj00000095OEC" type="hidden" value="701m0000000A3BCAA0" />  
 		  	  		<!-- Roadmaster Record ID-->
 		  	  		 <input id="recordType" name="recordType" type="hidden" value="012j0000000mE55" />
 		  	  		 <!-- Confirmation URL-->

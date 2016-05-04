@@ -2,9 +2,25 @@
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
  <head>
+	 <!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='12098924-44',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
 
-  <title>CDL Training and Truck Driving School in Jacksonville,FL - Roadmaster</title>
-<META NAME="DESCRIPTION" CONTENT="Roadmaster of Dunn. North Carolina is a hands-on truck driving school & CDL training center for areas around Raleigh-Durham, North Carolina.">
+
+
+  <title>Roadmaster CDL Training and Truck Driving School</title>
+<META NAME="DESCRIPTION" CONTENT="Roadmaster Truck Driving School is a hands-on truck driving school & CDL training center.">
   
   <?php include("../inc/head-subdir.inc"); ?>
   <!-- End Scripts -->
@@ -22,7 +38,7 @@
   </style>
   
  </head>
- <body class="landing-page">
+ <body>
  <?php include("../inc/analytics.inc"); ?>
 
 <!-- OFFCANVAS MENU -->
@@ -52,7 +68,7 @@
    </aside>
 
    <div class="row center">
-<img src="../img/headers/ph-cdltraining-L.gif" />
+<img src="/img/headers/ph-cdltraining-L.gif" alt="Roadmaster Drivers School CDL Training">
    </div>
    
       <!-- Small Nav-->
@@ -70,7 +86,7 @@
 
 <div class="row">
 	<div class="column small-12 large-12 medium-12">
-	  	  <h2>Why are truck drivers so in demand?</h2>
+	  	  <h1>Why are truck drivers so in demand?</h1>
 <p>The answer is simple…professional truck drivers deliver the goods that keep America and our economy moving!  Truck driving is not just a job that can pay well; it is the beginning of a professional career, and the fastest road to success. The shortage is not due to a lack of interest, just basic economics – the demand for professional truck drivers is growing faster than the number of new drivers entering the field and is a profession that cannot be outsourced!</p>
 
 <p>The U.S. Department of Labor Bureau of Labor Statistics projects the truck driving occupation to grow faster than the average of all occupations and the number of heavy truck and tractor-trailer drivers is expected to rise by 330,100, or 21%, between 2010 and 2020.  The DOL/BLS Employment Projections program forecasts almost 2 million heavy truck/tractor-trailer drivers will be needed by 2020!  Changes in federal regulations and increased competition from other sectors of the economy are forcing major changes in the trucking industry.  Those changes, in addition to retiring drivers, are putting a premium on new drivers and may result in increased compensation. </p>
@@ -80,7 +96,7 @@
 	<div class="row">
 		<div class="column small-12 large-6 medium-12">
 			<div class="panel">
-				  <h2>Truck Driver Salary & Benefits</h2>
+				  <h3>Truck Driver Salary & Benefits</h3>
 			  <p>A career as a truck driver can offer an individual a way to go from unemployed or underemployed to a middle class lifestyle quickly.  Truck driving is not just a job, it is a career and lifestyle.  The DOL Labor Statistics Bureau reports the average wage for a heavy tractor trailer driver; CDL Class A, around $18.24 hourly. This averages out to around $40,000 per year*, but that is just the beginning to what a truck driver can earn! </p>
 			  
 			  <ul class="yes-bullet">
@@ -102,7 +118,7 @@
 		
 		 <div class="large-6 columns"> 
 	  <div class="panel radius">
-	  <h2>Roadmaster offers the following:</h2>
+	  <h3>Roadmaster offers the following:</h3>
 	  		  	  	
 	  <p>All Roadmaster locations have administrative offices, spacious classrooms, and computer labs. The schools maintain specially designed driving courses where students practice backing, coupling, uncoupling, and docking tractor trailers.</p>
 	  
@@ -128,26 +144,18 @@
  
   <!-- Row 3 -->
       <div class="row">
-  	  <div class="large-6 columns">	  	  
-	  	  <h2>Why choose Roadmaster of Jacksonville,FL?</h2>
+  	  <div class="large-12 columns">	  	  
+	  	  <h2>Why choose Roadmaster Drivers School?</h2>
 	  	  <p>Becoming a truck driver is possible with the right driver training school behind you. With a solid reputation in the field, Roadmaster Drivers School can help you become a professional truck driver with only 3 to 4 weeks of specialized hands-on training.  For over 20 years, Roadmaster has trained over 75,000 entry level drivers and continues to help put people to work every day!</p>
 	  	  
 	  	  <p>Offering 11 training locations across the country, Roadmaster is an industry leader in CDL training, employing experienced instructors and offering students comprehensive classroom and behind the wheel truck driving education so they are fully prepared to start their new job in the trucking industry.  By focusing on giving students the best education and maintaining high job placement standards, Roadmaster has gained an excellent reputation in the trucking industry for quality training of entry-level commercial truck drivers. At Roadmaster, you will gain the confidence and know-how needed to enter into the professional trucking industry, setting yourself apart from the rest. Roadmaster is serious when it comes to helping graduates find a job and begins job placement assistance in the first week of training.  If qualified, you could even be pre-hired with a trucking company during your first week of training at Roadmaster!  Many graduates receive multiple offers of employment from major transportation carriers such as Werner, Schneider, TMC, Covenant, Swift and more!</p>
-	  	  
-  	  </div>
 
 	  </div><!-- end column-->
-	  
-		  <div class="large-6 columns"><h2>Location Information</h2>
-<p><img src="../../img/cities/jax4.jpg" alt="Roadmaster Truck Driving School"></p>
-<div class="columns small-12 medium-7">
-<p><b><a href="../../truck_school_jacksonville.php">Roadmaster Drivers School of Jacksonville, Florida</a></b><br> 1409 Pickettville Road<br> Jacksonville, FL 32220<br> <a href="tel:+19047833333">Phone: (904) 783-3333</a> <span class="show-for-small"><a href="../../truck_school_jacksonville.php#viewmap" target="_blank">Get Directions</a></span></p>
-</div>
-<div class="columns small-12 medium-5" style="padding: 0; margin: 0;"><a class="hide-for-small button default round" style="padding: .5em; margin: .5em;" href="../../truck_school_jacksonville.php#viewmap" target="_blank">Get Directions <i class="fi-arrow-right"></i></a></div></div>
-	   </div><!-- end row-->	
-	     		
-	  		 <div class="row">
+	   </div><!-- end row-->
+	   
+	   <div class="row">
 			 <div class="columns editable" id="dynamic-disclaimer"><p class="small-disclaimer"><span class="s1">*wage info supplied by Werner Enterprises</span></p></div>
+		 </div>
 
 <!-- CTA--><div class="row show-for-small uneditable" id="apply"><div class="columns text-center"><a class="button success radius" style="font-size:1.2em; line-height:1.2em;" href="tel:+18008311300" onclick="goog_report_conversion('tel:18008311300')">Click to Call Admissions Office<br>1-800-831-1300</a></div></div><!-- / CTA -->
 
@@ -156,8 +164,8 @@
 	
 	</div>
 </div>
-	  </section>
-	
+	 </section>
+	 
 <!-- Begin W2L Form -->
 <div class="row" id="hpForm">
 <div class="panel radius uneditable">
@@ -171,7 +179,7 @@
 					<!-- Organization ID-->	  	  		
 		  	  		<input type=hidden name="oid" value="00Dj0000000KHK4">
 		  	  		<!-- Parent Campaign ID-->
-		  	  		 <input name="00Nj00000095OEC" type="hidden" value="701m0000000A3AUAA0" /> 
+		  	  		 <input name="00Nj00000095OEC" type="hidden" value="701m0000000A39sAAC" />  
 		  	  		<!-- Roadmaster Record ID-->
 		  	  		 <input id="recordType" name="recordType" type="hidden" value="012j0000000mE55" />
 		  	  		 <!-- Confirmation URL-->

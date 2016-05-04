@@ -25,7 +25,7 @@
   </style>
   
  </head>
- <body>
+ <body class="landing-page">
  <?php include("../../inc/analytics.inc"); ?>
 
 <!-- OFFCANVAS MENU -->

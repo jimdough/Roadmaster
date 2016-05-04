@@ -22,7 +22,7 @@
   </style>
   
  </head>
- <body>
+ <body class="landing-page">
  <?php include("../inc/analytics.inc"); ?>
 
 <!-- OFFCANVAS MENU -->
@@ -60,13 +60,7 @@
    <!-- END Small Nav -->
 	
 		<div class="row">
-	  <!-- Column #1 -->
-	  <div class="small-12 medium-12 large-12 column">
-	  
 
-	  
-
-   </div> <!-- End Column 1-->
    	  <section class="editable" id="untitled-region-1">
 
 <div class="row">
@@ -129,19 +123,24 @@
  
   <!-- Row 3 -->
       <div class="row">
-  	  <div class="large-12 columns">	  	  
+  	  <div class="large-6 columns">	  	  
 	  	  <h2>Why choose Roadmaster of Columbus, OH?</h2>
 	  	  <p>Becoming a truck driver is possible with the right driver training school behind you. With a solid reputation in the field, Roadmaster Drivers School can help you become a professional truck driver with only 3 to 4 weeks of specialized hands-on training.  For over 20 years, Roadmaster has trained over 75,000 entry level drivers and continues to help put people to work every day!</p>
 	  	  
 	  	  <p>Offering 11 training locations across the country, Roadmaster is an industry leader in CDL training, employing experienced instructors and offering students comprehensive classroom and behind the wheel truck driving education so they are fully prepared to start their new job in the trucking industry.  By focusing on giving students the best education and maintaining high job placement standards, Roadmaster has gained an excellent reputation in the trucking industry for quality training of entry-level commercial truck drivers. At Roadmaster, you will gain the confidence and know-how needed to enter into the professional trucking industry, setting yourself apart from the rest. Roadmaster is serious when it comes to helping graduates find a job and begins job placement assistance in the first week of training.  If qualified, you could even be pre-hired with a trucking company during your first week of training at Roadmaster!  Many graduates receive multiple offers of employment from major transportation carriers such as Werner, Schneider, TMC, Covenant, Swift and more!</p>
-
-	  	 <!---<div class="large-6 columns>
+  	  </div>
+  	  
+	  	 <div class="large-6 columns">
 		 <h2>Location Information</h2>
 <p><img src="../../img/cities/columbus3-l.jpg" alt="Roadmaster Truck Driving School"></p>
 <div class="columns small-12 medium-7">
 <p><b><a href="../../truck_school_ohio.php">Roadmaster Drivers School of Columbus, Ohio</a></b><br> 4060 Perimeter Drive<br> Columbus, Ohio 43228<br> <a href="tel:+16143511748">Phone: (614) 351-1748</a> <span class="show-for-small"><a href="../../truck_school_ohio.php#viewmap" target="_blank">Get Directions</a></span></p>
 </div>
-<div class="columns small-12 medium-5" style="padding: 0; margin: 0;"><a class="hide-for-small button default round" style="padding: .5em; margin: .5em;" href="../../truck_school_ohio.php#viewmap" target="_blank">Get Directions <i class="fi-arrow-right"></i></a></div></div>
+<div class="columns small-12 medium-5" style="padding: 0; margin: 0;">
+<a class="hide-for-small button default round" style="padding: .5em; margin: .5em;" href="../../truck_school_ohio.php#viewmap" target="_blank">Get Directions <i class="fi-arrow-right"></i></a></div>
+
+
+	  	 </div>
 	   </div><!-- end row-->
 	   	  		
 	  		 <div class="row">
